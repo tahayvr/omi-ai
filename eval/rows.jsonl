@@ -1,0 +1,425 @@
+{"q": "switch to tokyo night", "expect": "omarchy theme set tokyo-night", "kind": "command", "note": ""}
+{"q": "can you change my theme to catppuccin please", "expect": "omarchy theme set catppuccin", "kind": "command", "note": ""}
+{"q": "gruvbox me", "expect": "omarchy theme set gruvbox", "kind": "command", "note": ""}
+{"q": "i want the nord colors", "expect": "omarchy theme set nord", "kind": "command", "note": ""}
+{"q": "make everything rose pine", "expect": "omarchy theme set rose-pine", "kind": "command", "note": ""}
+{"q": "set theme kanagwa", "expect": "omarchy theme set kanagawa", "kind": "command", "note": "typo for kanagawa"}
+{"q": "go with the light catppuccin variant", "expect": "omarchy theme set catppuccin-latte", "kind": "command", "note": ""}
+{"q": "apply the everforest theme", "expect": "omarchy theme set everforest", "kind": "command", "note": ""}
+{"q": "matte black theme pls", "expect": "omarchy theme set matte-black", "kind": "command", "note": ""}
+{"q": "put on the white theme, I'm working outside in the sun", "expect": "omarchy theme set white", "kind": "command", "note": ""}
+{"q": "hackerman mode", "expect": "omarchy theme set hackerman", "kind": "command", "note": ""}
+{"q": "which theme am I on right now?", "expect": "omarchy theme current", "kind": "command", "note": ""}
+{"q": "what's the current colour scheme called", "expect": "omarchy theme current", "kind": "command", "note": ""}
+{"q": "show me all the themes I can pick from", "expect": "omarchy theme list", "kind": "command", "note": ""}
+{"q": "open the theme picker", "expect": "omarchy theme switcher", "kind": "command", "note": ""}
+{"q": "I wanna browse themes visually", "expect": "omarchy theme switcher", "kind": "command", "note": ""}
+{"q": "next wallpaper", "expect": "omarchy theme bg next", "kind": "command", "note": ""}
+{"q": "change my background to a different one", "expect": "omarchy theme bg next", "kind": "command", "note": ""}
+{"q": "open the wallpaper chooser", "expect": "omarchy theme bg-switcher", "kind": "command", "note": ""}
+{"q": "what wallpaper is this?", "expect": "omarchy theme bg current", "kind": "command", "note": ""}
+{"q": "where do I drop my own wallpapers for this theme", "expect": "omarchy theme bg install", "kind": "command", "note": ""}
+{"q": "stop playing that intro animation when the background changes", "expect": "omarchy theme bg intro disable", "kind": "command", "note": ""}
+{"q": "install a theme from a github repo", "expect": "omarchy theme install", "kind": "command", "note": ""}
+{"q": "update my downloaded themes", "expect": "omarchy theme update", "kind": "command", "note": ""}
+{"q": "uninstall the hello theme", "expect": "omarchy theme remove hello", "kind": "command", "note": "destructive"}
+{"q": "delete the miasma theme from my machine", "expect": "omarchy theme remove miasma", "kind": "command", "note": "destructive"}
+{"q": "re-render the current theme, something looks off", "expect": "omarchy theme refresh", "kind": "command", "note": ""}
+{"q": "make chrome match my theme", "expect": "omarchy theme set browser", "kind": "command", "note": ""}
+{"q": "sync the theme colors to my browser", "expect": "omarchy theme set browser", "kind": "command", "note": ""}
+{"q": "theme vscode to match omarchy", "expect": "omarchy theme set vscode", "kind": "command", "note": ""}
+{"q": "push the theme to obsidian", "expect": "omarchy theme set obsidian", "kind": "command", "note": ""}
+{"q": "my tmux colors are stale, sync them with the theme", "expect": "omarchy theme set tmux", "kind": "command", "note": ""}
+{"q": "apply the theme to gnome apps", "expect": "omarchy theme set gnome", "kind": "command", "note": ""}
+{"q": "light up my keyboard in the theme color", "expect": "omarchy theme set keyboard", "kind": "command", "note": ""}
+{"q": "set my ROG keyboard RGB to match the theme", "expect": "omarchy theme set keyboard asus rog", "kind": "command", "note": ""}
+{"q": "make claude code use the omarchy theme", "expect": "omarchy theme set claude", "kind": "command", "note": ""}
+{"q": "sync theme to claude code and switch to it", "expect": "omarchy theme set claude --activate", "kind": "command", "note": ""}
+{"q": "make my terminals see-through to match glassy windows", "expect": "omarchy theme set glass", "kind": "command", "note": ""}
+{"q": "theme my hermes agent and activate it", "expect": "omarchy theme set hermes --activate", "kind": "command", "note": ""}
+{"q": "push the current theme to my other herdr machines", "expect": "omarchy theme set herdr machines", "kind": "command", "note": ""}
+{"q": "stop syncing theme changes with my herdr machines", "expect": "omarchy toggle theme sync", "kind": "command", "note": ""}
+{"q": "make the boot screen use the nord theme", "expect": "omarchy plymouth set by theme nord", "kind": "command", "note": ""}
+{"q": "what theme is my boot screen using", "expect": "omarchy plymouth current", "kind": "command", "note": ""}
+{"q": "put the boot/login screen back to the default omarchy look", "expect": "omarchy plymouth reset", "kind": "command", "note": "destructive"}
+{"q": "change my font to jetbrains mono", "expect": "omarchy font set \"JetBrainsMono Nerd Font\"", "kind": "command", "note": ""}
+{"q": "use caskaydia mono for the terminal font", "expect": "omarchy font set \"CaskaydiaMono Nerd Font\"", "kind": "command", "note": ""}
+{"q": "set the monospace font to iA Writer", "expect": "omarchy font set \"iA Writer Mono S\"", "kind": "command", "note": ""}
+{"q": "what font am I using", "expect": "omarchy font current", "kind": "command", "note": ""}
+{"q": "list the fonts I can choose", "expect": "omarchy font list", "kind": "command", "note": ""}
+{"q": "show chinese characters in traditional forms", "expect": "omarchy font cjk tc", "kind": "command", "note": ""}
+{"q": "use japanese glyph shapes for kanji", "expect": "omarchy font cjk jp", "kind": "command", "note": ""}
+{"q": "text is tiny everywhere, reset the text size", "expect": "omarchy display text size reset", "kind": "command", "note": ""}
+{"q": "what's my current text scale", "expect": "omarchy display text size", "kind": "command", "note": ""}
+{"q": "move the bar to the bottom", "expect": "omarchy bar position bottom", "kind": "command", "note": ""}
+{"q": "put the bar on the left", "expect": "omarchy bar position left", "kind": "command", "note": ""}
+{"q": "can the panel go on the right side of the screen", "expect": "omarchy bar position right", "kind": "command", "note": ""}
+{"q": "make the bar glassy", "expect": "omarchy bar background glassy", "kind": "command", "note": ""}
+{"q": "I want a solid bar background", "expect": "omarchy bar background opaque", "kind": "command", "note": ""}
+{"q": "no background on the bar", "expect": "omarchy bar background none", "kind": "command", "note": ""}
+{"q": "reset the bar layout, I messed up the widgets", "expect": "omarchy bar reset", "kind": "command", "note": ""}
+{"q": "restore default bar widgets", "expect": "omarchy bar defaults", "kind": "command", "note": ""}
+{"q": "bar text is unreadable on this wallpaper, fix the text color", "expect": "omarchy bar text color", "kind": "command", "note": ""}
+{"q": "hide the bar", "expect": "omarchy toggle bar on", "kind": "command", "note": "per catalog: 'on' hides the bar"}
+{"q": "bring the top bar back", "expect": "omarchy toggle bar off", "kind": "command", "note": "per catalog: 'off' shows the bar"}
+{"q": "toggle the bar", "expect": "omarchy toggle bar", "kind": "command", "note": ""}
+{"q": "zen mode: hide the bar and remove gaps", "expect": "omarchy toggle fullscreen desktop on", "kind": "command", "note": ""}
+{"q": "go back to the normal desktop with bar and gaps", "expect": "omarchy toggle fullscreen desktop off", "kind": "command", "note": ""}
+{"q": "move the dock to the left", "expect": "omarchy dock position left", "kind": "command", "note": ""}
+{"q": "auto hide the dock", "expect": "omarchy dock autohide on", "kind": "command", "note": ""}
+{"q": "keep the dock visible all the time", "expect": "omarchy dock autohide off", "kind": "command", "note": ""}
+{"q": "change which apps are pinned on the dock", "expect": "omarchy dock pinned", "kind": "command", "note": ""}
+{"q": "disable animations, my laptop is laggy", "expect": "omarchy toggle animations off", "kind": "command", "note": ""}
+{"q": "turn animations back on", "expect": "omarchy toggle animations on", "kind": "command", "note": ""}
+{"q": "square corners on windows", "expect": "omarchy hyprland corners sharp", "kind": "command", "note": ""}
+{"q": "i like rounded window corners", "expect": "omarchy hyprland corners rounded", "kind": "command", "note": ""}
+{"q": "make windows glassy", "expect": "omarchy hyprland window transparency glassy", "kind": "command", "note": ""}
+{"q": "no transparency on windows at all", "expect": "omarchy hyprland window transparency opaque", "kind": "command", "note": ""}
+{"q": "windows should be see-through", "expect": "omarchy hyprland window transparency transparent", "kind": "command", "note": ""}
+{"q": "make this window not transparent", "expect": "omarchy hyprland window transparency toggle", "kind": "command", "note": ""}
+{"q": "get rid of the gaps between windows", "expect": "omarchy hyprland window gaps toggle", "kind": "command", "note": ""}
+{"q": "everything is huge, scale the monitor down", "expect": "omarchy hyprland monitor scaling down", "kind": "command", "note": ""}
+{"q": "bump up the display scaling", "expect": "omarchy hyprland monitor scaling up", "kind": "command", "note": ""}
+{"q": "what scale is my monitor at", "expect": "omarchy hyprland monitor scaling", "kind": "command", "note": ""}
+{"q": "close every window", "expect": "omarchy hyprland window close all", "kind": "command", "note": ""}
+{"q": "kill all my open windows, I'm done for the day", "expect": "omarchy hyprland window close all", "kind": "command", "note": ""}
+{"q": "minimize this", "expect": "omarchy hyprland window minimize", "kind": "command", "note": ""}
+{"q": "send this window to the dock", "expect": "omarchy hyprland window minimize", "kind": "command", "note": ""}
+{"q": "pop this window out so it stays put", "expect": "omarchy hyprland window pop", "kind": "command", "note": ""}
+{"q": "make this tile fullscreen", "expect": "omarchy hyprland window tiled fullscreen toggle", "kind": "command", "note": ""}
+{"q": "remember this window's width", "expect": "omarchy hyprland window width save", "kind": "command", "note": ""}
+{"q": "switch this workspace's layout", "expect": "omarchy hyprland workspace layout toggle", "kind": "command", "note": ""}
+{"q": "cycle tiling layout", "expect": "omarchy hyprland workspace layout toggle", "kind": "command", "note": ""}
+{"q": "make scrolling the default layout for workspaces", "expect": "omarchy hyprland workspace layout default scrolling", "kind": "command", "note": ""}
+{"q": "what layout is this workspace using", "expect": "omarchy hyprland workspace layout current", "kind": "command", "note": ""}
+{"q": "turn off the laptop screen, I'm using my external monitor", "expect": "omarchy hyprland monitor internal off", "kind": "command", "note": ""}
+{"q": "enable the built-in display again", "expect": "omarchy hyprland monitor internal on", "kind": "command", "note": ""}
+{"q": "mirror my laptop screen to the projector", "expect": "omarchy hyprland monitor internal mirror on", "kind": "command", "note": ""}
+{"q": "stop mirroring", "expect": "omarchy hyprland monitor internal mirror off", "kind": "command", "note": ""}
+{"q": "it's too blue at night, warm up the screen", "expect": "omarchy toggle nightlight", "kind": "command", "note": ""}
+{"q": "night mode", "expect": "omarchy toggle nightlight", "kind": "command", "note": ""}
+{"q": "my eyes hurt late at night, can you do the orange screen thing", "expect": "omarchy toggle nightlight", "kind": "command", "note": ""}
+{"q": "turn off the night light", "expect": "omarchy toggle nightlight", "kind": "command", "note": ""}
+{"q": "is the night light on?", "expect": "omarchy toggle nightlight --status", "kind": "command", "note": ""}
+{"q": "keep the computer awake, I'm watching a long video", "expect": "omarchy toggle idle stay-awake", "kind": "command", "note": ""}
+{"q": "don't let the screen sleep", "expect": "omarchy toggle idle stay-awake", "kind": "command", "note": ""}
+{"q": "let it go idle normally again", "expect": "omarchy toggle idle allow-idle", "kind": "command", "note": ""}
+{"q": "is the idle inhibitor on?", "expect": "omarchy toggle idle status", "kind": "command", "note": ""}
+{"q": "do not disturb", "expect": "omarchy toggle notification silencing", "kind": "command", "note": ""}
+{"q": "silence notifications for a while", "expect": "omarchy toggle notification silencing", "kind": "command", "note": ""}
+{"q": "stop all these popups, I'm presenting", "expect": "omarchy toggle notification silencing", "kind": "command", "note": ""}
+{"q": "disable the touchpad", "expect": "omarchy toggle touchpad off", "kind": "command", "note": ""}
+{"q": "turn the trackpad back on", "expect": "omarchy toggle touchpad on", "kind": "command", "note": ""}
+{"q": "disable touch screen, the cat keeps tapping it", "expect": "omarchy toggle touchscreen off", "kind": "command", "note": ""}
+{"q": "disable the screensaver", "expect": "omarchy toggle screensaver", "kind": "command", "note": ""}
+{"q": "hide suspend from the system menu", "expect": "omarchy toggle suspend", "kind": "command", "note": ""}
+{"q": "switch to the integrated gpu to save battery", "expect": "omarchy toggle hybrid gpu", "kind": "command", "note": ""}
+{"q": "stop crash notifications", "expect": "omarchy toggle crash capture", "kind": "command", "note": ""}
+{"q": "list programs whose crash alerts are silenced", "expect": "omarchy crash mute", "kind": "command", "note": ""}
+{"q": "screenshot", "expect": "omarchy capture screenshot", "kind": "command", "note": ""}
+{"q": "take a screenshot", "expect": "omarchy capture screenshot", "kind": "command", "note": ""}
+{"q": "snip a region", "expect": "omarchy capture screenshot region", "kind": "command", "note": ""}
+{"q": "screenshot of a window and copy it", "expect": "omarchy capture screenshot windows copy", "kind": "command", "note": ""}
+{"q": "grab the whole screen and save it", "expect": "omarchy capture screenshot fullscreen save", "kind": "command", "note": ""}
+{"q": "capture an area and put it on my clipboard", "expect": "omarchy capture screenshot region copy", "kind": "command", "note": ""}
+{"q": "take a scrolling screenshot of this long page", "expect": "omarchy capture screenshot scroll", "kind": "command", "note": ""}
+{"q": "pic of this window", "expect": "omarchy capture screenshot windows", "kind": "command", "note": ""}
+{"q": "start recording my screen", "expect": "omarchy capture screenrecording", "kind": "command", "note": ""}
+{"q": "record the screen with system audio", "expect": "omarchy capture screenrecording --with-desktop-audio", "kind": "command", "note": ""}
+{"q": "record my whole screen with my mic", "expect": "omarchy capture screenrecording --fullscreen --with-microphone-audio", "kind": "command", "note": ""}
+{"q": "screen record with webcam overlay, big camera", "expect": "omarchy capture screenrecording --with-webcam --webcam-size=large", "kind": "command", "note": ""}
+{"q": "record a tutorial: full screen, desktop sound and my voice", "expect": "omarchy capture screenrecording --fullscreen --with-desktop-audio --with-microphone-audio", "kind": "command", "note": ""}
+{"q": "stop the recording", "expect": "omarchy capture screenrecording --stop-recording", "kind": "command", "note": ""}
+{"q": "am I recording right now?", "expect": "omarchy capture screenrecording --status", "kind": "command", "note": ""}
+{"q": "pick a camera and start recording with it", "expect": "omarchy capture screenrecording with webcam", "kind": "command", "note": ""}
+{"q": "make the webcam overlay bigger", "expect": "omarchy capture webcam resize larger", "kind": "command", "note": ""}
+{"q": "scan this qr code on screen", "expect": "omarchy capture qr", "kind": "command", "note": ""}
+{"q": "copy the text out of this image", "expect": "omarchy capture text", "kind": "command", "note": ""}
+{"q": "ocr a part of the screen", "expect": "omarchy capture text", "kind": "command", "note": ""}
+{"q": "louder", "expect": "omarchy audio output volume raise", "kind": "command", "note": ""}
+{"q": "turn it up", "expect": "omarchy audio output volume raise", "kind": "command", "note": ""}
+{"q": "volume down a notch", "expect": "omarchy audio output volume lower", "kind": "command", "note": ""}
+{"q": "too loud", "expect": "omarchy audio output volume lower", "kind": "command", "note": ""}
+{"q": "mute", "expect": "omarchy audio output volume mute-toggle", "kind": "command", "note": ""}
+{"q": "unmute the speakers", "expect": "omarchy audio output volume mute-toggle", "kind": "command", "note": ""}
+{"q": "mute my mic", "expect": "omarchy audio input mute", "kind": "command", "note": ""}
+{"q": "switch audio to my headphones", "expect": "omarchy audio output switch", "kind": "command", "note": ""}
+{"q": "change the sound output device", "expect": "omarchy audio output switch", "kind": "command", "note": ""}
+{"q": "next media player", "expect": "omarchy audio source switch next", "kind": "command", "note": ""}
+{"q": "no sound is coming out, restart audio", "expect": "omarchy restart audio", "kind": "command", "note": ""}
+{"q": "my usb headset is stuck, reset the audio stuff", "expect": "omarchy restart audio", "kind": "command", "note": ""}
+{"q": "turn on the speaker tuning", "expect": "omarchy audio tuning on", "kind": "command", "note": ""}
+{"q": "turn my keyboard backlight up", "expect": "omarchy brightness keyboard up", "kind": "command", "note": ""}
+{"q": "dim the keyboard lights", "expect": "omarchy brightness keyboard down", "kind": "command", "note": ""}
+{"q": "keyboard light off", "expect": "omarchy brightness keyboard off", "kind": "command", "note": ""}
+{"q": "turn the screen off", "expect": "omarchy brightness display off", "kind": "command", "note": ""}
+{"q": "turn the display back on", "expect": "omarchy brightness display on", "kind": "command", "note": ""}
+{"q": "what's the screen brightness at", "expect": "omarchy brightness display", "kind": "command", "note": ""}
+{"q": "wifi isn't working, restart it", "expect": "omarchy restart wifi", "kind": "command", "note": ""}
+{"q": "turn bluetooth on", "expect": "omarchy bluetooth power on", "kind": "command", "note": ""}
+{"q": "bluetooth off", "expect": "omarchy bluetooth power off", "kind": "command", "note": ""}
+{"q": "toggle bt", "expect": "omarchy bluetooth power toggle", "kind": "command", "note": ""}
+{"q": "is bluetooth enabled?", "expect": "omarchy bluetooth power is-on", "kind": "command", "note": ""}
+{"q": "my airpods won't connect, restart bluetooth", "expect": "omarchy restart bluetooth", "kind": "command", "note": ""}
+{"q": "run an internet speed test", "expect": "omarchy network speedtest", "kind": "command", "note": ""}
+{"q": "how fast is my download", "expect": "omarchy network speedtest down", "kind": "command", "note": ""}
+{"q": "test my upload speed", "expect": "omarchy network speedtest up", "kind": "command", "note": ""}
+{"q": "lock wifi to 5ghz", "expect": "omarchy network band 5", "kind": "command", "note": ""}
+{"q": "use the 2.4 GHz band", "expect": "omarchy network band 2.4", "kind": "command", "note": ""}
+{"q": "which wifi band am I on", "expect": "omarchy network band", "kind": "command", "note": ""}
+{"q": "am I connected to the internet?", "expect": "omarchy network status", "kind": "command", "note": ""}
+{"q": "use cloudflare dns", "expect": "omarchy dns Cloudflare", "kind": "command", "note": ""}
+{"q": "switch DNS to google", "expect": "omarchy dns Google", "kind": "command", "note": ""}
+{"q": "what dns am I using", "expect": "omarchy dns", "kind": "command", "note": ""}
+{"q": "show a qr code so my phone can join the wifi", "expect": "omarchy network qr", "kind": "command", "note": ""}
+{"q": "open the browser", "expect": "omarchy launch browser", "kind": "command", "note": ""}
+{"q": "open files", "expect": "omarchy launch nautilus", "kind": "command", "note": ""}
+{"q": "open the file manager here", "expect": "omarchy launch nautilus cwd", "kind": "command", "note": ""}
+{"q": "new terminal", "expect": "omarchy launch terminal", "kind": "command", "note": ""}
+{"q": "attach to my tmux session", "expect": "omarchy launch terminal tmux", "kind": "command", "note": ""}
+{"q": "show system info", "expect": "omarchy launch about", "kind": "command", "note": ""}
+{"q": "play some spotify", "expect": "omarchy launch spotify", "kind": "command", "note": ""}
+{"q": "open signal", "expect": "omarchy launch signal", "kind": "command", "note": ""}
+{"q": "open my password manager", "expect": "omarchy launch 1password", "kind": "command", "note": ""}
+{"q": "lazydocker", "expect": "omarchy launch docker tui", "kind": "command", "note": ""}
+{"q": "take me to the omarchy discord", "expect": "omarchy launch discord community", "kind": "command", "note": ""}
+{"q": "start the screensaver", "expect": "omarchy launch screensaver", "kind": "command", "note": ""}
+{"q": "launch battle.net with the fps overlay", "expect": "omarchy launch battlenet --with-mangohud", "kind": "command", "note": ""}
+{"q": "open the omarchy menu", "expect": "omarchy menu", "kind": "command", "note": ""}
+{"q": "clipboard history", "expect": "omarchy menu clipboard", "kind": "command", "note": ""}
+{"q": "emoji picker", "expect": "omarchy menu emoji", "kind": "command", "note": ""}
+{"q": "what are my keyboard shortcuts?", "expect": "omarchy menu keybindings", "kind": "command", "note": ""}
+{"q": "change my time zone", "expect": "omarchy menu timezone", "kind": "command", "note": ""}
+{"q": "start my coding agent", "expect": "omarchy agent", "kind": "command", "note": ""}
+{"q": "open clawd... I mean the openclaw dashboard", "expect": "omarchy launch openclaw", "kind": "command", "note": ""}
+{"q": "make firefox my default browser", "expect": "omarchy default browser firefox", "kind": "command", "note": ""}
+{"q": "set zen as default browser", "expect": "omarchy default browser zen", "kind": "command", "note": ""}
+{"q": "default editor should be neovim", "expect": "omarchy default editor nvim", "kind": "command", "note": ""}
+{"q": "use zed as my editor", "expect": "omarchy default editor zed", "kind": "command", "note": ""}
+{"q": "make kitty the default terminal", "expect": "omarchy default terminal kitty", "kind": "command", "note": ""}
+{"q": "set claude as my default coding agent", "expect": "omarchy default agent claude", "kind": "command", "note": ""}
+{"q": "which dictation backend is default", "expect": "omarchy default dictation", "kind": "command", "note": ""}
+{"q": "start dictation", "expect": "omarchy dictation start", "kind": "command", "note": ""}
+{"q": "let me talk instead of typing", "expect": "omarchy dictation start", "kind": "command", "note": ""}
+{"q": "stop dictating", "expect": "omarchy dictation stop", "kind": "command", "note": ""}
+{"q": "toggle voice typing", "expect": "omarchy dictation toggle", "kind": "command", "note": ""}
+{"q": "start voxtype", "expect": "omarchy dictation voxtype start", "kind": "command", "note": ""}
+{"q": "set up voxtype for dictation", "expect": "omarchy install dictation voxtype", "kind": "command", "note": ""}
+{"q": "install superwhisper", "expect": "omarchy install dictation superwhisper", "kind": "command", "note": ""}
+{"q": "pick a different voxtype model", "expect": "omarchy voxtype model", "kind": "command", "note": ""}
+{"q": "install steam", "expect": "omarchy install gaming steam", "kind": "command", "note": ""}
+{"q": "I want to play games, get me steam", "expect": "omarchy install gaming steam", "kind": "command", "note": ""}
+{"q": "install heroic launcher for my epic games", "expect": "omarchy install gaming heroic", "kind": "command", "note": ""}
+{"q": "set up lutris", "expect": "omarchy install gaming lutris", "kind": "command", "note": ""}
+{"q": "install retroarch for emulators", "expect": "omarchy install gaming retroarch", "kind": "command", "note": ""}
+{"q": "my xbox controller doesn't work, install support", "expect": "omarchy install gaming xbox-controllers", "kind": "command", "note": ""}
+{"q": "xbox cloud gaming please", "expect": "omarchy install gaming xbox-cloud", "kind": "command", "note": ""}
+{"q": "install firefox", "expect": "omarchy install browser firefox", "kind": "command", "note": ""}
+{"q": "get me brave", "expect": "omarchy install browser brave", "kind": "command", "note": ""}
+{"q": "install google chrome", "expect": "omarchy install browser chrome", "kind": "command", "note": ""}
+{"q": "install vscode", "expect": "omarchy install editor vscode", "kind": "command", "note": ""}
+{"q": "install the zed editor", "expect": "omarchy install editor zed", "kind": "command", "note": ""}
+{"q": "i want helix", "expect": "omarchy install editor helix", "kind": "command", "note": ""}
+{"q": "install emacs", "expect": "omarchy install editor emacs", "kind": "command", "note": ""}
+{"q": "set up rust", "expect": "omarchy install dev-env rust", "kind": "command", "note": ""}
+{"q": "install node.js dev environment", "expect": "omarchy install dev-env node", "kind": "command", "note": ""}
+{"q": "I need python set up for development", "expect": "omarchy install dev-env python", "kind": "command", "note": ""}
+{"q": "rails dev env", "expect": "omarchy install dev-env ruby", "kind": "command", "note": ""}
+{"q": "install ghostty", "expect": "omarchy install terminal ghostty", "kind": "command", "note": ""}
+{"q": "install the claude desktop app", "expect": "omarchy install ai claude", "kind": "command", "note": ""}
+{"q": "get chatgpt desktop", "expect": "omarchy install ai chatgpt", "kind": "command", "note": ""}
+{"q": "install spotify", "expect": "omarchy install service spotify", "kind": "command", "note": ""}
+{"q": "install 1password", "expect": "omarchy install service 1password", "kind": "command", "note": ""}
+{"q": "set up dropbox", "expect": "omarchy install service dropbox", "kind": "command", "note": ""}
+{"q": "install tailscale", "expect": "omarchy install service tailscale", "kind": "command", "note": ""}
+{"q": "I need a VPN, install nordvpn", "expect": "omarchy install service nordvpn", "kind": "command", "note": ""}
+{"q": "install office / outlook / teams", "expect": "omarchy install service microsoft", "kind": "command", "note": ""}
+{"q": "set up game streaming with sunshine", "expect": "omarchy install service sunshine", "kind": "command", "note": ""}
+{"q": "spin up a database in docker", "expect": "omarchy install docker dbs", "kind": "command", "note": ""}
+{"q": "install the yt-dlp chrome extension helper", "expect": "omarchy install chromium ytdlp", "kind": "command", "note": ""}
+{"q": "bring back all the apps omarchy came with", "expect": "omarchy install preinstalls", "kind": "command", "note": ""}
+{"q": "install a package", "expect": "omarchy pkg install", "kind": "command", "note": ""}
+{"q": "browse the AUR for something to install", "expect": "omarchy pkg aur install", "kind": "command", "note": ""}
+{"q": "make an app launcher for a website", "expect": "omarchy webapp install", "kind": "command", "note": ""}
+{"q": "add a web app", "expect": "omarchy webapp install", "kind": "command", "note": ""}
+{"q": "create a launcher for a terminal app", "expect": "omarchy tui install", "kind": "command", "note": ""}
+{"q": "uninstall steam", "expect": "omarchy remove gaming steam", "kind": "command", "note": "destructive"}
+{"q": "get rid of lutris", "expect": "omarchy remove gaming lutris", "kind": "command", "note": "destructive"}
+{"q": "remove ollama and its models", "expect": "omarchy remove ai ollama", "kind": "command", "note": "destructive"}
+{"q": "uninstall lm studio", "expect": "omarchy remove ai lm studio", "kind": "command", "note": "destructive"}
+{"q": "remove brave browser", "expect": "omarchy remove browser brave", "kind": "command", "note": "destructive"}
+{"q": "remove the node dev environment", "expect": "omarchy remove dev env node", "kind": "command", "note": "destructive"}
+{"q": "uninstall 1password", "expect": "omarchy remove service 1password", "kind": "command", "note": "destructive"}
+{"q": "remove fingerprint login", "expect": "omarchy remove security fingerprint", "kind": "command", "note": "destructive"}
+{"q": "delete a web app launcher", "expect": "omarchy webapp remove", "kind": "command", "note": "destructive"}
+{"q": "remove all the web apps", "expect": "omarchy webapp remove all", "kind": "command", "note": "destructive"}
+{"q": "remove a tui launcher", "expect": "omarchy tui remove", "kind": "command", "note": "destructive"}
+{"q": "strip out the preinstalled bloat", "expect": "omarchy remove preinstalls", "kind": "command", "note": "destructive"}
+{"q": "uninstall a package", "expect": "omarchy pkg remove", "kind": "command", "note": "destructive"}
+{"q": "remove voxtype", "expect": "omarchy remove dictation voxtype", "kind": "command", "note": "destructive"}
+{"q": "delete the microsoft web apps", "expect": "omarchy remove service microsoft", "kind": "command", "note": "destructive"}
+{"q": "update", "expect": "omarchy update", "kind": "command", "note": ""}
+{"q": "update my system", "expect": "omarchy update", "kind": "command", "note": ""}
+{"q": "upgrade everything", "expect": "omarchy update", "kind": "command", "note": ""}
+{"q": "any updates available?", "expect": "omarchy update available", "kind": "command", "note": ""}
+{"q": "update firmware", "expect": "omarchy update firmware", "kind": "command", "note": ""}
+{"q": "update just the AUR stuff", "expect": "omarchy update aur pkgs", "kind": "command", "note": ""}
+{"q": "only update pacman packages", "expect": "omarchy update system pkgs", "kind": "command", "note": ""}
+{"q": "clean the package cache", "expect": "omarchy update pkg prune", "kind": "command", "note": ""}
+{"q": "my clock is wrong, resync the time", "expect": "omarchy update time", "kind": "command", "note": ""}
+{"q": "clean up orphaned packages", "expect": "omarchy update orphan pkgs", "kind": "command", "note": "destructive"}
+{"q": "fix the keyring errors", "expect": "omarchy update keyring", "kind": "command", "note": ""}
+{"q": "did the last update fail? check the logs", "expect": "omarchy update analyze logs", "kind": "command", "note": ""}
+{"q": "what version of omarchy is this", "expect": "omarchy version", "kind": "command", "note": ""}
+{"q": "when did I last update packages", "expect": "omarchy version pkgs", "kind": "command", "note": ""}
+{"q": "which release channel am I on", "expect": "omarchy channel current", "kind": "command", "note": ""}
+{"q": "switch to the edge channel", "expect": "omarchy channel set edge", "kind": "command", "note": "destructive"}
+{"q": "run pending migrations", "expect": "omarchy migrate", "kind": "command", "note": ""}
+{"q": "restart the shell, bar is frozen", "expect": "omarchy restart shell", "kind": "command", "note": ""}
+{"q": "the bar disappeared, reload the omarchy shell", "expect": "omarchy restart shell", "kind": "command", "note": ""}
+{"q": "my touchpad stopped responding", "expect": "omarchy restart trackpad", "kind": "command", "note": ""}
+{"q": "reload hyprland config", "expect": "omarchy restart hyprctl", "kind": "command", "note": ""}
+{"q": "restart the night light service", "expect": "omarchy restart hyprsunset", "kind": "command", "note": ""}
+{"q": "reload terminals", "expect": "omarchy restart terminal", "kind": "command", "note": ""}
+{"q": "reset my hyprland configs to stock", "expect": "omarchy refresh hyprland", "kind": "command", "note": "destructive"}
+{"q": "reset shell.json to defaults", "expect": "omarchy refresh shell", "kind": "command", "note": "destructive"}
+{"q": "restore default chromium flags", "expect": "omarchy refresh chromium", "kind": "command", "note": "destructive"}
+{"q": "fix missing app launchers", "expect": "omarchy refresh applications", "kind": "command", "note": ""}
+{"q": "lock", "expect": "omarchy system lock", "kind": "command", "note": ""}
+{"q": "lock my screen, going for coffee", "expect": "omarchy system lock", "kind": "command", "note": ""}
+{"q": "reboot", "expect": "omarchy system reboot", "kind": "command", "note": ""}
+{"q": "restart the computer", "expect": "omarchy system reboot", "kind": "command", "note": ""}
+{"q": "shut down", "expect": "omarchy system shutdown", "kind": "command", "note": ""}
+{"q": "log me out", "expect": "omarchy system logout", "kind": "command", "note": ""}
+{"q": "reboot into the boot menu", "expect": "omarchy system reboot-boot-menu", "kind": "command", "note": ""}
+{"q": "wake the screens up", "expect": "omarchy system wake", "kind": "command", "note": ""}
+{"q": "cpu and memory usage", "expect": "omarchy system stats", "kind": "command", "note": ""}
+{"q": "performance mode", "expect": "omarchy powerprofiles set autodetect performance", "kind": "command", "note": "first positional required; autodetect = current power source"}
+{"q": "save battery, use power saver", "expect": "omarchy powerprofiles set autodetect power-saver", "kind": "command", "note": "first positional required"}
+{"q": "when plugged in, always use performance", "expect": "omarchy powerprofiles set ac performance", "kind": "command", "note": ""}
+{"q": "what power profiles are there", "expect": "omarchy powerprofiles list", "kind": "command", "note": ""}
+{"q": "battery level?", "expect": "omarchy battery status", "kind": "command", "note": ""}
+{"q": "show the battery notification", "expect": "omarchy notification battery", "kind": "command", "note": ""}
+{"q": "show the weather", "expect": "omarchy notification weather", "kind": "command", "note": ""}
+{"q": "change my weather location", "expect": "omarchy weather location", "kind": "command", "note": ""}
+{"q": "set up hibernation", "expect": "omarchy hibernation setup", "kind": "command", "note": ""}
+{"q": "can this machine hibernate?", "expect": "omarchy hibernation available", "kind": "command", "note": ""}
+{"q": "remove hibernation", "expect": "omarchy hibernation remove", "kind": "command", "note": "destructive"}
+{"q": "take a system snapshot before I mess with things", "expect": "omarchy snapshot create", "kind": "command", "note": "destructive per catalog"}
+{"q": "roll back to a snapshot", "expect": "omarchy snapshot restore", "kind": "command", "note": "destructive"}
+{"q": "change my disk encryption password", "expect": "omarchy drive password", "kind": "command", "note": "destructive"}
+{"q": "factory reset this laptop", "expect": "omarchy setup factory reset", "kind": "command", "note": "destructive"}
+{"q": "reinstall omarchy from scratch", "expect": "omarchy reinstall", "kind": "command", "note": "destructive"}
+{"q": "run the screensaver", "expect": "omarchy screensaver", "kind": "command", "note": ""}
+{"q": "set up fingerprint unlock", "expect": "omarchy setup security fingerprint", "kind": "command", "note": ""}
+{"q": "use my yubikey for sudo", "expect": "omarchy setup security fido2", "kind": "command", "note": ""}
+{"q": "enable the ssh agent", "expect": "omarchy setup security ssh agent", "kind": "command", "note": ""}
+{"q": "let me ssh into this box", "expect": "omarchy setup security sshd", "kind": "command", "note": "destructive"}
+{"q": "let me run docker without sudo", "expect": "omarchy setup security sudoless docker", "kind": "command", "note": "destructive"}
+{"q": "add a keyboard layout", "expect": "omarchy setup keyboard", "kind": "command", "note": ""}
+{"q": "I need to type japanese", "expect": "omarchy setup input mozc", "kind": "command", "note": ""}
+{"q": "set up korean input", "expect": "omarchy setup input hangul", "kind": "command", "note": ""}
+{"q": "what language is omarchy set to", "expect": "omarchy language", "kind": "command", "note": ""}
+{"q": "send my clipboard to my phone via localsend", "expect": "omarchy share clipboard", "kind": "command", "note": ""}
+{"q": "share a file over localsend", "expect": "omarchy share file", "kind": "command", "note": ""}
+{"q": "airdrop a folder to another computer", "expect": "omarchy share folder", "kind": "command", "note": ""}
+{"q": "shrink this video for sharing", "expect": "omarchy transcode", "kind": "command", "note": ""}
+{"q": "set a reminder", "expect": "omarchy reminder --interactive", "kind": "command", "note": ""}
+{"q": "what reminders do I have", "expect": "omarchy reminder show", "kind": "command", "note": ""}
+{"q": "clear all reminders", "expect": "omarchy reminder clear", "kind": "command", "note": ""}
+{"q": "print debug info for a bug report", "expect": "omarchy debug", "kind": "command", "note": ""}
+{"q": "why won't my screen lock? show idle diagnostics", "expect": "omarchy debug idle", "kind": "command", "note": ""}
+{"q": "test disk speed", "expect": "omarchy disk speedtest", "kind": "command", "note": ""}
+{"q": "start the windows vm", "expect": "omarchy windows vm launch", "kind": "command", "note": ""}
+{"q": "install a windows virtual machine", "expect": "omarchy windows vm install", "kind": "command", "note": ""}
+{"q": "what's my windows product key", "expect": "omarchy windows key", "kind": "command", "note": ""}
+{"q": "add a retroarch game to my launcher", "expect": "omarchy games retro install", "kind": "command", "note": ""}
+{"q": "list shell plugins", "expect": "omarchy plugin list", "kind": "command", "note": ""}
+{"q": "update my plugins", "expect": "omarchy plugin update", "kind": "command", "note": ""}
+{"q": "do I have a webcam?", "expect": "omarchy hw webcam", "kind": "command", "note": ""}
+{"q": "am I on a dev link?", "expect": "omarchy dev status", "kind": "command", "note": ""}
+{"q": "switch my claude account to the next one", "expect": "omarchy agent account use claude next", "kind": "command", "note": ""}
+{"q": "how do I change the theme?", "expect": null, "kind": "escalate", "note": "how-to question, not an action"}
+{"q": "why is my wifi so slow", "expect": null, "kind": "escalate", "note": "troubleshooting question"}
+{"q": "my screen flickers sometimes", "expect": null, "kind": "escalate", "note": "problem report, no action requested"}
+{"q": "remind me in 10 minutes to stretch", "expect": null, "kind": "escalate", "note": "reminder with minutes/message not expressible in catalog"}
+{"q": "install neovim from the AUR", "expect": null, "kind": "escalate", "note": "named arbitrary package; pkg aur install is an interactive picker"}
+{"q": "install htop", "expect": null, "kind": "escalate", "note": "arbitrary named package not in catalog"}
+{"q": "set brightness to 37%", "expect": null, "kind": "escalate", "note": "numeric brightness not expressible"}
+{"q": "make the screen brighter", "expect": "omarchy brightness display +10%", "kind": "command", "note": "relabelled: spec adds +10%/10%- steps the CLI accepts"}
+{"q": "dim my monitor a bit", "expect": "omarchy brightness display 10%-", "kind": "command", "note": "relabelled: spec adds +10%/10%- steps the CLI accepts"}
+{"q": "set volume to 50 percent", "expect": null, "kind": "escalate", "note": "absolute volume not expressible"}
+{"q": "change my keybinding for the terminal", "expect": null, "kind": "escalate", "note": "config file edit"}
+{"q": "bind super+b to open firefox", "expect": null, "kind": "escalate", "note": "config file edit"}
+{"q": "increase the gaps to 20px", "expect": null, "kind": "escalate", "note": "config edit; only gaps toggle exists"}
+{"q": "bar's too big lol", "expect": null, "kind": "escalate", "note": "no bar size control in catalog"}
+{"q": "make the bar font bigger", "expect": null, "kind": "escalate", "note": "no bar font size command"}
+{"q": "set text size to 14", "expect": null, "kind": "escalate", "note": "free-form numeric size not expressible"}
+{"q": "set display scaling to 1.5", "expect": null, "kind": "escalate", "note": "numeric scale not expressible"}
+{"q": "switch to dark theme then take a screenshot", "expect": null, "kind": "escalate", "note": "multi-step request"}
+{"q": "update and then reboot", "expect": null, "kind": "escalate", "note": "multi-step request"}
+{"q": "install steam and heroic", "expect": null, "kind": "escalate", "note": "multi-step request (two commands)"}
+{"q": "hi there", "expect": null, "kind": "escalate", "note": "chit-chat"}
+{"q": "thanks!", "expect": null, "kind": "escalate", "note": "chit-chat"}
+{"q": "tell me a joke", "expect": null, "kind": "escalate", "note": "chit-chat"}
+{"q": "what's the weather like in Paris tomorrow", "expect": null, "kind": "escalate", "note": "information question, not an omarchy action"}
+{"q": "connect to my home wifi network called Starlink", "expect": null, "kind": "escalate", "note": "connecting to a named network not in catalog"}
+{"q": "pair my airpods", "expect": null, "kind": "escalate", "note": "bluetooth pairing not in catalog"}
+{"q": "connect to my bluetooth speaker", "expect": null, "kind": "escalate", "note": "device connection not in catalog"}
+{"q": "set my wallpaper to ~/Pictures/cat.jpg", "expect": null, "kind": "escalate", "note": "arbitrary file path not expressible"}
+{"q": "make a theme with purple and orange", "expect": null, "kind": "escalate", "note": "theme creation not in catalog"}
+{"q": "set the theme to dracula", "expect": null, "kind": "escalate", "note": "dracula is not an available theme"}
+{"q": "switch to solarized", "expect": null, "kind": "escalate", "note": "solarized not in theme list"}
+{"q": "use fira code as my font", "expect": null, "kind": "escalate", "note": "font not in catalog list"}
+{"q": "set default browser to vivaldi", "expect": null, "kind": "escalate", "note": "browser not in allowed set"}
+{"q": "make nano my default editor", "expect": null, "kind": "escalate", "note": "editor not in allowed set"}
+{"q": "install wezterm", "expect": null, "kind": "escalate", "note": "terminal not in supported set"}
+{"q": "uninstall chromium", "expect": null, "kind": "escalate", "note": "chromium not removable via remove browser"}
+{"q": "install docker", "expect": null, "kind": "escalate", "note": "no plain docker install; docker dbs is databases"}
+{"q": "what's using all my RAM?", "expect": null, "kind": "escalate", "note": "diagnostic question needing interpretation"}
+{"q": "why does my laptop get so hot", "expect": null, "kind": "escalate", "note": "troubleshooting"}
+{"q": "my bluetooth headphones keep disconnecting, what should I do", "expect": null, "kind": "escalate", "note": "troubleshooting advice"}
+{"q": "is it safe to run the factory reset?", "expect": null, "kind": "escalate", "note": "advice question"}
+{"q": "what does omarchy refresh hyprland do", "expect": null, "kind": "escalate", "note": "explanation question"}
+{"q": "how do I take a screenshot with the keyboard", "expect": null, "kind": "escalate", "note": "how-to question"}
+{"q": "open youtube", "expect": null, "kind": "escalate", "note": "opening a URL not in catalog"}
+{"q": "open slack", "expect": null, "kind": "escalate", "note": "app launch not in catalog"}
+{"q": "launch steam", "expect": null, "kind": "escalate", "note": "no launch steam command"}
+{"q": "record only my left monitor at 1080p", "expect": null, "kind": "escalate", "note": "monitor selection/resolution not in catalog"}
+{"q": "record the screen for 30 seconds", "expect": null, "kind": "escalate", "note": "timed recording not expressible"}
+{"q": "screenshot and email it to bob", "expect": null, "kind": "escalate", "note": "multi-step / outside scope"}
+{"q": "rename workspace 3 to 'code'", "expect": null, "kind": "escalate", "note": "not in catalog"}
+{"q": "move this window to workspace 2", "expect": null, "kind": "escalate", "note": "hyprctl dispatch not in catalog"}
+{"q": "split the screen vertically", "expect": null, "kind": "escalate", "note": "not in catalog"}
+{"q": "set my timezone to Europe/Berlin", "expect": null, "kind": "escalate", "note": "timezone picker is interactive; named value not expressible"}
+{"q": "switch language to German", "expect": null, "kind": "escalate", "note": "free-form language code not in catalog values"}
+{"q": "add the us-intl keyboard layout", "expect": null, "kind": "escalate", "note": "named layout not expressible; setup keyboard is interactive"}
+{"q": "set night light to 4000K", "expect": null, "kind": "escalate", "note": "temperature value not expressible"}
+{"q": "turn on night light at 9pm every day", "expect": null, "kind": "escalate", "note": "scheduling not in catalog"}
+{"q": "shut down in 30 minutes", "expect": null, "kind": "escalate", "note": "delayed action not expressible"}
+{"q": "lock the screen after 2 minutes of idle", "expect": null, "kind": "escalate", "note": "idle timeout config edit"}
+{"q": "change the lock screen timeout", "expect": null, "kind": "escalate", "note": "config edit"}
+{"q": "change my user password", "expect": null, "kind": "escalate", "note": "not in catalog"}
+{"q": "delete my downloads folder", "expect": null, "kind": "escalate", "note": "file operation out of scope"}
+{"q": "kill firefox", "expect": null, "kind": "escalate", "note": "process kill not in catalog"}
+{"q": "close this window", "expect": null, "kind": "escalate", "note": "close single window not in catalog (only close all)"}
+{"q": "mute spotify only", "expect": null, "kind": "escalate", "note": "per-app volume not in catalog"}
+{"q": "set my mic volume lower", "expect": null, "kind": "escalate", "note": "input volume not in catalog"}
+{"q": "show me my battery health", "expect": null, "kind": "escalate", "note": "battery health not in catalog"}
+{"q": "how much disk space do I have left", "expect": null, "kind": "escalate", "note": "disk usage not in catalog"}
+{"q": "what's my IP address", "expect": null, "kind": "escalate", "note": "not in catalog"}
+{"q": "set up a cron job to update daily", "expect": null, "kind": "escalate", "note": "scheduling / config"}
+{"q": "I think the theme looks ugly", "expect": null, "kind": "escalate", "note": "opinion without action"}
+{"q": "can you make it nicer", "expect": null, "kind": "escalate", "note": "vague, no single action"}
+{"q": "turn on the thing", "expect": null, "kind": "escalate", "note": "too vague"}
+{"q": "fix my computer", "expect": null, "kind": "escalate", "note": "too vague"}
+{"q": "enable hdr on my monitor", "expect": null, "kind": "escalate", "note": "not in catalog"}
+{"q": "set refresh rate to 144hz", "expect": null, "kind": "escalate", "note": "monitor mode change not in catalog"}
+{"q": "make the dock icons bigger", "expect": null, "kind": "escalate", "note": "no dock size command"}
+{"q": "what's the difference between dwindle and scrolling layout", "expect": null, "kind": "escalate", "note": "explanation question"}
+{"q": "install ollama", "expect": null, "kind": "escalate", "note": "no install ai ollama command (only remove)"}
+{"q": "set my wifi band to 60ghz", "expect": null, "kind": "escalate", "note": "invalid band value"}
+{"q": "snooze notifications until tomorrow", "expect": null, "kind": "escalate", "note": "timed DND not expressible"}
+{"q": "set the keyboard backlight to 50%", "expect": null, "kind": "escalate", "note": "numeric not expressible"}
+{"q": "play my workout playlist on spotify", "expect": null, "kind": "escalate", "note": "media control not in catalog"}
+{"q": "translate this text to french", "expect": null, "kind": "escalate", "note": "out of scope"}

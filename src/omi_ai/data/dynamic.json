@@ -1,0 +1,6 @@
+{
+  "omarchy theme set::theme-name": {"cmd": ["omarchy", "theme", "list"], "slug": true},
+  "omarchy theme remove::theme-name": {"cmd": ["omarchy", "theme", "list"], "slug": true},
+  "omarchy plymouth set by theme::theme-name": {"cmd": ["omarchy", "theme", "list"], "slug": true},
+  "omarchy font set::font-name": {"cmd": ["omarchy", "font", "list"]}
+}

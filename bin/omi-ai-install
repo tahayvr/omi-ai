@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Install (or re-install) Omi AI for this user. Safe to run repeatedly.
+# Touches only: this project's .venv, ~/.config/omi-ai, ~/.local/share/omi-ai,
+# ~/.local/bin/omi-ask, and ~/.config/systemd/user/omi-ai.{socket,service}.
+
+set -euo pipefail
+
+PROJECT=$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)
+CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/omi-ai"
+SHARE="$HOME/.local/share/omi-ai"
+UNITS="${XDG_CONFIG_HOME:-$HOME/.config}/systemd/user"
+
+(cd "$PROJECT" && uv sync --quiet)
+
+mkdir -p "$CONFIG" "$SHARE" "$UNITS" "$HOME/.local/bin"
+if [[ ! -s $CONFIG/api-key ]]; then
+  read -rs -p "TypeSafe API key: " key && echo
+  (umask 077 && printf '%s' "$key" >"$CONFIG/api-key")
+  unset key
+fi
+chmod 600 "$CONFIG/api-key"
+
+ln -sfn "$PROJECT/src/omi_ai/data/policy.json" "$SHARE/policy.json"
+ln -sfn "$PROJECT/bin/omi-ask" "$HOME/.local/bin/omi-ask"
+install -m644 "$PROJECT/packaging/omi-ai.socket" "$UNITS/omi-ai.socket"
+sed "s|@PROJECT@|$PROJECT|" "$PROJECT/packaging/omi-ai.service.in" >"$UNITS/omi-ai.service"
+
+systemctl --user daemon-reload
+systemctl --user enable --now omi-ai.socket >/dev/null
+systemctl --user try-restart omi-ai.service
+
+if [[ ! -e $CONFIG/.privacy-notice-shown ]]; then
+  cat <<'NOTICE'
+
+Omi AI sends the text you type in the ask prompt to TypeSafe AI's servers for interpretation. It does not send your files, your configuration, or system information. It requires a network connection and your own TypeSafe API key. It will not work offline.
+
+NOTICE
+  touch "$CONFIG/.privacy-notice-shown"
+fi
+
+echo "Omi AI installed. Bind a key to: omi-ask"

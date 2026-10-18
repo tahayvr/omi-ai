@@ -1,0 +1,392 @@
+omarchy agent  [--inline] [--pick]  # Launch the default coding agent in a terminal
+omarchy agent account add  [--check] [--events] {claude|codex|grok}?  # Sign in to a Claude, Codex, or Grok subscription
+omarchy agent account list  {claude|codex|grok}? [--json]  # List Claude, Codex, and Grok subscription accounts and their limits
+omarchy agent account mode  {claude|codex|grok}? {manual|auto}?  # Switch Claude, Codex, or Grok accounts automatically near a limit, or only notify
+omarchy agent account use  {claude|codex|grok}? {account|next}?  # Choose which Claude, Codex, or Grok account new sessions use
+omarchy agent usage update  [--force] [--limits-only]  # Regenerate the AI agent usage data files
+omarchy ascii    # Render text as ASCII art in the font the Omarchy logo is drawn in
+omarchy audio input mute    # Toggle microphone mute. Drives the hardware mic-mute LED on laptops that expose one.
+omarchy audio output sink    # Print the sink whose volume and mute a given output really uses
+omarchy audio output switch    # Switch between audio outputs while preserving the mute status
+omarchy audio output volume  {raise|lower|mute-toggle}  # Adjust output volume and show the Omarchy OSD
+omarchy audio sink availability    # Print PulseAudio sink or source availability for the shell
+omarchy audio source switch  {next|previous}?  # Cycle to the next media source and transfer playback when the current source is playing
+omarchy audio tuning  {on|off|status|match|fronted-sink} [--force]  # Manage the speaker tuning for this laptop
+omarchy bar reset    # Configure the bar and its widget layout
+omarchy bar defaults    # Configure the bar and its widget layout
+omarchy bar position  {top|bottom|left|right}?  # Configure the bar and its widget layout
+omarchy bar background  {opaque|glassy|none|cycle}?  # Configure the bar and its widget layout
+omarchy bar text color    # Choose a legible transparent bar text color
+omarchy battery present    # Returns true if a battery is present on the system.
+omarchy battery status  [--shell]  # Returns a formatted battery status string with percentage and power draw/charge.
+omarchy bluetooth power  {on|off|toggle|is-on}  # Turn Bluetooth on or off, remembered across reboots
+omarchy branding about  {image|text|reset}  # Edit, set, or reset About branding
+omarchy branding screensaver  {image|text|reset}  # Edit, set, or reset screensaver branding
+omarchy brightness display  [--no-osd] {off|on}?  # Show or adjust brightness on the focused display.
+omarchy brightness display apple  [--no-osd]  # Show or adjust Apple Studio Display and Apple XDR Display brightness using asdcontrol.
+omarchy brightness keyboard  [--no-osd] {up|down|cycle|off|restore}  # Adjust keyboard backlight brightness using available steps.
+omarchy brightness keyboard mute  {on|off}  # Set the mic-mute indicator LED on laptops that expose a platform::micmute LED node.
+omarchy capture qr    # Decode a QR code from a screenshot region
+omarchy capture screenrecording  [--fullscreen] [--with-desktop-audio] [--with-microphone-audio] [--with-webcam] --webcam-size={small|medium|large}? [--stop-recording] [--status]  # Start or stop screen recording
+omarchy capture screenrecording with webcam    # Pick a webcam and start a screen recording with it
+omarchy capture screenshot  {smart|region|windows|fullscreen|scroll}? {copy|save}?  # Take a screenshot
+omarchy capture text    # Extract text from a screenshot region with OCR
+omarchy capture webcam list    # List webcam devices that support video capture
+omarchy capture webcam resize  {smaller|larger|reset|small|medium|large}  # Resize the active webcam recording overlay
+omarchy channel current    # Print the active Omarchy package channel
+omarchy channel set  {stable|rc|edge|dev}  # Set the Omarchy package channel. DESTRUCTIVE
+omarchy cmd missing    # Check whether any required commands are missing
+omarchy cmd present    # Check whether all required commands are available
+omarchy crash mute  {on|off|toggle}?  # Silence crash notifications for one program, or list what is silenced
+omarchy debug  [--no-sudo] [--print]  # Print debugging information
+omarchy debug idle    # Show idle, screensaver, and lock diagnostics
+omarchy default agent  {pi|omp|opencode|ori|claude|codex|grok|openclaw|agy|hermes|copilot|crush|cursor-agent|muse|kimi}?  # Set and launch the default coding agent
+omarchy default browser  {chromium|chrome|brave|brave-origin|edge|firefox|zen}?  # Set the default browser for Omarchy and XDG handlers
+omarchy default dictation    # Get or set the default dictation backend
+omarchy default editor  {code|cursor|zed|sublime_text|helix|vim|emacs|nvim}?  # Set the default editor used by omarchy-launch-editor
+omarchy default terminal  {alacritty|foot|ghostty|kitty}?  # Set the default terminal used by xdg-terminal-exec
+omarchy dev add migration  [--no-edit]  # Create a new Omarchy migration in the current source tree.
+omarchy dev benchmark cli    # Measure Omarchy CLI response times
+omarchy dev benchmark theme switcher  [--keep-cache]  # Measure theme switcher cache and selector prep times
+omarchy dev install ydoo    # Install and enable ydotool mouse automation for Omarchy development
+omarchy dev pkg test    # Build and install an Omarchy package from a local checkout
+omarchy dev status    # Show the current Omarchy dev-link state
+omarchy dev theme preview  {theme-name|theme-dir|colors.toml}? [--no-color] {--no-osc|--osc}?  # Preview an Omarchy theme palette in the terminal
+omarchy dev ui preview    # Open the omarchy-shell dev gallery (qs.Ui kit preview)
+omarchy dev unlink  [--no-reboot]  # Restore Omarchy to the package install after reboot
+omarchy dictation  {start|stop|toggle}  # Record dictation with the configured backend
+omarchy dictation superwhisper  {start|stop|toggle}  # Record dictation using Superwhisper
+omarchy dictation voxtype  {start|stop|toggle}  # Record dictation using Voxtype
+omarchy disk speedtest    # Measure live disk read and write speed
+omarchy display text size  {size|reset}?  # Scale text everywhere — omarchy shell, GTK apps, and terminals
+omarchy dns  {Cloudflare|Google|Custom}?  # Show or configure the system DNS provider
+omarchy dock position  {top|bottom|left|right}?  # Configure the dock shown on floating workspaces
+omarchy dock autohide  {on|off|toggle}?  # Configure the dock shown on floating workspaces
+omarchy dock pinned    # Configure the dock shown on floating workspaces
+omarchy drive password    # Set a new password for an encrypted drive DESTRUCTIVE
+omarchy drive select    # Select a drive from a list with info that includes space and brand. Used by omarchy-drive-password.
+omarchy file select  [--multiple] [--directory]  # Pick files with the desktop file chooser
+omarchy font cjk  {jp|kr|sc|tc|hk|default}?  # Show or set the glyph forms for Chinese, Japanese, and Korean text
+omarchy font current    # Show current monospace font
+omarchy font list    # List available monospace fonts
+omarchy font set  {Adwaita Mono|CaskaydiaMono Nerd Font|CaskaydiaMono Nerd Font Mono|JetBrainsMono Nerd Font|Liberation Mono|Nimbus Mono PS|iA Writer Mono S}  # Set the system monospace font
+omarchy games retro cores    # List installed RetroArch core names
+omarchy games retro install    # Create a desktop launcher for a RetroArch game
+omarchy hibernation available    # Check if hibernation is supported
+omarchy hibernation remove    # Remove hibernation setup including swap and boot resume settings DESTRUCTIVE
+omarchy hibernation setup  [--force] [--no-rebuild]  # Set up hibernation with swap and boot resume configuration
+omarchy hook    # Run a named hook from ~/.config/omarchy/hooks/<name> and ~/.config/omarchy/hooks/<name>.d/.
+omarchy hw aarch64    # Detect whether the CPU is aarch64 (every ARM machine, Apple Silicon included).
+omarchy hw aarch64 apple    # Detect whether the computer is an Apple Silicon Mac.
+omarchy hw aarch64 gb10    # Detect whether the computer is an NVIDIA GB10 desktop, such as the DGX Spark.
+omarchy hw aarch64 n1x    # Detect whether the computer is an NVIDIA N1x laptop.
+omarchy hw aarch64 qualcomm    # Detect whether the computer is a Qualcomm Snapdragon machine.
+omarchy hw asus expertbook b9406    # Detect ASUS ExpertBook B9406 series laptops on Intel Panther Lake.
+omarchy hw asus rog    # Detect whether the computer is an Asus ROG machine.
+omarchy hw asus zenbook ux5406aa    # Detect ASUS Zenbook UX5406AA series laptops on Intel Panther Lake.
+omarchy hw dell xps haptic touchpad    # Match Dell XPS systems with the Synaptics haptic touchpad.
+omarchy hw dell xps oled    # Match Dell XPS systems with LG OLED panel on Intel Panther Lake (Xe3) GPU.
+omarchy hw dell xps13 dx13260 ptl    # Match the Dell XPS 13 DX13260 with an Intel Panther Lake GPU.
+omarchy hw dell xps13 sidecar amps    # Match the Dell XPS 13 DX13260 that requires the sidecar amplifier workaround.
+omarchy hw display    # Print the most likely display backlight device.
+omarchy hw elgato camlink 4k    # Detect whether an Elgato Cam Link 4K is plugged in.
+omarchy hw external monitors    # Returns true when an external monitor is physically connected.
+omarchy hw framework16    # Detect whether the computer is a Framework Laptop 16.
+omarchy hw hybrid gpu    # Detect whether the system has an active hybrid GPU configuration
+omarchy hw intel    # Detect whether the computer has an Intel CPU.
+omarchy hw intel ptl    # Detect whether the computer has an Intel Panther Lake GPU.
+omarchy hw intel sof    # Detect an Intel SOF-capable audio DSP
+omarchy hw laptop    # Returns true when running on a laptop (has a lid or laptop chassis).
+omarchy hw nvidia    # Detect whether the computer has an NVIDIA GPU.
+omarchy hw nvidia display    # Detect whether NVIDIA drives the display (rather than a hybrid iGPU).
+omarchy hw nvidia gsp    # Detect whether the computer has an NVIDIA GPU with GSP firmware (Turing or newer).
+omarchy hw nvidia without gsp    # Detect whether the computer has an NVIDIA GPU without GSP firmware (Maxwell/Pascal/Volta).
+omarchy hw platform    # Print the hardware platform: x86, aarch64, aarch64-apple, aarch64-qualcomm, aarch64-n1x or aarch64-gb10.
+omarchy hw recover internal monitor    # Clear the internal-monitor-disable toggle if no external display is connected.
+omarchy hw surface    # Detect whether the computer is a Microsoft Surface device.
+omarchy hw touchpad    # Print the detected Hyprland touchpad or trackpad device name
+omarchy hw touchscreen    # Print the detected Hyprland touchscreen or tablet device name
+omarchy hw vm    # Returns true when running in a virtual machine.
+omarchy hw vulkan    # Detect whether Vulkan is available.
+omarchy hw webcam    # Check whether a webcam is available
+omarchy hw x86    # Detect whether the CPU is x86_64.
+omarchy hyprland corners  {theme|sharp|rounded}?  # Show or set window corners: theme, sharp, or rounded
+omarchy hyprland monitor focused    # Print the name of the currently focused Hyprland monitor.
+omarchy hyprland monitor focused apple    # Return success if the focused or named Hyprland monitor is an Apple display.
+omarchy hyprland monitor internal  {on|off|toggle|recover}  # Enable, disable, toggle, or recover the internal laptop display
+omarchy hyprland monitor internal mirror  {on|off|toggle|recover}  # Enable, disable, toggle, or recover mirroring the internal display to an external monitor
+omarchy hyprland monitor laptop    # Print the name of the built-in laptop display, including disabled outputs.
+omarchy hyprland monitor scaling  {up|down}?  # Show, set, or adjust focused Hyprland monitor scaling
+omarchy hyprland monitor watch    # Watch Hyprland monitor events and recover monitor toggles when a monitor is removed
+omarchy hyprland window close all  [--wait]  # Close all open windows
+omarchy hyprland window gaps toggle    # Toggles the window gaps globally between no gaps and the default.
+omarchy hyprland window minimize    # Minimize a window to the dock
+omarchy hyprland window pop    # Toggle to pop-out a tile to stay fixed on a display basis.
+omarchy hyprland window single square aspect toggle    # Toggle single-window square aspect ratio.
+omarchy hyprland window tiled fullscreen toggle    # Toggle tiled fullscreen for the focused Hyprland window
+omarchy hyprland window transparency  {opaque|transparent|glassy}?  # Show or set how see-through windows are: opaque, transparent, or glassy
+omarchy hyprland window transparency toggle    # Toggles transparency for the currently focused window.
+omarchy hyprland window width  {save|restore}  # Save or restore the focused Hyprland window width
+omarchy hyprland workspace layout current    # Print the layout of a workspace: dwindle, scrolling, or floating
+omarchy hyprland workspace layout default  {dwindle|scrolling|floating}?  # Show or set the layout of workspaces without one of their own: dwindle, scrolling, or floating
+omarchy hyprland workspace layout toggle    # Cycle the current active workspace through the dwindle, scrolling, and floating layouts
+omarchy install ai chatgpt    # Install the ChatGPT desktop app
+omarchy install ai claude    # Install the Claude desktop app
+omarchy install ai hermes    # Install the Hermes desktop app
+omarchy install ai openclaw    # Install the OpenClaw agent platform and its Control UI web app
+omarchy install ai t3 code    # Install T3 Code and point it at the Omarchy palette
+omarchy install browser  {chromium|chrome|brave|brave-origin|edge|firefox|zen}  # Install a supported browser
+omarchy install chromium claude    # Install the Claude extension for Chromium-based browsers
+omarchy install chromium copy url    # Install the native messaging host for the Copy URL Chromium extension
+omarchy install chromium google account    # Allow Chromium to sign in to Google accounts by adding the required OAuth credentials
+omarchy install chromium ytdlp    # Install the native messaging host for the yt-dlp Chromium extension
+omarchy install dev-env  {ruby|node|bun|deno|go|laravel|symfony|php|python|elixir|phoenix|rust|java|zig|ocaml|dotnet|clojure|scala}  # Install a supported development environment
+omarchy install dictation superwhisper    # Install and configure Superwhisper dictation
+omarchy install dictation voxtype    # Install and configure Voxtype dictation
+omarchy install docker dbs    # Install one of the supported databases in a Docker container with the suitable development options.
+omarchy install editor emacs    # Install Emacs with Omarchy theme and font integration via the omarchy-emacs AUR package
+omarchy install editor helix    # Install Helix and configure it to use the current Omarchy theme
+omarchy install editor vscode    # Install VS Code and configure Omarchy defaults for secrets, updates, and theme
+omarchy install editor zed    # Install Zed Editor and configure it with the current Omarchy theme
+omarchy install gaming battlenet    # Install Battle.net standalone via umu-launcher + GE-Proton (no Steam, no Lutris, no Heroic).
+omarchy install gaming geforce-now    # Install and launch Geforce Now.
+omarchy install gaming gpu-lib32    # Install lib32 graphics drivers (Vulkan + NVIDIA) for any detected GPUs.
+omarchy install gaming heroic    # Install Heroic Games Launcher (Epic, GOG, Amazon Prime Gaming) with graphics drivers.
+omarchy install gaming lutris    # Install Lutris with Wine + DXVK for running Windows games (Battle.net, EA, Ubisoft Connect, etc.)
+omarchy install gaming retroarch    # Install RetroArch with the full libretro core set plus FBNeo and a ~/Games ROM directory.
+omarchy install gaming steam    # Install Steam and graphics drivers selected for this system
+omarchy install gaming xbox-cloud    # Install Xbox Cloud Gaming as a web app and launch it.
+omarchy install gaming xbox-controllers    # Install support for using Xbox controllers with Steam/RetroArch/etc.
+omarchy install hermes cli  {--check|--now|--retire-mise}  # Install Hermes Desktop for the default agent; its runtime provides the hermes command
+omarchy install openclaw cli  {--check|--now}  # Install OpenClaw for the default agent as the self-updating copy under ~/.openclaw
+omarchy install preinstalls    # Restore the preinstalled Omarchy applications (web apps, TUIs, and selected packages).
+omarchy install service 1password    # Install 1Password and its Chromium extension.
+omarchy install service dropbox    # Install and start the Dropbox service. Must then be authenticated via the web.
+omarchy install service microsoft    # Install Microsoft Outlook, Word, Excel, PowerPoint, Teams, and OneDrive as web apps.
+omarchy install service nordvpn    # Install the NordVPN service with optional GUI.
+omarchy install service once    # Install the ONCE service, enable its background service, and launch the TUI.
+omarchy install service signal    # Install Signal and launch it.
+omarchy install service spotify    # Install Spotify, as its web player where Spotify has no Linux client.
+omarchy install service sunshine    # Install Sunshine and open Moonlight streaming ports for LAN and Tailscale.
+omarchy install service tailscale    # Install the Tailscale mesh VPN service and a web app for the Tailscale Admin Console.
+omarchy install terminal  {alacritty|foot|ghostty|kitty}  # Install one of the approved terminals and set it as the default for Omarchy (Super + Return etc).
+omarchy install video decode    # Let mpv and Chromium decode video on the video chip of Snapdragon laptops
+omarchy language    # Show or set the Omarchy language and the session's locale
+omarchy launch 1password    # Launch 1Password or start its installer when missing.
+omarchy launch about    # Launch the fastfetch TUI that gives information about the current system.
+omarchy launch battlenet  [--with-mangohud]  # Launch the installed Battle.net client via umu-launcher + GE-Proton.
+omarchy launch browser    # Launch the default browser as determined by xdg-settings.
+omarchy launch discord community    # Open the Omarchy Discord community in the Discord app or a browser.
+omarchy launch docker tui    # Open the Docker TUI (lazydocker) with access to the Docker daemon
+omarchy launch nautilus    # Launch Files
+omarchy launch nautilus cwd    # Launch Files in the active terminal's current directory
+omarchy launch openclaw    # Open the OpenClaw Control UI (or its terminal UI with --tui), onboarding or starting the gateway first when needed.
+omarchy launch screensaver    # Launch the Omarchy screensaver in the default terminal on the system with the correct font configuration.
+omarchy launch signal    # Launch Signal or start its installer when missing.
+omarchy launch spotify    # Launch Spotify or start its installer when missing.
+omarchy launch terminal    # Launch a terminal in the active terminal's current directory
+omarchy launch terminal herdr    # Launch or attach to the persistent herdr session in a terminal
+omarchy launch terminal tmux    # Launch or attach to the Work tmux session in a terminal
+omarchy menu  {toggle|summon|close|refresh|ping}?  # Control the Omarchy menu (toggle / summon / close / refresh)
+omarchy menu clipboard    # Launch the clipboard manager
+omarchy menu emoji    # Launch emojis
+omarchy menu herdr keybindings  {--print|-p}?  # Display annotated Herdr keybindings using an interactive search menu.
+omarchy menu keybindings    # Display Hyprland keybindings defined in your configuration using an interactive search menu.
+omarchy menu plugin  {enable|disable|clone|remove}  # Pick a shell plugin to enable, disable, clone, or remove
+omarchy menu timezone    # Select and set the system timezone
+omarchy menu tmux keybindings  {--print|-p}?  # Display annotated Tmux keybindings using an interactive search menu.
+omarchy migrate  [--pending]  # Run pending Omarchy migrations.
+omarchy migrate notify    # Notify the user when Omarchy has pending migrations
+omarchy monitor state    # Print monitor panel state for the shell
+omarchy n1x probe    # Record N1x hardware and boot evidence to /var/log/omarchy-n1x-probe.log, on demand.
+omarchy network band  {auto|2.4|5|6}?  # Show or pin the Wi-Fi band for the active connection
+omarchy network qr  [--meta]  # Generate a Wi-Fi QR matrix for the shell
+omarchy network speedtest  {down|up}?  # Measure live internet speed for one direction
+omarchy network status  [--verbose]  # Print active network status for the shell
+omarchy notification battery    # Show the current battery status notification
+omarchy notification time    # Show the current time and date notification
+omarchy notification weather    # Toggle the current weather panel
+omarchy openclaw onboard    # Run OpenClaw's setup wizard the way Omarchy needs it: in the terminal, installing the gateway as a user service, and returning when it is done.
+omarchy osd    # Show the Omarchy Quickshell on-screen display
+omarchy pkg aur accessible    # Returns true if the AUR is up and available.
+omarchy pkg aur install    # Show a fuzzy-finder TUI for picking new AUR packages to install.
+omarchy pkg install    # Show a fuzzy-finder TUI for picking new Arch and OPR packages to install.
+omarchy pkg remove    # Show a fuzzy-finder TUI for picking packages installed on the system to be removed. DESTRUCTIVE
+omarchy plugin add  [--enable] [--yes]  # Add a shell plugin from git
+omarchy plugin list  [--json]  # List discovered shell plugins
+omarchy plugin remove  [--yes]  # Remove an installed shell plugin DESTRUCTIVE
+omarchy plugin update  [--yes]  # Update installed git-managed plugins
+omarchy plymouth current    # Show which theme is styling the Plymouth boot screen
+omarchy plymouth list    # List themes that can style the Plymouth boot screen
+omarchy plymouth reset    # Restore the default Omarchy Plymouth boot theme and SDDM login screen DESTRUCTIVE
+omarchy plymouth set by theme  {catppuccin|catppuccin-latte|ethereal|everforest|flexoki-light|gold-rush|gruvbox|hackerman|harbordark|hello|kanagawa|last-horizon|lumon|lupine|matte-black|miasma|nord|osaka-jade|retro-82|ristretto|rose-pine|solitude|starship|sunset-drive|tokyo-night|vantablack|vhs80|white}  # Set the Plymouth boot theme from an Omarchy theme
+omarchy plymouth switcher    # Open the Plymouth unlock screen switcher
+omarchy power present    # Returns true if external power is connected.
+omarchy powerprofiles init    # Set the correct power profile on boot based on current AC/battery state.
+omarchy powerprofiles list  [--active-state]  # Returns a list of all the available power profiles on the system.
+omarchy powerprofiles set  {autodetect|ac|battery}? {power-saver|balanced|performance}?  # Set and remember the power profile for AC or battery use
+omarchy refresh applications    # Ensure default application launchers and mise wrappers are installed.
+omarchy refresh chromium    # Refresh the ~/.config/chromium-flags.conf file from the Omarchy defaults. DESTRUCTIVE
+omarchy refresh herdr    # Overwrite the user herdr config with the Omarchy default and reload herdr. DESTRUCTIVE
+omarchy refresh hyprland    # Overwrite all the user Hyprland Lua configs in ~/.config/hypr with the Omarchy defaults. DESTRUCTIVE
+omarchy refresh hyprsunset    # Overwrite the user config for hyprsunset with the Omarchy default and restart the service. DESTRUCTIVE
+omarchy refresh limine    # Overwrite the user config for the Limine bootloader and rebuild it. DESTRUCTIVE
+omarchy refresh pacman    # Overwrite the package configuration for /etc/pacman with the Omarchy default of using its dedicated mirrors and repositories, then update all packages. DESTRUCTIVE
+omarchy refresh plymouth    # Overwrite the user config for the Plymouth drive decryption and boot sequence with the Omarchy default and rebuild it. DESTRUCTIVE
+omarchy refresh sddm    # Refresh the SDDM theme from default DESTRUCTIVE
+omarchy refresh shell    # Reset shell.json to Omarchy defaults DESTRUCTIVE
+omarchy refresh tmux    # Overwrite the user tmux config with the Omarchy default and reload tmux. DESTRUCTIVE
+omarchy reinstall    # Reinstall Omarchy packages and reset default configs DESTRUCTIVE
+omarchy reinstall configs    # Reset Omarchy user configs and shipped defaults in $HOME (destructive) DESTRUCTIVE
+omarchy reinstall pkgs    # Reinstall all default Omarchy packages from the stable channel, or on aarch64 the edge channel DESTRUCTIVE
+omarchy reminder  [--interactive]  # Set and show lightweight desktop notification reminders
+omarchy reminder show  [--json]  # Set and show lightweight desktop notification reminders
+omarchy reminder clear    # Set and show lightweight desktop notification reminders
+omarchy remove ai chatgpt    # Remove the ChatGPT desktop app along with its configuration and caches. DESTRUCTIVE
+omarchy remove ai claude    # Remove the Claude desktop app along with its configuration and caches. DESTRUCTIVE
+omarchy remove ai grok bot    # Remove Grok Bot along with its settings and data. DESTRUCTIVE
+omarchy remove ai hermes    # Remove the Hermes desktop app along with the Hermes runtime it installed. DESTRUCTIVE
+omarchy remove ai lm studio    # Remove LM Studio along with its configuration and every model it downloaded. DESTRUCTIVE
+omarchy remove ai ollama    # Remove Ollama along with every model it pulled. DESTRUCTIVE
+omarchy remove ai openclaw    # Remove the OpenClaw agent platform along with its gateway service and web app. DESTRUCTIVE
+omarchy remove ai perplexity    # Remove the Perplexity desktop app along with its runtime caches. DESTRUCTIVE
+omarchy remove ai t3 code    # Remove T3 Code along with its configuration and workspaces. DESTRUCTIVE
+omarchy remove browser  {chrome|brave|brave-origin|edge|firefox|zen}  # Remove a supported browser and clean up Omarchy browser defaults DESTRUCTIVE
+omarchy remove dev env  {ruby|node|bun|deno|go|php|laravel|symfony|python|elixir|phoenix|zig|rust|java|dotnet|ocaml|clojure|scala}  # Remove a development environment that was previously installed via omarchy-install-dev-env. DESTRUCTIVE
+omarchy remove dictation superwhisper    # Remove Superwhisper dictation and its desktop integration DESTRUCTIVE
+omarchy remove dictation voxtype    # Remove Voxtype dictation and its configuration DESTRUCTIVE
+omarchy remove gaming battlenet    # Remove Battle.net, its Proton prefix, installed games, and desktop entry. DESTRUCTIVE
+omarchy remove gaming geforce-now    # Remove the GeForce NOW Flatpak app and its data. DESTRUCTIVE
+omarchy remove gaming heroic    # Remove Heroic Games Launcher and its game libraries, configs, and caches. DESTRUCTIVE
+omarchy remove gaming lutris    # Remove Lutris, Wine, umu-launcher, and all their configs and caches. DESTRUCTIVE
+omarchy remove gaming minecraft    # Remove the Minecraft launcher along with its worlds, mods, and caches. DESTRUCTIVE
+omarchy remove gaming retroarch    # Remove RetroArch, all libretro cores, and its config/saves. Leaves ~/Games/roms and ~/Games/bios alone. DESTRUCTIVE
+omarchy remove gaming steam    # Remove Steam and all of its game libraries, configs, and caches. DESTRUCTIVE
+omarchy remove gaming xbox cloud    # Remove the Xbox Cloud Gaming web app. DESTRUCTIVE
+omarchy remove gaming xbox-controllers    # Remove the xpadneo Xbox controller driver and undo its module/blacklist config. DESTRUCTIVE
+omarchy remove preinstalls    # Remove preinstalled Omarchy applications (web apps, TUIs, and selected packages). DESTRUCTIVE
+omarchy remove security fido2    # Remove FIDO2 authentication from sudo and polkit DESTRUCTIVE
+omarchy remove security fingerprint    # Remove fingerprint authentication from sudo, polkit, and lock screen DESTRUCTIVE
+omarchy remove security sshd    # Disable the OpenSSH server, remove standard firewall rules, and optionally remove authorized keys DESTRUCTIVE
+omarchy remove security sudoless docker    # Disable sudoless Docker by removing your user from the docker group DESTRUCTIVE
+omarchy remove service 1password    # Remove 1Password and its Chromium extension. DESTRUCTIVE
+omarchy remove service microsoft    # Remove the Microsoft Outlook, Word, Excel, PowerPoint, Teams, and OneDrive web apps. DESTRUCTIVE
+omarchy remove service ssh agent    # Disable the gcr-ssh-agent SSH agent and its environment override. DESTRUCTIVE
+omarchy remove service sunshine    # Remove Sunshine and close Omarchy-managed Moonlight streaming ports. DESTRUCTIVE
+omarchy restart audio    # Restart audio services and recover stuck USB audio devices.
+omarchy restart bluetooth    # Unblock and restart the bluetooth service.
+omarchy restart btop    # Reload btop configuration (used by the Omarchy theme switching).
+omarchy restart helix    # Reload Helix configuration
+omarchy restart herdr    # Reload herdr if running with the latest configuration
+omarchy restart hyprctl    # Reload hyprland configuration (used by the Omarchy theme switching).
+omarchy restart hyprsunset    # Restart the hyprsunset service (used for blue light filtering/night light).
+omarchy restart opencode    # Reload opencode configuration (used by the Omarchy theme switching).
+omarchy restart shell    # Restart the Omarchy shell
+omarchy restart terminal    # Reload supported terminal emulators after config changes
+omarchy restart tmux    # Restart tmux if running with the latest configuration
+omarchy restart trackpad    # Reset the trackpad by unbinding and rebinding its driver.
+omarchy restart wifi    # Unblock and restart the Wi-Fi service.
+omarchy restart xcompose    # Restart the XCompose input method service (fcitx5) to apply new compose key settings.
+omarchy screensaver    # Run the Omarchy screensaver using random effects from TTE.
+omarchy setup direct boot    # Add or remove an EFI boot entry for the Omarchy UKI, allowing the system to boot directly DESTRUCTIVE
+omarchy setup factory reset    # Factory-reset this machine back to its freshly-installed state DESTRUCTIVE
+omarchy setup input  {mozc|hangul|pinyin|chewing|cangjie5}?  # Select input methods for Japanese, Korean, or Chinese typing
+omarchy setup keyboard    # Select the keyboard layouts available for switching
+omarchy setup security fido2    # Set up FIDO2 authentication for sudo and polkit
+omarchy setup security fingerprint    # Set up fingerprint authentication for sudo, polkit, and lock screen
+omarchy setup security ssh agent    # Enable an SSH agent (gcr-ssh-agent) that prompts for key passphrases graphically.
+omarchy setup security sshd    # Set up the OpenSSH server, open the firewall, and authorize an SSH key DESTRUCTIVE
+omarchy setup security sudoless docker    # Enable sudoless Docker by adding your user to the docker group (root-equivalent!) DESTRUCTIVE
+omarchy share  {clipboard|file|folder}  # Share clipboard, files, or folders with LocalSend
+omarchy show done    # Display a "Done!" or "Failed!" message and wait for user to press any key.
+omarchy show logo    # Display the Omarchy logo in the terminal using green color.
+omarchy snapshot  {create|restore}  # Create or restore system snapshots with snapper DESTRUCTIVE
+omarchy sudo keepalive    # Prompt for sudo once and keep the credential alive in the background.
+omarchy sudo passwordless  {permanent|--active|--disable}?  # Toggle passwordless sudo for the current user. DESTRUCTIVE
+omarchy system  {logout|reboot|reboot-boot-menu|shutdown}  # Log out, reboot, or shut down after closing applications
+omarchy system lock    # Lock the computer and turn off the display
+omarchy system stats  [--bar-widget]  # Print CPU and memory stats for the shell
+omarchy system wake    # Wake displays and restore brightness after idle
+omarchy tailscale receive  [--once]  # Save incoming Taildrop files and announce them
+omarchy theme bg boot intro    # Play the current background's matching theme intro
+omarchy theme bg cache    # Cache background switcher thumbnails for the current theme
+omarchy theme bg current    # Show current background
+omarchy theme bg install    # Open the current theme's user background folder
+omarchy theme bg intro  {enable|disable|toggle|status}  # Enable or disable background intros
+omarchy theme bg next    # Cycle to the next background for the current theme
+omarchy theme bg-switcher    # Open the Omarchy background switcher
+omarchy theme current    # Show current theme
+omarchy theme extras    # List the user-installed themes that came from a git clone
+omarchy theme install    # Install a theme from a git repository
+omarchy theme list    # List available themes
+omarchy theme refresh    # Refresh the current theme from its templates.
+omarchy theme remove  {catppuccin|catppuccin-latte|ethereal|everforest|flexoki-light|gold-rush|gruvbox|hackerman|harbordark|hello|kanagawa|last-horizon|lumon|lupine|matte-black|miasma|nord|osaka-jade|retro-82|ristretto|rose-pine|solitude|starship|sunset-drive|tokyo-night|vantablack|vhs80|white}  # Remove a user-installed theme DESTRUCTIVE
+omarchy theme set  {catppuccin|catppuccin-latte|ethereal|everforest|flexoki-light|gold-rush|gruvbox|hackerman|harbordark|hello|kanagawa|last-horizon|lumon|lupine|matte-black|miasma|nord|osaka-jade|retro-82|ristretto|rose-pine|solitude|starship|sunset-drive|tokyo-night|vantablack|vhs80|white}  # Apply an Omarchy theme
+omarchy theme set browser    # Apply the current theme color to Chromium, Chrome, Edge, and Brave
+omarchy theme set claude  [--activate]  # Sync the generated Omarchy theme to Claude Code
+omarchy theme set fcitx5  [--activate]  # Sync the generated Omarchy theme to the Fcitx candidate window
+omarchy theme set foot    # Apply current Omarchy theme colors and background alpha to running Foot terminals
+omarchy theme set glass    # Give terminals, btop, and GTK apps a see-through background while windows are glassy
+omarchy theme set gnome    # Apply the current theme to GNOME color mode and icon settings
+omarchy theme set herdr machines  [--available]  # Mirror the current theme to your herdr machines that run Omarchy
+omarchy theme set hermes  [--activate] [--wait]  # Sync the generated Omarchy theme to Hermes as a skin
+omarchy theme set hunk    # Tell running Hunk sessions to pick up the new terminal colors
+omarchy theme set keyboard    # Apply the current theme keyboard color to supported keyboards
+omarchy theme set keyboard asus rog    # Apply the current theme keyboard color to ASUS ROG keyboards
+omarchy theme set keyboard f16    # Apply the current theme keyboard color to Framework Laptop 16 keyboards
+omarchy theme set obsidian    # Sync Omarchy theme to all Obsidian vaults
+omarchy theme set pi  [--activate]  # Sync the generated Omarchy Pi theme
+omarchy theme set t3code    # Sync the generated Omarchy theme to T3 Code
+omarchy theme set templates    # Generate themed config files from Omarchy templates
+omarchy theme set tmux    # Sync current Omarchy theme environment into tmux
+omarchy theme set vscode    # Sync Omarchy theme to VS Code, VSCodium, and Cursor
+omarchy theme switcher    # Open the Omarchy theme switcher
+omarchy theme update    # Update user-installed git themes
+omarchy toggle animations  {toggle|on|off}?  # Toggle animations, blur and shadows, which are slow without a GPU
+omarchy toggle bar  {toggle|on|off}?  # Toggle bar visibility without killing the Omarchy shell (on hides the bar, off shows it)
+omarchy toggle crash capture    # Toggle crash capture notifications
+omarchy toggle fullscreen desktop  {toggle|on|off}?  # Toggle a full screen desktop: hide the top bar and remove the window gaps together
+omarchy toggle hybrid gpu    # Toggle dedicated vs integrated GPU mode via supergfxd (for hybrid gpu laptops, like Asus G14).
+omarchy toggle idle  {toggle|stay-awake|allow-idle|status}?  # Toggle idle behavior so the system either idles normally or stays awake
+omarchy toggle input device  {touchpad|touchscreen} {on|off|toggle}?  # Enable, disable, or toggle a Hyprland input device
+omarchy toggle nightlight  [--status]  # Toggle nightlight screen temperature
+omarchy toggle notification silencing    # Toggle notification do-not-disturb mode
+omarchy toggle screensaver    # Toggle screensaver availability
+omarchy toggle suspend    # Toggle suspend availability in the system menu
+omarchy toggle theme sync    # Toggle mirroring theme changes to and from your herdr machines
+omarchy toggle touchpad  {on|off|toggle}?  # Enable, disable, or toggle the touchpad
+omarchy toggle touchscreen  {on|off|toggle}?  # Enable, disable, or toggle the touch functionality of the screen
+omarchy transcode    # Transcode pictures and videos for sharing
+omarchy tui install    # Create a desktop launcher for a terminal UI app
+omarchy tui remove    # Remove a terminal UI desktop launcher DESTRUCTIVE
+omarchy tui remove all    # Remove all TUIs installed via omarchy-tui-install. DESTRUCTIVE
+omarchy update    # Update Omarchy and system packages
+omarchy update analyze logs    # Check the update log for known failure conditions
+omarchy update aur pkgs    # Update AUR packages if any are installed
+omarchy update available    # Check whether Omarchy updates are available.
+omarchy update confirm    # Prompt for confirmation before starting an update
+omarchy update dev    # Update the active Omarchy dev checkout
+omarchy update firmware    # Update system firmware using fwupd. Ensures the fwupd EFI binary is installed
+omarchy update keyring    # Ensure the Omarchy, Arch and (on aarch64) Arch Linux ARM keyring packages are installed and populated
+omarchy update mise    # Update mise-managed tools
+omarchy update orphan pkgs    # Review and optionally remove orphaned system packages after updates DESTRUCTIVE
+omarchy update pkg prune    # Prune superseded versions from the pacman package cache
+omarchy update restart  {--services-only|--reboot-only}?  # Prompt for required reboot or service restarts after updates
+omarchy update system pkgs    # Update system packages with pacman
+omarchy update time    # Restart system time synchronization
+omarchy upgrade to quattro  [--yes] [--reboot] [--dev]  # Upgrade a legacy Omarchy install to the package-backed Omarchy quattro layout. DESTRUCTIVE
+omarchy version    # Print the installed Omarchy version
+omarchy version channel    # Print the active Omarchy mirror and package channel
+omarchy version pkgs    # Print when system packages were last upgraded
+omarchy voxtype config    # Open Voxtype configuration
+omarchy voxtype model    # Open Voxtype AI model setup
+omarchy weather icon    # Returns a weather condition icon, adjusted for live sunrise and sunset.
+omarchy weather location    # Show or set the location used for weather reports
+omarchy weather status    # Returns a formatted weather status string with temperature and wind speed.
+omarchy webapp handler hey    # Open HEY webmail and translate mailto links
+omarchy webapp handler zoom    # Open Zoom web meetings from browser protocol links
+omarchy webapp install    # Create a desktop launcher for a web app
+omarchy webapp remove    # Remove a web app desktop launcher DESTRUCTIVE
+omarchy webapp remove all    # Remove all web apps installed via omarchy-webapp-install. DESTRUCTIVE
+omarchy windows key    # Print the OEM Windows product key stored in firmware
+omarchy windows vm  {install|remove|launch|stop|status}  # Install, launch, stop, inspect, or remove the Windows VM DESTRUCTIVE

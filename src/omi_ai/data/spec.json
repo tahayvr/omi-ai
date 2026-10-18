@@ -1,0 +1,2094 @@
+{
+ "_doc": "Hand-written meaning for each command form. commands.<route>.description is what the command Choice sees; keywords feed the retriever only. args.<route>.<arg>: choice args get question/stated/options (option keys are literal CLI tokens and override the parsed values); flags get question. Routes not listed fall back to the CLI summary; args not listed get a generic question.",
+ "commands": {
+  "omarchy theme set": {
+   "description": "switch the whole desktop to a different named colour theme or look (colour scheme, palette, rice)",
+   "keywords": [
+    "theme",
+    "colors",
+    "colours",
+    "scheme",
+    "palette",
+    "look",
+    "rice",
+    "dark",
+    "light"
+   ]
+  },
+  "omarchy theme switcher": {
+   "description": "open a picker to browse and choose a colour theme visually, without naming one",
+   "keywords": [
+    "theme",
+    "picker",
+    "browse",
+    "choose",
+    "menu"
+   ]
+  },
+  "omarchy theme current": {
+   "description": "tell the user which colour theme is active right now",
+   "keywords": [
+    "which",
+    "what",
+    "theme",
+    "current",
+    "using"
+   ]
+  },
+  "omarchy theme list": {
+   "description": "list every colour theme that is installed and available",
+   "keywords": [
+    "themes",
+    "available",
+    "list",
+    "options"
+   ]
+  },
+  "omarchy theme bg next": {
+   "description": "change the desktop wallpaper to the next background image of the current theme",
+   "keywords": [
+    "wallpaper",
+    "background",
+    "bg",
+    "next",
+    "change",
+    "cycle",
+    "picture"
+   ]
+  },
+  "omarchy theme bg-switcher": {
+   "description": "open a picker to browse and choose a desktop wallpaper or background image",
+   "keywords": [
+    "wallpaper",
+    "background",
+    "picker",
+    "choose",
+    "browse"
+   ]
+  },
+  "omarchy theme bg current": {
+   "description": "show which wallpaper or background image is in use",
+   "keywords": [
+    "wallpaper",
+    "background",
+    "which",
+    "current"
+   ]
+  },
+  "omarchy theme bg install": {
+   "description": "open the folder where the user can add their own wallpapers for the current theme",
+   "keywords": [
+    "wallpaper",
+    "folder",
+    "add",
+    "own",
+    "custom"
+   ]
+  },
+  "omarchy theme bg intro": {
+   "description": "turn the animated intro that plays when the wallpaper changes on or off",
+   "keywords": [
+    "intro",
+    "animation",
+    "wallpaper",
+    "background"
+   ]
+  },
+  "omarchy theme bg boot intro": {
+   "description": "play the current wallpaper's theme intro animation now",
+   "keywords": [
+    "intro",
+    "play",
+    "animation"
+   ]
+  },
+  "omarchy theme install": {
+   "description": "install a new colour theme from a git repository or URL",
+   "keywords": [
+    "theme",
+    "install",
+    "download",
+    "new",
+    "git",
+    "repo"
+   ]
+  },
+  "omarchy theme remove": {
+   "description": "delete an installed colour theme",
+   "keywords": [
+    "theme",
+    "delete",
+    "uninstall",
+    "remove"
+   ]
+  },
+  "omarchy theme update": {
+   "description": "update colour themes that were installed from git to their latest version",
+   "keywords": [
+    "themes",
+    "update",
+    "upgrade",
+    "pull"
+   ]
+  },
+  "omarchy theme refresh": {
+   "description": "re-apply and regenerate the current theme from its templates, to fix apps that did not pick up the theme or to apply theme changes",
+   "keywords": [
+    "reapply",
+    "regenerate",
+    "apply",
+    "theme",
+    "changes",
+    "fix"
+   ]
+  },
+  "omarchy theme set templates": {
+   "description": "regenerate all themed app config files from the theme templates so theme changes are applied",
+   "keywords": [
+    "templates",
+    "regenerate",
+    "apply",
+    "theme",
+    "changes"
+   ]
+  },
+  "omarchy theme set browser": {
+   "description": "apply the current theme colour to Chromium, Chrome, Edge and Brave",
+   "keywords": [
+    "browser",
+    "chrome",
+    "chromium",
+    "brave",
+    "edge",
+    "theme"
+   ]
+  },
+  "omarchy theme set vscode": {
+   "description": "apply the current theme to VS Code, VSCodium and Cursor",
+   "keywords": [
+    "vscode",
+    "code",
+    "cursor",
+    "editor",
+    "theme"
+   ]
+  },
+  "omarchy theme set obsidian": {
+   "description": "apply the current theme to Obsidian notes vaults",
+   "keywords": [
+    "obsidian",
+    "notes",
+    "theme"
+   ]
+  },
+  "omarchy theme set gnome": {
+   "description": "apply the current theme to GNOME/GTK apps: dark or light mode and icons",
+   "keywords": [
+    "gnome",
+    "gtk",
+    "apps",
+    "icons",
+    "dark",
+    "mode",
+    "theme"
+   ]
+  },
+  "omarchy theme set tmux": {
+   "description": "apply the current theme to tmux",
+   "keywords": [
+    "tmux",
+    "theme"
+   ]
+  },
+  "omarchy theme set foot": {
+   "description": "apply the current theme colours to open Foot terminal windows",
+   "keywords": [
+    "foot",
+    "terminal",
+    "theme"
+   ]
+  },
+  "omarchy theme set glass": {
+   "description": "give terminals, btop and GTK apps a see-through glass background while windows are glassy",
+   "keywords": [
+    "glass",
+    "glassy",
+    "see-through",
+    "transparent",
+    "terminal"
+   ]
+  },
+  "omarchy theme set claude": {
+   "description": "apply the current theme to Claude Code",
+   "keywords": [
+    "claude",
+    "theme"
+   ]
+  },
+  "omarchy theme set keyboard": {
+   "description": "light the keyboard backlight in the current theme's colour (RGB keyboards)",
+   "keywords": [
+    "keyboard",
+    "rgb",
+    "backlight",
+    "color",
+    "theme"
+   ]
+  },
+  "omarchy theme set herdr machines": {
+   "description": "copy the current theme to the user's other herdr machines running Omarchy",
+   "keywords": [
+    "herdr",
+    "machines",
+    "sync",
+    "mirror",
+    "theme"
+   ]
+  },
+  "omarchy bar position": {
+   "description": "move the bar (top bar, status bar, panel, waybar) to a different edge of the screen",
+   "keywords": [
+    "bar",
+    "panel",
+    "waybar",
+    "statusbar",
+    "move",
+    "top",
+    "bottom",
+    "left",
+    "right",
+    "side"
+   ]
+  },
+  "omarchy bar background": {
+   "description": "change how the bar (top bar, status bar, panel) background looks: solid, glassy see-through, or no background",
+   "keywords": [
+    "bar",
+    "panel",
+    "background",
+    "transparent",
+    "glassy",
+    "opaque",
+    "solid"
+   ]
+  },
+  "omarchy bar reset": {
+   "description": "reset the bar (top bar, panel) layout and widgets back to defaults",
+   "keywords": [
+    "bar",
+    "panel",
+    "reset",
+    "default",
+    "widgets"
+   ]
+  },
+  "omarchy bar defaults": {
+   "description": "show the default bar (top bar, panel) layout and widgets",
+   "keywords": [
+    "bar",
+    "panel",
+    "defaults"
+   ]
+  },
+  "omarchy bar text color": {
+   "description": "pick a readable text colour for a see-through bar (top bar, panel)",
+   "keywords": [
+    "bar",
+    "text",
+    "color",
+    "colour",
+    "readable",
+    "font"
+   ]
+  },
+  "omarchy toggle bar": {
+   "description": "hide or show the bar (top bar, status bar, panel, waybar) without restarting anything",
+   "keywords": [
+    "bar",
+    "panel",
+    "waybar",
+    "hide",
+    "show",
+    "statusbar"
+   ]
+  },
+  "omarchy toggle nightlight": {
+   "description": "turn the night light (warm blue-light filter, redshift, night shift) on or off",
+   "keywords": [
+    "nightlight",
+    "night",
+    "light",
+    "blue",
+    "warm",
+    "redshift",
+    "shift",
+    "eyes",
+    "orange",
+    "yellow",
+    "filter"
+   ]
+  },
+  "omarchy toggle idle": {
+   "description": "keep the computer awake (stop the screen locking or sleeping when idle), or let it idle and lock normally again",
+   "keywords": [
+    "awake",
+    "idle",
+    "caffeine",
+    "sleep",
+    "lock",
+    "screen",
+    "off",
+    "inhibit",
+    "presentation"
+   ]
+  },
+  "omarchy toggle animations": {
+   "description": "turn window animations, blur and shadows off or back on (to make the desktop faster or snappier)",
+   "keywords": [
+    "animations",
+    "blur",
+    "shadows",
+    "effects",
+    "fast",
+    "snappy",
+    "laggy",
+    "slow"
+   ]
+  },
+  "omarchy toggle fullscreen desktop": {
+   "description": "zen mode: hide the top bar and remove window gaps together for a distraction-free full screen desktop",
+   "keywords": [
+    "zen",
+    "distraction",
+    "fullscreen",
+    "gaps",
+    "bar",
+    "focus",
+    "minimal"
+   ]
+  },
+  "omarchy toggle notification silencing": {
+   "description": "do not disturb: silence or unsilence notifications",
+   "keywords": [
+    "dnd",
+    "disturb",
+    "notifications",
+    "silence",
+    "quiet",
+    "mute",
+    "focus"
+   ]
+  },
+  "omarchy toggle touchpad": {
+   "description": "disable or enable the laptop touchpad / trackpad",
+   "keywords": [
+    "touchpad",
+    "trackpad",
+    "mouse",
+    "pad"
+   ]
+  },
+  "omarchy toggle touchscreen": {
+   "description": "disable or enable the touch screen",
+   "keywords": [
+    "touchscreen",
+    "touch",
+    "screen"
+   ]
+  },
+  "omarchy toggle screensaver": {
+   "description": "allow or prevent the screensaver from appearing",
+   "keywords": [
+    "screensaver"
+   ]
+  },
+  "omarchy toggle suspend": {
+   "description": "show or hide the suspend option in the system menu",
+   "keywords": [
+    "suspend",
+    "menu",
+    "option"
+   ]
+  },
+  "omarchy toggle hybrid gpu": {
+   "description": "switch a hybrid-graphics laptop between the dedicated GPU and the integrated GPU",
+   "keywords": [
+    "gpu",
+    "nvidia",
+    "graphics",
+    "dedicated",
+    "integrated",
+    "hybrid",
+    "card"
+   ]
+  },
+  "omarchy toggle theme sync": {
+   "description": "turn mirroring of theme changes to and from herdr machines on or off",
+   "keywords": [
+    "theme",
+    "sync",
+    "herdr"
+   ]
+  },
+  "omarchy toggle crash capture": {
+   "description": "turn crash report notifications on or off",
+   "keywords": [
+    "crash",
+    "notifications",
+    "reports"
+   ]
+  },
+  "omarchy toggle input device": {
+   "description": "enable, disable or toggle the touchpad or touchscreen input device",
+   "keywords": [
+    "touchpad",
+    "touchscreen",
+    "input",
+    "device"
+   ]
+  },
+  "omarchy capture screenshot": {
+   "description": "take a screenshot (screen capture, screengrab, snip, print screen) of the screen, a region, or a window",
+   "keywords": [
+    "screenshot",
+    "screengrab",
+    "snip",
+    "capture",
+    "print",
+    "screen",
+    "grab",
+    "picture",
+    "snap"
+   ]
+  },
+  "omarchy capture screenrecording": {
+   "description": "start, stop or check a recording of the screen (screen recording, screencast), optionally with sound, microphone or webcam overlay",
+   "keywords": [
+    "record",
+    "recording",
+    "screencast",
+    "video",
+    "capture",
+    "stop"
+   ]
+  },
+  "omarchy capture screenrecording with webcam": {
+   "description": "choose which webcam to use from a list, then start a screen recording with it",
+   "keywords": [
+    "webcam",
+    "camera",
+    "choose",
+    "pick",
+    "record"
+   ]
+  },
+  "omarchy capture text": {
+   "description": "grab text from part of the screen with OCR, e.g. copy text out of an image",
+   "keywords": [
+    "ocr",
+    "text",
+    "copy",
+    "extract",
+    "read",
+    "image"
+   ]
+  },
+  "omarchy capture qr": {
+   "description": "scan or read a QR code shown on the screen",
+   "keywords": [
+    "qr",
+    "code",
+    "scan",
+    "read"
+   ]
+  },
+  "omarchy capture webcam resize": {
+   "description": "make the webcam overlay in a screen recording bigger or smaller",
+   "keywords": [
+    "webcam",
+    "overlay",
+    "bigger",
+    "smaller",
+    "resize"
+   ]
+  },
+  "omarchy capture webcam list": {
+   "description": "list the webcams / cameras available for recording",
+   "keywords": [
+    "webcam",
+    "camera",
+    "list",
+    "devices"
+   ]
+  },
+  "omarchy audio output volume": {
+   "description": "make the speaker/headphone volume louder or quieter, or mute and unmute the sound",
+   "keywords": [
+    "volume",
+    "sound",
+    "louder",
+    "quieter",
+    "mute",
+    "unmute",
+    "audio",
+    "loud",
+    "quiet",
+    "speaker"
+   ]
+  },
+  "omarchy audio input mute": {
+   "description": "mute or unmute the microphone",
+   "keywords": [
+    "mic",
+    "microphone",
+    "mute",
+    "unmute",
+    "input"
+   ]
+  },
+  "omarchy audio output switch": {
+   "description": "switch sound output to a different device, e.g. between speakers and headphones",
+   "keywords": [
+    "headphones",
+    "speakers",
+    "output",
+    "switch",
+    "headset",
+    "bluetooth",
+    "device",
+    "sound"
+   ]
+  },
+  "omarchy audio source switch": {
+   "description": "move media playback to the next or previous media player / source",
+   "keywords": [
+    "media",
+    "player",
+    "source",
+    "playback"
+   ]
+  },
+  "omarchy audio tuning": {
+   "description": "turn the laptop speaker tuning (sound enhancement) on or off",
+   "keywords": [
+    "speaker",
+    "tuning",
+    "eq",
+    "equalizer",
+    "enhancement"
+   ]
+  },
+  "omarchy restart audio": {
+   "description": "restart the sound system to fix audio that stopped working or a stuck USB audio device",
+   "keywords": [
+    "audio",
+    "sound",
+    "restart",
+    "fix",
+    "pipewire",
+    "broken"
+   ]
+  },
+  "omarchy brightness display": {
+   "description": "show, raise, lower or set the screen brightness, or turn the display off or on",
+   "keywords": [
+    "brightness",
+    "bright",
+    "dim",
+    "dark",
+    "screen",
+    "display",
+    "darker",
+    "brighter"
+   ]
+  },
+  "omarchy brightness keyboard": {
+   "description": "change the keyboard backlight brightness (keyboard light)",
+   "keywords": [
+    "keyboard",
+    "backlight",
+    "light",
+    "keys",
+    "illumination"
+   ]
+  },
+  "omarchy restart wifi": {
+   "description": "restart the wifi / wireless service, to fix a dropped or stuck wifi connection",
+   "keywords": [
+    "wifi",
+    "wireless",
+    "internet",
+    "network",
+    "restart",
+    "reconnect",
+    "fix"
+   ]
+  },
+  "omarchy restart bluetooth": {
+   "description": "unblock and restart bluetooth, to fix bluetooth problems",
+   "keywords": [
+    "bluetooth",
+    "restart",
+    "fix"
+   ]
+  },
+  "omarchy bluetooth power": {
+   "description": "turn bluetooth on or off",
+   "keywords": [
+    "bluetooth",
+    "on",
+    "off",
+    "radio"
+   ]
+  },
+  "omarchy network speedtest": {
+   "description": "test how fast the internet connection is",
+   "keywords": [
+    "speed",
+    "speedtest",
+    "internet",
+    "fast",
+    "slow",
+    "bandwidth",
+    "download",
+    "upload"
+   ]
+  },
+  "omarchy network status": {
+   "description": "show which network is connected and its status",
+   "keywords": [
+    "network",
+    "connected",
+    "wifi",
+    "status",
+    "ip"
+   ]
+  },
+  "omarchy network qr": {
+   "description": "show a QR code for sharing the wifi network and password",
+   "keywords": [
+    "wifi",
+    "qr",
+    "share",
+    "password"
+   ]
+  },
+  "omarchy network band": {
+   "description": "show or choose which wifi frequency band (2.4, 5 or 6 GHz) is used",
+   "keywords": [
+    "band",
+    "ghz",
+    "2.4",
+    "5ghz",
+    "frequency",
+    "wifi"
+   ]
+  },
+  "omarchy dns": {
+   "description": "show or change which DNS provider the system uses (Cloudflare, Google, automatic)",
+   "keywords": [
+    "dns",
+    "cloudflare",
+    "google",
+    "resolver"
+   ]
+  },
+  "omarchy font set": {
+   "description": "change the system / terminal monospace font to a named font",
+   "keywords": [
+    "font",
+    "typeface",
+    "monospace",
+    "terminal"
+   ]
+  },
+  "omarchy font current": {
+   "description": "tell the user which font is in use right now",
+   "keywords": [
+    "font",
+    "which",
+    "current",
+    "using"
+   ]
+  },
+  "omarchy font list": {
+   "description": "list the monospace fonts that are available",
+   "keywords": [
+    "fonts",
+    "list",
+    "available"
+   ]
+  },
+  "omarchy display text size": {
+   "description": "make text and UI bigger or smaller everywhere (scale text size), or reset it",
+   "keywords": [
+    "text",
+    "size",
+    "bigger",
+    "smaller",
+    "scale",
+    "zoom",
+    "font",
+    "readable"
+   ]
+  },
+  "omarchy hyprland monitor scaling": {
+   "description": "show or change the monitor / display scaling (zoom everything in or out on screen)",
+   "keywords": [
+    "scaling",
+    "scale",
+    "zoom",
+    "hidpi",
+    "monitor",
+    "display",
+    "bigger",
+    "smaller"
+   ]
+  },
+  "omarchy hyprland monitor internal": {
+   "description": "turn the built-in laptop screen off or on (e.g. when using an external monitor)",
+   "keywords": [
+    "laptop",
+    "screen",
+    "internal",
+    "builtin",
+    "display",
+    "monitor",
+    "external"
+   ]
+  },
+  "omarchy hyprland monitor internal mirror": {
+   "description": "mirror the laptop screen onto an external monitor or projector, or stop mirroring",
+   "keywords": [
+    "mirror",
+    "duplicate",
+    "projector",
+    "external",
+    "monitor"
+   ]
+  },
+  "omarchy hyprland window transparency": {
+   "description": "make all windows solid, see-through, or glassy",
+   "keywords": [
+    "transparent",
+    "transparency",
+    "opacity",
+    "see-through",
+    "glassy",
+    "opaque",
+    "solid",
+    "windows"
+   ]
+  },
+  "omarchy hyprland window transparency toggle": {
+   "description": "toggle see-through transparency for just the focused window",
+   "keywords": [
+    "transparent",
+    "window",
+    "this",
+    "focused",
+    "opacity"
+   ]
+  },
+  "omarchy hyprland window gaps toggle": {
+   "description": "turn the gaps (spacing) between windows on or off",
+   "keywords": [
+    "gaps",
+    "spacing",
+    "padding",
+    "windows",
+    "margin"
+   ]
+  },
+  "omarchy hyprland window close all": {
+   "description": "close every open window",
+   "keywords": [
+    "close",
+    "all",
+    "windows",
+    "everything",
+    "kill"
+   ]
+  },
+  "omarchy hyprland window minimize": {
+   "description": "minimize / hide the current window to the dock",
+   "keywords": [
+    "minimize",
+    "hide",
+    "window",
+    "dock"
+   ]
+  },
+  "omarchy hyprland window pop": {
+   "description": "pop the current tiled window out so it floats pinned on top",
+   "keywords": [
+    "pop",
+    "float",
+    "pin",
+    "window",
+    "picture"
+   ]
+  },
+  "omarchy hyprland window tiled fullscreen toggle": {
+   "description": "make the focused window fill the tiled area (fullscreen within tiling) or restore it",
+   "keywords": [
+    "fullscreen",
+    "maximize",
+    "window",
+    "tiled"
+   ]
+  },
+  "omarchy hyprland corners": {
+   "description": "make window corners rounded or sharp (square)",
+   "keywords": [
+    "corners",
+    "rounded",
+    "round",
+    "sharp",
+    "square",
+    "radius"
+   ]
+  },
+  "omarchy hyprland workspace layout toggle": {
+   "description": "cycle the current workspace's window layout between tiling, scrolling and floating",
+   "keywords": [
+    "layout",
+    "tiling",
+    "floating",
+    "scrolling",
+    "workspace",
+    "cycle"
+   ]
+  },
+  "omarchy hyprland workspace layout default": {
+   "description": "set the default window layout for workspaces: tiling (dwindle), scrolling, or floating",
+   "keywords": [
+    "layout",
+    "default",
+    "tiling",
+    "dwindle",
+    "floating",
+    "scrolling"
+   ]
+  },
+  "omarchy dock position": {
+   "description": "move the dock to a different edge of the screen",
+   "keywords": [
+    "dock",
+    "move",
+    "position",
+    "side"
+   ]
+  },
+  "omarchy dock autohide": {
+   "description": "make the dock hide automatically, or stay visible",
+   "keywords": [
+    "dock",
+    "autohide",
+    "hide",
+    "auto"
+   ]
+  },
+  "omarchy system": {
+   "description": "log out, reboot / restart the computer, reboot into the boot menu, or shut down / power off",
+   "keywords": [
+    "reboot",
+    "restart",
+    "shutdown",
+    "shut",
+    "poweroff",
+    "power",
+    "logout",
+    "log",
+    "out",
+    "turn",
+    "computer"
+   ]
+  },
+  "omarchy system lock": {
+   "description": "lock the screen / computer now",
+   "keywords": [
+    "lock",
+    "screen",
+    "away",
+    "computer"
+   ]
+  },
+  "omarchy screensaver": {
+   "description": "run the screensaver animation in the current terminal",
+   "keywords": [
+    "screensaver"
+   ]
+  },
+  "omarchy powerprofiles set": {
+   "description": "change the power profile / power mode: power saver (battery life), balanced, or performance",
+   "keywords": [
+    "power",
+    "profile",
+    "mode",
+    "battery",
+    "saver",
+    "performance",
+    "balanced",
+    "eco",
+    "save"
+   ]
+  },
+  "omarchy battery status": {
+   "description": "show battery charge percentage and power draw",
+   "keywords": [
+    "battery",
+    "charge",
+    "percent",
+    "left",
+    "remaining"
+   ]
+  },
+  "omarchy notification battery": {
+   "description": "show a notification with the battery status",
+   "keywords": [
+    "battery",
+    "notification"
+   ]
+  },
+  "omarchy notification time": {
+   "description": "show a notification with the current time and date",
+   "keywords": [
+    "time",
+    "date",
+    "clock",
+    "day",
+    "today"
+   ]
+  },
+  "omarchy notification weather": {
+   "description": "show the weather / forecast panel, or hide it",
+   "keywords": [
+    "weather",
+    "forecast",
+    "temperature",
+    "rain",
+    "outside"
+   ]
+  },
+  "omarchy weather location": {
+   "description": "show or set the location used for the weather",
+   "keywords": [
+    "weather",
+    "location",
+    "city"
+   ]
+  },
+  "omarchy update": {
+   "description": "update the whole system: Omarchy and all packages (upgrade, check for updates and install them)",
+   "keywords": [
+    "update",
+    "upgrade",
+    "packages",
+    "system",
+    "latest",
+    "pacman"
+   ]
+  },
+  "omarchy update available": {
+   "description": "check whether an Omarchy update is available, without installing it",
+   "keywords": [
+    "update",
+    "available",
+    "new",
+    "version",
+    "check"
+   ]
+  },
+  "omarchy update firmware": {
+   "description": "update the computer's firmware / BIOS",
+   "keywords": [
+    "firmware",
+    "bios",
+    "fwupd",
+    "uefi"
+   ]
+  },
+  "omarchy update aur pkgs": {
+   "description": "update installed AUR packages",
+   "keywords": [
+    "aur",
+    "packages",
+    "update",
+    "yay"
+   ]
+  },
+  "omarchy update system pkgs": {
+   "description": "update only the system packages with pacman, not Omarchy itself",
+   "keywords": [
+    "pacman",
+    "packages",
+    "system",
+    "update"
+   ]
+  },
+  "omarchy update mise": {
+   "description": "update the mise-managed developer tools (node, ruby, python versions)",
+   "keywords": [
+    "mise",
+    "tools",
+    "runtimes",
+    "update"
+   ]
+  },
+  "omarchy update time": {
+   "description": "resync the system clock / time with the internet",
+   "keywords": [
+    "time",
+    "clock",
+    "sync",
+    "wrong",
+    "ntp"
+   ]
+  },
+  "omarchy update pkg prune": {
+   "description": "free disk space by pruning old package versions from the pacman cache",
+   "keywords": [
+    "cache",
+    "prune",
+    "clean",
+    "space",
+    "disk"
+   ]
+  },
+  "omarchy version": {
+   "description": "show which Omarchy version is installed",
+   "keywords": [
+    "version",
+    "which",
+    "release"
+   ]
+  },
+  "omarchy restart shell": {
+   "description": "restart the Omarchy shell (bar, notifications, menus) when it is frozen or glitchy",
+   "keywords": [
+    "shell",
+    "bar",
+    "restart",
+    "frozen",
+    "reload",
+    "quickshell"
+   ]
+  },
+  "omarchy restart hyprctl": {
+   "description": "reload the Hyprland window manager configuration",
+   "keywords": [
+    "hyprland",
+    "reload",
+    "config"
+   ]
+  },
+  "omarchy restart terminal": {
+   "description": "reload terminal emulators so config changes take effect",
+   "keywords": [
+    "terminal",
+    "reload"
+   ]
+  },
+  "omarchy restart trackpad": {
+   "description": "reset the trackpad / touchpad driver when it stops working",
+   "keywords": [
+    "trackpad",
+    "touchpad",
+    "reset",
+    "fix",
+    "stuck"
+   ]
+  },
+  "omarchy launch browser": {
+   "description": "open the web browser",
+   "keywords": [
+    "browser",
+    "web",
+    "internet",
+    "chrome",
+    "firefox",
+    "open"
+   ]
+  },
+  "omarchy launch terminal": {
+   "description": "open a new terminal window",
+   "keywords": [
+    "terminal",
+    "console",
+    "shell",
+    "command",
+    "line",
+    "open"
+   ]
+  },
+  "omarchy launch nautilus": {
+   "description": "open the file manager (Files, Nautilus, file browser)",
+   "keywords": [
+    "files",
+    "file",
+    "manager",
+    "explorer",
+    "nautilus",
+    "folders",
+    "finder"
+   ]
+  },
+  "omarchy launch about": {
+   "description": "show system information (fastfetch: hardware, OS, specs)",
+   "keywords": [
+    "about",
+    "specs",
+    "system",
+    "info",
+    "fastfetch",
+    "neofetch",
+    "hardware"
+   ]
+  },
+  "omarchy launch spotify": {
+   "description": "open Spotify music",
+   "keywords": [
+    "spotify",
+    "music"
+   ]
+  },
+  "omarchy launch signal": {
+   "description": "open Signal messenger",
+   "keywords": [
+    "signal",
+    "messenger",
+    "chat"
+   ]
+  },
+  "omarchy launch 1password": {
+   "description": "open 1Password password manager",
+   "keywords": [
+    "1password",
+    "password",
+    "manager"
+   ]
+  },
+  "omarchy launch docker tui": {
+   "description": "open lazydocker to manage Docker containers",
+   "keywords": [
+    "docker",
+    "containers",
+    "lazydocker"
+   ]
+  },
+  "omarchy launch screensaver": {
+   "description": "start the screensaver now, full screen",
+   "keywords": [
+    "screensaver",
+    "start"
+   ]
+  },
+  "omarchy menu clipboard": {
+   "description": "open the clipboard history manager",
+   "keywords": [
+    "clipboard",
+    "history",
+    "paste",
+    "copied"
+   ]
+  },
+  "omarchy menu emoji": {
+   "description": "open the emoji picker",
+   "keywords": [
+    "emoji",
+    "emojis",
+    "picker",
+    "smiley"
+   ]
+  },
+  "omarchy menu keybindings": {
+   "description": "show the keyboard shortcuts / keybindings cheat sheet",
+   "keywords": [
+    "keybindings",
+    "shortcuts",
+    "hotkeys",
+    "keys",
+    "bindings",
+    "cheatsheet"
+   ]
+  },
+  "omarchy menu timezone": {
+   "description": "change the system time zone",
+   "keywords": [
+    "timezone",
+    "zone",
+    "time",
+    "travel"
+   ]
+  },
+  "omarchy menu": {
+   "description": "open the Omarchy main menu",
+   "keywords": [
+    "menu",
+    "main",
+    "omarchy"
+   ]
+  },
+  "omarchy setup keyboard": {
+   "description": "choose keyboard layouts / languages for typing",
+   "keywords": [
+    "keyboard",
+    "layout",
+    "language",
+    "qwerty",
+    "azerty",
+    "dvorak"
+   ]
+  },
+  "omarchy language": {
+   "description": "show or change the Omarchy interface language",
+   "keywords": [
+    "language",
+    "locale",
+    "translation"
+   ]
+  },
+  "omarchy default browser": {
+   "description": "change which web browser is the default",
+   "keywords": [
+    "default",
+    "browser"
+   ]
+  },
+  "omarchy default terminal": {
+   "description": "change which terminal app is the default",
+   "keywords": [
+    "default",
+    "terminal"
+   ]
+  },
+  "omarchy default editor": {
+   "description": "change which text / code editor is the default",
+   "keywords": [
+    "default",
+    "editor"
+   ]
+  },
+  "omarchy default agent": {
+   "description": "change which AI coding agent is the default",
+   "keywords": [
+    "default",
+    "agent",
+    "ai",
+    "coding"
+   ]
+  },
+  "omarchy install browser": {
+   "description": "install a web browser (Chrome, Brave, Firefox, Zen, Edge, Chromium)",
+   "keywords": [
+    "install",
+    "browser",
+    "get"
+   ]
+  },
+  "omarchy install terminal": {
+   "description": "install a terminal app and make it the default",
+   "keywords": [
+    "install",
+    "terminal"
+   ]
+  },
+  "omarchy install dev-env": {
+   "description": "install a programming language / development environment (node, ruby, python, rust, go...)",
+   "keywords": [
+    "install",
+    "dev",
+    "language",
+    "programming",
+    "environment",
+    "setup"
+   ]
+  },
+  "omarchy install gaming steam": {
+   "description": "install Steam for gaming",
+   "keywords": [
+    "steam",
+    "games",
+    "gaming",
+    "install"
+   ]
+  },
+  "omarchy install editor vscode": {
+   "description": "install Visual Studio Code",
+   "keywords": [
+    "vscode",
+    "code",
+    "visual",
+    "studio",
+    "install"
+   ]
+  },
+  "omarchy install editor zed": {
+   "description": "install the Zed editor",
+   "keywords": [
+    "zed",
+    "install"
+   ]
+  },
+  "omarchy install service tailscale": {
+   "description": "install the Tailscale VPN",
+   "keywords": [
+    "tailscale",
+    "vpn",
+    "install"
+   ]
+  },
+  "omarchy install service spotify": {
+   "description": "install Spotify",
+   "keywords": [
+    "spotify",
+    "install",
+    "music"
+   ]
+  },
+  "omarchy install docker dbs": {
+   "description": "install a database (Postgres, MySQL, Redis...) in Docker for development",
+   "keywords": [
+    "database",
+    "postgres",
+    "mysql",
+    "redis",
+    "docker",
+    "db"
+   ]
+  },
+  "omarchy pkg install": {
+   "description": "open a picker to search for and install packages / apps from the Arch repos",
+   "keywords": [
+    "install",
+    "package",
+    "app",
+    "software",
+    "search",
+    "pacman"
+   ]
+  },
+  "omarchy pkg aur install": {
+   "description": "open a picker to search for and install packages from the AUR",
+   "keywords": [
+    "aur",
+    "install",
+    "package",
+    "yay"
+   ]
+  },
+  "omarchy pkg remove": {
+   "description": "open a picker to choose installed packages to uninstall",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "package",
+    "app",
+    "software"
+   ]
+  },
+  "omarchy webapp install": {
+   "description": "create a desktop app launcher for a website (web app)",
+   "keywords": [
+    "webapp",
+    "website",
+    "app",
+    "launcher",
+    "pwa"
+   ]
+  },
+  "omarchy tui install": {
+   "description": "create a desktop launcher for a terminal app (TUI)",
+   "keywords": [
+    "tui",
+    "terminal",
+    "app",
+    "launcher"
+   ]
+  },
+  "omarchy share": {
+   "description": "send the clipboard, a file or a folder to another device or phone with LocalSend",
+   "keywords": [
+    "share",
+    "send",
+    "localsend",
+    "transfer",
+    "airdrop",
+    "phone"
+   ]
+  },
+  "omarchy dictation": {
+   "description": "start, stop or toggle voice dictation (speech to text)",
+   "keywords": [
+    "dictation",
+    "dictate",
+    "voice",
+    "speech",
+    "transcribe",
+    "talk"
+   ]
+  },
+  "omarchy snapshot": {
+   "description": "create a system snapshot (backup point) or restore / roll back to one",
+   "keywords": [
+    "snapshot",
+    "backup",
+    "restore",
+    "rollback",
+    "snapper"
+   ]
+  },
+  "omarchy setup factory reset": {
+   "description": "factory-reset the machine, wiping it back to a fresh install",
+   "keywords": [
+    "factory",
+    "reset",
+    "wipe",
+    "fresh"
+   ]
+  },
+  "omarchy hibernation setup": {
+   "description": "set up hibernation (suspend to disk)",
+   "keywords": [
+    "hibernate",
+    "hibernation",
+    "suspend",
+    "disk"
+   ]
+  },
+  "omarchy reminder": {
+   "description": "set a new desktop reminder, asking interactively what and when",
+   "keywords": [
+    "reminder",
+    "remind",
+    "set",
+    "new"
+   ],
+   "timed": true
+  },
+  "omarchy reminder show": {
+   "description": "list the reminders that are currently set",
+   "keywords": [
+    "reminders",
+    "list",
+    "show",
+    "pending"
+   ],
+   "timed": true
+  },
+  "omarchy reminder clear": {
+   "description": "delete / clear all reminders",
+   "keywords": [
+    "reminders",
+    "clear",
+    "delete",
+    "cancel",
+    "all"
+   ],
+   "timed": true
+  },
+  "omarchy dock pinned": {
+   "description": "show which apps are pinned to the dock",
+   "keywords": [
+    "dock",
+    "pinned",
+    "apps"
+   ]
+  },
+  "omarchy weather status": {
+   "description": "print a one-line weather summary for the status bar (used by the bar, not for people)",
+   "keywords": [
+    "weather"
+   ]
+  },
+  "omarchy launch nautilus cwd": {
+   "description": "open the file manager in the same folder the terminal is in (here, this directory)",
+   "keywords": [
+    "files",
+    "here",
+    "folder",
+    "current",
+    "directory",
+    "cwd"
+   ]
+  },
+  "omarchy plymouth set by theme": {
+   "description": "style the boot screen / boot splash after a named colour theme",
+   "keywords": [
+    "boot",
+    "plymouth",
+    "splash",
+    "theme"
+   ]
+  },
+  "omarchy plymouth current": {
+   "description": "tell the user which theme the boot screen / boot splash uses",
+   "keywords": [
+    "boot",
+    "plymouth",
+    "splash",
+    "which"
+   ]
+  },
+  "omarchy windows vm": {
+   "description": "install, start, stop, check or remove a Windows virtual machine",
+   "keywords": [
+    "windows",
+    "vm",
+    "virtual",
+    "machine"
+   ]
+  },
+  "omarchy install service microsoft": {
+   "description": "install Microsoft Office apps (Outlook, Word, Excel, PowerPoint, Teams, OneDrive) as web apps",
+   "keywords": [
+    "microsoft",
+    "office",
+    "outlook",
+    "word",
+    "excel",
+    "teams",
+    "powerpoint",
+    "onedrive"
+   ]
+  }
+ },
+ "args": {
+  "omarchy theme set": {
+   "pos0": {
+    "question": "Which colour theme does the user want to switch the desktop to?"
+   }
+  },
+  "omarchy plymouth set by theme": {
+   "pos0": {
+    "question": "Which colour theme should the boot screen be styled after?"
+   }
+  },
+  "omarchy theme remove": {
+   "pos0": {
+    "question": "Which colour theme does the user want deleted?"
+   }
+  },
+  "omarchy font set": {
+   "pos0": {
+    "question": "Which font does the user want to use?"
+   }
+  },
+  "omarchy bar position": {
+   "pos0": {
+    "question": "Which edge of the screen should the bar move to?",
+    "stated": "Does the request say which edge or side of the screen the bar should go to?",
+    "options": {
+     "top": "the top edge of the screen",
+     "bottom": "the bottom edge of the screen",
+     "left": "the left side of the screen",
+     "right": "the right side of the screen"
+    }
+   }
+  },
+  "omarchy dock position": {
+   "pos0": {
+    "question": "Which edge of the screen should the dock move to?",
+    "stated": "Does the request say which edge or side of the screen the dock should go to?",
+    "options": {
+     "top": "the top edge",
+     "bottom": "the bottom edge",
+     "left": "the left side",
+     "right": "the right side"
+    }
+   }
+  },
+  "omarchy bar background": {
+   "pos0": {
+    "question": "How should the bar's background look?",
+    "stated": "Does the request say how the bar background should look, such as solid, see-through, glassy or none?",
+    "options": {
+     "opaque": "a solid, non-transparent background",
+     "glassy": "a frosted, see-through glass background",
+     "none": "no background at all, fully transparent",
+     "cycle": "go to the next background style, without naming one"
+    }
+   }
+  },
+  "omarchy toggle bar": {
+   "pos0": {
+    "question": "Should the bar be hidden or shown?",
+    "stated": "Does the request say specifically whether the bar should end up hidden or visible, rather than just flipping it?",
+    "options": {
+     "on": "hide the bar, make it disappear",
+     "off": "show the bar, bring it back",
+     "toggle": "flip it: hide it if visible, show it if hidden"
+    }
+   }
+  },
+  "omarchy toggle idle": {
+   "pos0": {
+    "question": "Should the computer be kept awake, or allowed to idle, lock and sleep normally?",
+    "stated": "Does the request say specifically whether the computer should stay awake or be allowed to idle again, rather than just flipping the setting?",
+    "options": {
+     "stay-awake": "keep the computer awake, never lock or sleep",
+     "allow-idle": "let the computer idle, lock and sleep normally again",
+     "toggle": "flip the current setting",
+     "status": "just report whether it is being kept awake"
+    }
+   }
+  },
+  "omarchy toggle animations": {
+   "pos0": {
+    "question": "Should animations and visual effects be turned on or off?",
+    "stated": "Does the request say specifically whether effects should end up on or off, rather than just flipping them?",
+    "options": {
+     "on": "turn animations, blur and shadows on",
+     "off": "turn animations, blur and shadows off",
+     "toggle": "flip the current setting"
+    }
+   }
+  },
+  "omarchy toggle fullscreen desktop": {
+   "pos0": {
+    "question": "Should the distraction-free full screen desktop be turned on or off?",
+    "stated": "Does the request say specifically whether it should end up on or off, rather than just flipping it?",
+    "options": {
+     "on": "turn the distraction-free mode on",
+     "off": "turn it off, bring back the bar and gaps",
+     "toggle": "flip the current setting"
+    }
+   }
+  },
+  "omarchy toggle touchpad": {
+   "pos0": {
+    "question": "Should the touchpad be enabled or disabled?",
+    "stated": "Does the request say specifically whether the touchpad should end up enabled or disabled, rather than just flipping it?",
+    "options": {
+     "on": "enable the touchpad",
+     "off": "disable the touchpad",
+     "toggle": "flip the current state"
+    }
+   }
+  },
+  "omarchy toggle touchscreen": {
+   "pos0": {
+    "question": "Should the touch screen be enabled or disabled?",
+    "stated": "Does the request say specifically whether touch should end up enabled or disabled, rather than just flipping it?",
+    "options": {
+     "on": "enable touch",
+     "off": "disable touch",
+     "toggle": "flip the current state"
+    }
+   }
+  },
+  "omarchy toggle nightlight": {
+   "--status": {
+    "question": "Is the user only asking whether the night light is currently on, rather than asking to change it?"
+   }
+  },
+  "omarchy capture screenshot": {
+   "pos0": {
+    "question": "What part of the screen should the screenshot capture?",
+    "stated": "Does the request say what part of the screen to capture, such as a region, a window, the whole screen, or a scrolling page?",
+    "options": {
+     "smart": "let the tool guess the best area",
+     "region": "an area the user drags or selects",
+     "windows": "a single window",
+     "fullscreen": "the entire screen",
+     "scroll": "a long scrolling capture of a page"
+    }
+   },
+   "pos1": {
+    "question": "What should happen with the screenshot afterwards?",
+    "stated": "Does the request say whether to copy the screenshot to the clipboard or save it to a file?",
+    "options": {
+     "copy": "copy it to the clipboard to paste somewhere",
+     "save": "save it as a file"
+    }
+   }
+  },
+  "omarchy capture screenrecording": {
+   "--fullscreen": {
+    "question": "Does the user want to record the entire screen rather than a selected area?"
+   },
+   "--with-desktop-audio": {
+    "question": "Does the user want the computer's own sound (system or desktop audio) included in the recording?"
+   },
+   "--with-microphone-audio": {
+    "question": "Does the user want their microphone or voice included in the recording?"
+   },
+   "--with-webcam": {
+    "question": "Does the user want their webcam or face camera shown in the recording?"
+   },
+   "--webcam-size": {
+    "question": "How big should the webcam overlay be?",
+    "stated": "Does the request say how big the webcam overlay should be?",
+    "options": {
+     "small": "a small webcam overlay",
+     "medium": "a medium webcam overlay",
+     "large": "a large webcam overlay"
+    }
+   },
+   "--stop-recording": {
+    "question": "Is the user asking to stop a recording that is already running?"
+   },
+   "--status": {
+    "question": "Is the user only asking whether a recording is currently running?"
+   }
+  },
+  "omarchy audio output volume": {
+   "pos0": {
+    "question": "Should the sound get louder, quieter, or be muted or unmuted?",
+    "options": {
+     "raise": "make the sound louder, turn it up",
+     "lower": "make the sound quieter, turn it down",
+     "mute-toggle": "silence the sound completely, or unsilence it"
+    }
+   }
+  },
+  "omarchy audio source switch": {
+   "pos0": {
+    "question": "Should playback move to the next or previous media source?",
+    "stated": "Does the request say next or previous?",
+    "options": {
+     "next": "the next media source",
+     "previous": "the previous media source"
+    }
+   }
+  },
+  "omarchy brightness display": {
+   "pos1": {
+    "question": "How should the screen brightness change?",
+    "stated": "Does the request ask to change the screen brightness or turn the display off or on, rather than just asking what the brightness is?",
+    "options": {
+     "+10%": "a bit brighter",
+     "10%-": "a bit dimmer / darker",
+     "25%": "a quarter brightness",
+     "50%": "half brightness",
+     "75%": "three quarters brightness",
+     "100%": "full / maximum brightness",
+     "off": "turn the display off",
+     "on": "turn the display back on"
+    }
+   },
+   "--no-osd": {
+    "question": "Does the user ask for no on-screen popup when changing brightness?"
+   }
+  },
+  "omarchy brightness keyboard": {
+   "pos1": {
+    "question": "How should the keyboard backlight change?",
+    "options": {
+     "up": "brighter keyboard light",
+     "down": "dimmer keyboard light",
+     "cycle": "step to the next brightness level",
+     "off": "turn the keyboard light off",
+     "restore": "bring the keyboard light back to how it was"
+    }
+   },
+   "--no-osd": {
+    "question": "Does the user ask for no on-screen popup?"
+   }
+  },
+  "omarchy bluetooth power": {
+   "pos0": {
+    "question": "What should happen to bluetooth?",
+    "options": {
+     "on": "turn bluetooth on",
+     "off": "turn bluetooth off",
+     "toggle": "flip bluetooth on or off",
+     "is-on": "just check whether bluetooth is on"
+    }
+   }
+  },
+  "omarchy network speedtest": {
+   "pos0": {
+    "question": "Which direction of internet speed should be tested?",
+    "stated": "Does the request say to test only download or only upload speed?",
+    "options": {
+     "down": "download speed",
+     "up": "upload speed"
+    }
+   }
+  },
+  "omarchy network band": {
+   "pos0": {
+    "question": "Which wifi band should be used?",
+    "stated": "Does the request name a wifi band or ask for automatic band selection?",
+    "options": {
+     "auto": "choose the band automatically",
+     "2.4": "the 2.4 GHz band, longer range",
+     "5": "the 5 GHz band, faster",
+     "6": "the 6 GHz band"
+    }
+   }
+  },
+  "omarchy dns": {
+   "pos0": {
+    "question": "Which DNS provider should the system use?",
+    "stated": "Does the request name a DNS provider or ask for the default automatic DNS?",
+    "options": {
+     "Cloudflare": "Cloudflare DNS (1.1.1.1)",
+     "Google": "Google DNS (8.8.8.8)",
+     "DHCP": "the automatic DNS from the router or network, the default",
+     "Custom": "a custom DNS server the user will enter"
+    }
+   }
+  },
+  "omarchy display text size": {
+   "pos0": {
+    "question": "Should the text size be reset to the default?",
+    "stated": "Does the request ask to reset text size back to the default?",
+    "options": {
+     "reset": "reset text size to the default"
+    }
+   }
+  },
+  "omarchy hyprland monitor scaling": {
+   "pos0": {
+    "question": "Should the display scaling go up (everything bigger) or down (everything smaller)?",
+    "stated": "Does the request say whether things on screen should get bigger or smaller?",
+    "options": {
+     "up": "scale up, make everything on screen bigger",
+     "down": "scale down, make everything smaller and fit more"
+    }
+   }
+  },
+  "omarchy hyprland monitor internal": {
+   "pos0": {
+    "question": "What should happen to the built-in laptop screen?",
+    "options": {
+     "on": "turn the laptop screen on",
+     "off": "turn the laptop screen off",
+     "toggle": "flip it on or off",
+     "recover": "recover it after something went wrong"
+    }
+   }
+  },
+  "omarchy hyprland monitor internal mirror": {
+   "pos0": {
+    "question": "What should happen to screen mirroring?",
+    "options": {
+     "on": "start mirroring the laptop screen to the external display",
+     "off": "stop mirroring",
+     "toggle": "flip mirroring on or off",
+     "recover": "recover after something went wrong"
+    }
+   }
+  },
+  "omarchy hyprland window transparency": {
+   "pos0": {
+    "question": "How see-through should windows be?",
+    "stated": "Does the request say how see-through the windows should be?",
+    "options": {
+     "opaque": "fully solid, not see-through",
+     "transparent": "see-through",
+     "glassy": "frosted, blurred glass"
+    }
+   }
+  },
+  "omarchy hyprland corners": {
+   "pos0": {
+    "question": "What shape should window corners have?",
+    "stated": "Does the request say what the corners should look like?",
+    "options": {
+     "rounded": "rounded corners",
+     "sharp": "sharp, square corners",
+     "theme": "whatever the current theme uses"
+    }
+   }
+  },
+  "omarchy hyprland workspace layout default": {
+   "pos0": {
+    "question": "Which window layout should workspaces use by default?",
+    "stated": "Does the request name a window layout?",
+    "options": {
+     "dwindle": "tiling: windows split the screen between them",
+     "scrolling": "scrolling: windows in a row you scroll through",
+     "floating": "floating: windows overlap freely like a classic desktop"
+    }
+   }
+  },
+  "omarchy dock autohide": {
+   "pos0": {
+    "question": "Should the dock hide automatically?",
+    "stated": "Does the request say whether the dock should hide automatically or stay visible, rather than just flipping it?",
+    "options": {
+     "on": "hide the dock automatically",
+     "off": "keep the dock visible",
+     "toggle": "flip the setting"
+    }
+   }
+  },
+  "omarchy system": {
+   "pos0": {
+    "question": "What should happen to the computer's session?",
+    "options": {
+     "logout": "log out / sign out of the session",
+     "reboot": "restart / reboot the computer",
+     "reboot-boot-menu": "restart into the boot menu / firmware menu",
+     "shutdown": "shut down / power off / turn off the computer"
+    }
+   }
+  },
+  "omarchy powerprofiles set": {
+   "pos0": {
+    "question": "Is the power profile meant for when the laptop is plugged in, on battery, or chosen automatically?",
+    "stated": "Does the request say whether this is for when plugged in or on battery?",
+    "options": {
+     "ac": "when plugged in / charging",
+     "battery": "when running on battery",
+     "autodetect": "for whichever state the laptop is in now"
+    }
+   },
+   "pos1": {
+    "question": "Which power profile should be used?",
+    "stated": "Does the request say which power mode it wants: saving power, balanced, or full performance?",
+    "options": {
+     "power-saver": "save power, longer battery life, quieter",
+     "balanced": "a balance of speed and power use",
+     "performance": "maximum speed and performance"
+    }
+   }
+  },
+  "omarchy default browser": {
+   "pos0": {
+    "question": "Which browser should become the default?",
+    "stated": "Does the request name a browser?",
+    "options": {
+     "chromium": "Chromium",
+     "chrome": "Google Chrome",
+     "brave": "Brave",
+     "brave-origin": "Brave Origin",
+     "edge": "Microsoft Edge",
+     "firefox": "Firefox",
+     "zen": "Zen browser"
+    }
+   }
+  },
+  "omarchy install browser": {
+   "pos0": {
+    "question": "Which browser should be installed?",
+    "options": {
+     "chromium": "Chromium",
+     "chrome": "Google Chrome",
+     "brave": "Brave",
+     "brave-origin": "Brave Origin",
+     "edge": "Microsoft Edge",
+     "firefox": "Firefox",
+     "zen": "Zen browser"
+    }
+   }
+  },
+  "omarchy remove browser": {
+   "pos0": {
+    "question": "Which browser should be removed?",
+    "options": {
+     "chrome": "Google Chrome",
+     "brave": "Brave",
+     "brave-origin": "Brave Origin",
+     "edge": "Microsoft Edge",
+     "firefox": "Firefox",
+     "zen": "Zen browser"
+    }
+   }
+  },
+  "omarchy default terminal": {
+   "pos0": {
+    "question": "Which terminal app should become the default?",
+    "stated": "Does the request name a terminal app?",
+    "options": {
+     "alacritty": "Alacritty",
+     "foot": "Foot",
+     "ghostty": "Ghostty",
+     "kitty": "Kitty"
+    }
+   }
+  },
+  "omarchy install terminal": {
+   "pos0": {
+    "question": "Which terminal app should be installed?",
+    "options": {
+     "alacritty": "Alacritty",
+     "foot": "Foot",
+     "ghostty": "Ghostty",
+     "kitty": "Kitty"
+    }
+   }
+  },
+  "omarchy default editor": {
+   "pos0": {
+    "question": "Which editor should become the default?",
+    "stated": "Does the request name an editor?",
+    "options": {
+     "code": "VS Code",
+     "cursor": "Cursor",
+     "zed": "Zed",
+     "sublime_text": "Sublime Text",
+     "helix": "Helix",
+     "vim": "Vim",
+     "emacs": "Emacs",
+     "nvim": "Neovim"
+    }
+   }
+  },
+  "omarchy share": {
+   "pos0": {
+    "question": "What does the user want to share?",
+    "options": {
+     "clipboard": "what is copied on the clipboard",
+     "file": "one or more files",
+     "folder": "a folder"
+    }
+   }
+  },
+  "omarchy dictation": {
+   "pos0": {
+    "question": "Should dictation start, stop, or toggle?",
+    "options": {
+     "start": "start dictating / listening",
+     "stop": "stop dictating",
+     "toggle": "flip dictation on or off"
+    }
+   }
+  },
+  "omarchy snapshot": {
+   "pos0": {
+    "question": "Should a new snapshot be created, or should the system be restored from one?",
+    "options": {
+     "create": "make a new snapshot / backup point",
+     "restore": "restore or roll back to an earlier snapshot"
+    }
+   }
+  },
+  "omarchy theme bg intro": {
+   "pos0": {
+    "question": "What should happen to the wallpaper intro animation?",
+    "options": {
+     "enable": "turn intros on",
+     "disable": "turn intros off",
+     "toggle": "flip intros on or off",
+     "status": "check whether intros are on"
+    }
+   }
+  },
+  "omarchy agent account use": {
+   "pos1": {
+    "question": "Should the next account be used?",
+    "stated": "Does the request ask to switch to the next account?",
+    "options": {
+     "next": "the next account"
+    }
+   }
+  },
+  "omarchy windows vm": {
+   "pos0": {
+    "question": "What should happen to the Windows virtual machine?",
+    "options": {
+     "install": "install / create it",
+     "launch": "start / open it",
+     "stop": "stop / shut it down",
+     "status": "check whether it is running",
+     "remove": "delete it"
+    }
+   }
+  }
+ }
+}

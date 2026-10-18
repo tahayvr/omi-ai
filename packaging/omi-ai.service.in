@@ -1,0 +1,10 @@
+[Unit]
+Description=Omi AI (natural language to omarchy commands)
+Requires=omi-ai.socket
+
+[Service]
+ExecStart=@PROJECT@/.venv/bin/python -m omi_ai.serve
+Nice=10
+CPUWeight=20
+MemoryMax=256M
+Restart=no

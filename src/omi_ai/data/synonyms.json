@@ -1,0 +1,288 @@
+{
+ "_doc": "Retriever-only query expansion: phrase in the request -> extra words to match. Jev never sees these.",
+ "louder": [
+  "volume"
+ ],
+ "quieter": [
+  "volume"
+ ],
+ "loud": [
+  "volume"
+ ],
+ "quiet": [
+  "volume"
+ ],
+ "sound": [
+  "volume audio"
+ ],
+ "mute": [
+  "volume mute"
+ ],
+ "unmute": [
+  "volume mute"
+ ],
+ "speakers": [
+  "audio output"
+ ],
+ "headphones": [
+  "audio output switch"
+ ],
+ "mic": [
+  "microphone input"
+ ],
+ "dim": [
+  "brightness"
+ ],
+ "darker": [
+  "brightness"
+ ],
+ "brighter": [
+  "brightness"
+ ],
+ "dark": [
+  "brightness theme"
+ ],
+ "wallpaper": [
+  "background bg"
+ ],
+ "picture": [
+  "screenshot background"
+ ],
+ "screengrab": [
+  "screenshot"
+ ],
+ "snip": [
+  "screenshot"
+ ],
+ "screencast": [
+  "screenrecording"
+ ],
+ "record": [
+  "screenrecording"
+ ],
+ "recording": [
+  "screenrecording"
+ ],
+ "wifi": [
+  "network wifi"
+ ],
+ "internet": [
+  "network wifi"
+ ],
+ "wireless": [
+  "wifi"
+ ],
+ "panel": [
+  "bar"
+ ],
+ "waybar": [
+  "bar"
+ ],
+ "statusbar": [
+  "bar"
+ ],
+ "reboot": [
+  "system"
+ ],
+ "restart computer": [
+  "system reboot"
+ ],
+ "shutdown": [
+  "system"
+ ],
+ "shut down": [
+  "system shutdown"
+ ],
+ "power off": [
+  "system shutdown"
+ ],
+ "turn off computer": [
+  "system shutdown"
+ ],
+ "log out": [
+  "system logout"
+ ],
+ "logout": [
+  "system"
+ ],
+ "sign out": [
+  "system logout"
+ ],
+ "lock": [
+  "system lock"
+ ],
+ "colors": [
+  "theme"
+ ],
+ "colours": [
+  "theme"
+ ],
+ "colour": [
+  "theme"
+ ],
+ "color": [
+  "theme"
+ ],
+ "scheme": [
+  "theme"
+ ],
+ "rice": [
+  "theme"
+ ],
+ "upgrade": [
+  "update"
+ ],
+ "packages": [
+  "update pkg"
+ ],
+ "night": [
+  "nightlight"
+ ],
+ "blue light": [
+  "nightlight"
+ ],
+ "eyes": [
+  "nightlight"
+ ],
+ "warm": [
+  "nightlight"
+ ],
+ "awake": [
+  "idle"
+ ],
+ "sleep": [
+  "idle suspend"
+ ],
+ "caffeine": [
+  "idle"
+ ],
+ "dnd": [
+  "notification silencing"
+ ],
+ "disturb": [
+  "notification silencing"
+ ],
+ "files": [
+  "nautilus"
+ ],
+ "file manager": [
+  "nautilus"
+ ],
+ "explorer": [
+  "nautilus"
+ ],
+ "shortcuts": [
+  "keybindings"
+ ],
+ "hotkeys": [
+  "keybindings"
+ ],
+ "battery life": [
+  "powerprofiles power-saver"
+ ],
+ "performance": [
+  "powerprofiles"
+ ],
+ "power mode": [
+  "powerprofiles"
+ ],
+ "power saving": [
+  "powerprofiles"
+ ],
+ "trackpad": [
+  "touchpad"
+ ],
+ "gaps": [
+  "window gaps"
+ ],
+ "see through": [
+  "transparency"
+ ],
+ "transparent": [
+  "transparency"
+ ],
+ "bigger": [
+  "size scaling"
+ ],
+ "smaller": [
+  "size scaling"
+ ],
+ "zoom": [
+  "scaling"
+ ],
+ "font": [
+  "font"
+ ],
+ "typeface": [
+  "font"
+ ],
+ "dictate": [
+  "dictation"
+ ],
+ "speech": [
+  "dictation"
+ ],
+ "ocr": [
+  "capture text"
+ ],
+ "backup": [
+  "snapshot"
+ ],
+ "roll back": [
+  "snapshot restore"
+ ],
+ "uninstall": [
+  "remove"
+ ],
+ "delete": [
+  "remove"
+ ],
+ "get rid": [
+  "remove"
+ ],
+ "specs": [
+  "about"
+ ],
+ "neofetch": [
+  "about"
+ ],
+ "time zone": [
+  "timezone"
+ ],
+ "vscode": [
+  "vscode code"
+ ],
+ "vs code": [
+  "vscode"
+ ],
+ "nvidia": [
+  "gpu"
+ ],
+ "graphics": [
+  "gpu"
+ ],
+ "boot screen": [
+  "plymouth"
+ ],
+ "boot splash": [
+  "plymouth"
+ ],
+ "login screen": [
+  "plymouth sddm"
+ ],
+ "popups": [
+  "notification"
+ ],
+ "notifications": [
+  "notification"
+ ],
+ "presenting": [
+  "notification silencing idle"
+ ],
+ "came with": [
+  "preinstalls"
+ ],
+ "default apps": [
+  "preinstalls"
+ ]
+}

@@ -1,0 +1,26 @@
+[project]
+name = "omi-ai"
+version = "0.1.0"
+description = "Omi AI: plain-English requests to omarchy commands, powered by TypeSafe Jev"
+readme = "README.md"
+authors = [
+    { name = "tahayvr" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "rapidfuzz>=3.14.6",
+    "requests>=2.34.2",
+    "ruff>=0.17.1",
+    "typesafe-sdk>=0.7.5",
+]
+
+[project.urls]
+Homepage = "https://taha.gg"
+Repository = "https://github.com/tahayvr/omi-ai"
+
+[project.scripts]
+omi-ai = "omi_ai:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
