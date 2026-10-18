@@ -11,7 +11,7 @@ jobs:
       OMI_AI_SNAPSHOT: "1"
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10
+      - uses: astral-sh/setup-uv@v6
       - run: uv sync
       - run: uv run ruff check src tests
       - run: uv run ruff format --check src tests
