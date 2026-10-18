@@ -17,3 +17,10 @@ wheels/
 .env.*
 api-key
 *.key
+
+# Offline eval fixtures (recorded Jev answers) stay local
+eval/fixtures/
+
+# Local-only artifacts (screenshots of the dev machine, generated test reports)
+docs/screenshots/
+docs/test-results.md

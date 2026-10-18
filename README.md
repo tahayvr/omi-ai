@@ -1,77 +1,92 @@
 # Omi AI
 
-Type a request in plain English, get an `omarchy` command, confirm, run.
+Type a request in plain English, get an `omarchy` command, confirm, run. Built on
+[TypeSafe Jev](https://docs.typesafe.ai) and Omarchy's own menus.
 
-## Test
-
-```bash
-# Resolve only (prints the command, never runs it)
-uv run omi-ai ask "make it louder"
-
-# Through the daemon (what the launcher uses)
-curl -s --get 127.0.0.1:8127/ask --data-urlencode "q=switch to tokyo night"
-
-# Full flow: input menu -> confirm -> run
-omi-ask
-```
-
-If theme names aren't recognised in a plain shell, set `export OMARCHY_PATH=$HOME/omarchy` first (systemd already has it).
-
-Things to try: `hide the bar`, `screenshot of a window and copy it`, `night light on`, `keep the screen awake`, `bar on the left`, `performance mode`, `why is my wifi slow` (should refuse), `shut down in 30 minutes` (should refuse), `factory reset` (asks twice).
-
-## When it can't find a command
-
-`omi-ask` shows a menu titled with the reason, instead of just refusing:
-
-- **Ask the agent: …** opens your default coding agent with your text (`omarchy agent prompt`). This row comes first for questions, problem reports and timed requests.
-- **Run: …** shows up to 3 "did you mean" commands Jev already scored (`fits` ≥ 0.2), at no extra API cost. Picking one runs it, and destructive ones still ask twice. None are shown for timed requests ("shut down in 30 minutes").
-- **Rephrase** reopens the input box.
-- **Cancel** closes the menu.
-
-Picks are logged as `escalate-agent`, `escalate-picked-suggestion`, `escalate-rephrased` or `escalate-cancelled`. To see which escalations users overrode:
+## Install
 
 ```bash
-jq -c 'select(.outcome | startswith("escalate")) | {q, outcome, command}' ~/.local/state/omi-ai/log.jsonl
+git clone https://github.com/tahayvr/omi-ai && cd omi-ai
+bin/omi-ai-install     # service, omi-ai and omi-ask on your PATH
+omi-ai setup           # paste your TypeSafe API key (checked before it's saved)
+omi-ai doctor          # everything green?
 ```
 
-## Reading the output
+Then run `omi-ask`, or bind a key to it yourself in `~/.config/hypr/bindings.lua`, e.g.
+`o.bind("SUPER + SHIFT + SPACE", "Ask Omi", "omi-ask")`. Omi doesn't set keybindings for you.
+
+Omi AI sends the text you type in the ask prompt to TypeSafe AI's servers for interpretation. It does not send your
+files, your configuration, or system information. It needs a network connection and your own TypeSafe API key;
+without a connection it falls back to offline best guesses.
+
+## Using it
+
+- **Confirm menu:** Run / Change any argument / Explain / Wrong command / Copy / Cancel. Nothing runs without Run.
+- **Destructive commands** (uninstall, reset, overwrite…) ask a second time, or never run with `destructive = "block"`.
+- **When nothing fits:** ask the agent with your text, pick a "did you mean" command, rephrase, or cancel. Questions
+  and timed requests ("shut down in 30 minutes") lead with the agent; timed requests get no suggestions.
+- **Long output** opens in a menu; picking a line copies it.
+
+Things to try: `hide the bar`, `screenshot of a window and copy it`, `night light on`, `keep the screen awake`,
+`bar on the left`, `performance mode`, `why is my wifi slow` (question → agent), `shut down in 30 minutes` (refused),
+`factory reset` (asks twice).
+
+| Command | What it does |
+| --- | --- |
+| `omi-ask` | The whole flow (what you bind a key to) |
+| `omi-ai ask "…"` | Resolve and print with scores; never runs anything |
+| `omi-ai setup [--terminal]` | Add or replace the API key (`--terminal`: hidden input) |
+| `omi-ai doctor [--menu]` | Health checks, each with its fix |
+| `omi-ai history` | Pick a recent command and run it again (no API call) |
+| `omi-ai review [--days N] [--export] [--prune]` | What your usage says to fix; export misses as eval rows |
+| `omi-ai config [show\|edit\|reload\|path\|get KEY]` | The config file |
+| `omi-ai spec check [--all] [--update-snapshot]` | Spec vs the live Omarchy catalog |
+| `omi-ai uninstall [--purge]` | Remove the service and symlinks (`--purge`: key, config and log too) |
+
+## Config
+
+`~/.config/omi-ai/config.toml`, optional. `omi-ai config edit` opens a commented copy; `omi-ai config reload`
+applies it. Main knobs: `thresholds.preset` (`conservative` / `balanced` / `permissive`), `ui.suggestions`,
+`safety.destructive`, `privacy.log_queries`, `model.name`.
+
+## Development
+
+```bash
+just            # list recipes
+just ask "make it louder"
+just test       # unit tests (no network, < 1 s)
+just snapshot   # record Jev answers for the offline eval (once, and after spec or prompt changes)
+just eval       # offline eval on the test split: no API, no cost
+just check      # lint + tests + offline eval, before you push
+just restart    # daemon picks up code, spec and config changes
+```
+
+Evals stay local; CI runs lint and tests only. Fixtures in `eval/fixtures/` are not committed.
+If theme names are missing in a plain shell, `export OMARCHY_PATH=$HOME/omarchy` (the justfile sets it).
+
+### Reading `omi-ai ask` output
 
 ```
 omarchy toggle bar on  (92%)
-  route=omarchy toggle bar scores={"route_p":0.99,"actionable":0.96,"covered":0.95,"timing":0.07,"detail":0.17} tokens=2665 cached=false jev=80ms total=95ms
+  route=omarchy toggle bar scores={"route_p":0.99,"actionable":0.96,"covered":0.95,"timing":0.07,"detail":0.17} tokens=2665 cached=false jev=80ms
 ```
 
-- `(92%)`: overall confidence, the weakest judgment behind the command (command pick, each argument, each "was it stated").
-- `route`: the command Jev picked (also shown on escalate, so you can see what it considered).
-- `route_p`: probability Jev gave that command against the other 7 candidates.
-- `actionable`: is this an action or a status question? Below 0.3 → refused as a how-to, problem report or chat.
-- `covered`: would the picked command actually do what you asked? Below 0.5 → "no single command does that".
-- `timing`: did you ask for a delay, schedule or duration? 0.5 or above → refused (except reminders).
-- `detail`: did you name something the command can't take (a package, place, number…)? 0.8 or above → refused.
+- `(92%)`: confidence, the weakest of the command pick and its arguments.
+- `route_p`: probability for the picked command against the other 7 candidates.
+- `actionable`: an action or status question? Below 0.5 → treated as a question.
+- `covered`: would the command do what you asked? Below 0.5 → "no single command does that".
+- `timing`: a delay or schedule? 0.5+ → refused (reminders exempt).
+- `detail`: names something the command can't take? 0.8+ → refused.
 - Destructive commands also need `actionable` and `covered` ≥ 0.7.
-- `tokens`: input tokens for this request (output is free). ~2.5k tokens ≈ $0.0001.
-- `cached`: answer came from the disk cache (`~/.cache/omi-ai/jev`), no API call or cost.
-- `jev`: daemon time for retrieval + the Jev call. `total`: full round trip from `omi-ask`.
+- `tokens`: input tokens (~2.5k ≈ $0.0001; output is free). `cached`: answered from `~/.cache/omi-ai/jev`, free.
+- `jev`: daemon time for retrieval + the Jev call. `omi-ask` also prints `total` (full round trip).
 
-Thresholds live in `Thresholds` in `src/omi_ai/dispatch.py`.
+### Logs and usage
 
-## After changing code or spec
+- Every request and outcome: `~/.local/state/omi-ai/log.jsonl` (`omi-ai review` reads it)
+- Daemon: `just logs`
+- Account usage and limits: https://console.typesafe.ai
 
-```bash
-systemctl --user restart omi-ai.service   # daemon reloads spec/policy
-OMARCHY_PATH=$HOME/omarchy uv run python -m omi_ai.evaluate run --split valid --fails
-```
-
-## Logs and API usage
-
-- Every query: `~/.local/state/omi-ai/log.jsonl`
-- Daemon errors: `journalctl --user -u omi-ai`
-- Tokens and cost spent through the daemon:
-  ```bash
-  jq -s '[.[] | select(.cached == false) | .tokens] | add as $t | {tokens: $t, usd: ($t * 0.042 / 1e6)}' ~/.local/state/omi-ai/log.jsonl
-  ```
-- Account-wide usage and limits: https://console.typesafe.ai
-
-See [NOTES.md](NOTES.md) for design and results.
+See [NOTES.md](NOTES.md) for design and eval results.
 
 By [Taha Nejad](https://taha.gg).

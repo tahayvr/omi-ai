@@ -2,7 +2,7 @@
 Description=Omi AI request socket
 
 [Socket]
-ListenStream=127.0.0.1:8127
+ListenStream=127.0.0.1:@PORT@
 
 [Install]
 WantedBy=sockets.target

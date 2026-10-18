@@ -1,0 +1,15 @@
+{
+  "_doc": "Held-out results (jev-1.13.0, balanced preset, spec with 349 described commands), 2026-10-18. `just eval` warns when a run is more than 1 point worse.",
+  "test": {
+    "deployed_fn_acc": 0.891,
+    "arg_acc": 0.864,
+    "false_command": 0.103,
+    "over_escalate": 0.092
+  },
+  "valid": {
+    "deployed_fn_acc": 0.918,
+    "arg_acc": 0.868,
+    "false_command": 0.093,
+    "over_escalate": 0.069
+  }
+}

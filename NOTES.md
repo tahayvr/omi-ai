@@ -6,20 +6,24 @@ Built against the **live** CLI (`omarchy commands --all --json`), not the old Ma
 
 | Path | What |
 |---|---|
-| `src/omi_ai/catalog.py` | Parses the live manifest's `args` strings into fillable forms (choice / flag / free), applies policy |
+| `src/omi_ai/cli.py` | `omi-ai` subcommands |
+| `src/omi_ai/catalog.py` | Parses the live manifest's `args` into fillable forms (choice / flag / free), applies policy; `OMI_AI_SNAPSHOT=1` uses the bundled snapshot |
 | `src/omi_ai/retriever.py` | rapidfuzz keyword retriever, top-k candidates |
-| `src/omi_ai/dispatch.py` | Jev questions, disk cache, decision logic, thresholds |
-| `src/omi_ai/serve.py` | Socket-activated HTTP daemon, `GET /ask?q=` |
-| `src/omi_ai/evaluate.py` | recall / run / sweep |
-| `src/omi_ai/data/spec.json` | Hand-written descriptions, argument questions, option meanings |
-| `src/omi_ai/data/policy.json` | Hidden routes allowed back in, destructive routes |
-| `src/omi_ai/data/dynamic.json` | Args resolved live (theme names, fonts) |
-| `src/omi_ai/data/synonyms.json` | Retriever-only query expansion |
-| `bin/omi-ask` | Launcher: Omarchy menu input → confirm → run |
-| `bin/omi-ai-install` | Idempotent installer |
-| `eval/rows.jsonl` | 425 labelled rows (written by a separate agent from the catalog, never shown the spec). Split valid/test by hash of the query |
-
-Try it: `uv run omi-ai ask "make it louder"` (prints, never runs).
+| `src/omi_ai/dispatch.py` | Jev questions, disk cache, fixtures replay, decision logic, thresholds, `build()` for argument edits, offline guesses |
+| `src/omi_ai/serve.py` | Socket-activated daemon: `/ask`, `/build`, `/health` |
+| `src/omi_ai/flow.py` | The `omi-ask` menu flow: confirm, change argument, explain, wrong, escalate menu, history |
+| `src/omi_ai/gates.py` | Run-time gates: live route check, destructive policy (word-prefix match) |
+| `src/omi_ai/execute.py` | Runs argv (never a shell); sudo/TUI commands in Omarchy's floating terminal |
+| `src/omi_ai/menu.py` | `omarchy-menu-input` / `-select` / `notify-send` wrappers |
+| `src/omi_ai/config.py` | `config.toml` loading, presets, validation, template |
+| `src/omi_ai/onboarding.py` | `omi-ai setup` (key validated via `models.list()`, saved atomically, 600) |
+| `src/omi_ai/doctor.py`, `review.py`, `speccheck.py`, `uninstall.py` | The matching subcommands |
+| `src/omi_ai/events.py` | Usage log (`log.jsonl`), privacy filter, pruning |
+| `src/omi_ai/evaluate.py` | recall / run / sweep / snapshot, `--offline` replay, floors |
+| `src/omi_ai/data/` | `spec.json`, `policy.json`, `dynamic.json` (+ snapshot), `synonyms.json`, `manifest-live.json` snapshot |
+| `bin/omi-ask`, `bin/omi-ai-install` | Entry point to bind a key to; idempotent installer |
+| `eval/rows.jsonl`, `eval/floors.json` | 425 labelled rows (valid/test by hash); held-out floors `just eval` warns on |
+| `tests/` | pytest, no network: catalog, gates, config, dispatch, flow (fake menus), onboarding, menu (fake binaries), serve, review, uninstall |
 
 ## SDK / models (checked 2026-10-17)
 
@@ -88,6 +92,28 @@ Held-out **test** (223 rows: 184 command, 39 escalate):
 - Latency: median Jev round trip **~78 ms**. Daemon cold start 1.3 s (manifest + theme/font lists), warm request ~100 ms end to end.
 
 Remaining weak spots: near-duplicate routes (`screensaver` vs `launch screensaver`, `bar reset` vs `bar defaults`), "back on/off" direction on toggles, flags that Jev adds unasked (`--fullscreen`, `--meta`), and no-arg picker commands given a specific value ("set timezone to Berlin" → opens the timezone picker; labelled escalate).
+
+## Spec round 2 (2026-10-18)
+
+Hand-described commands 157 → 349 of 392 (the 43 left are `hw` probes and `dev` tools); status-bar/script helpers are
+described as internal so Jev stops picking them; 33 new argument specs with labels. Re-swept on valid: with the
+richer spec `actionable_min` 0.5 dominates 0.3, so all presets now use 0.5.
+
+Held-out test, balanced preset:
+
+| | command | args | over-escalate | escalate recall | false-command |
+|---|---|---|---|---|---|
+| before (157 described, actionable 0.3) | 87.0% | 83.2% | 10.3% | 87.2% | 12.8% |
+| **after (349 described, actionable 0.5)** | **89.1%** | **86.4%** | **9.2%** | **89.7%** | **10.3%** |
+
+| test split | command | args | over-escalate | false-command |
+|---|---|---|---|---|
+| conservative | 85.3% | 82.6% | 13.0% | 10.3% |
+| balanced | 89.1% | 86.4% | 9.2% | 10.3% |
+| permissive | 89.7% | 87.0% | 8.7% | 12.8% |
+
+Remaining false commands are mostly "picker" commands given a specific value (timezone, language, keyboard
+layout, AUR package): they open the right picker, but the eval labels them as escalations.
 
 ## Gates
 

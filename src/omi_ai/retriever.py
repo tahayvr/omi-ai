@@ -73,9 +73,7 @@ def tokens(text: str) -> list[str]:
 
 
 class Retriever:
-    def __init__(
-        self, forms: dict[str, Form], spec: dict, synonyms: dict[str, list[str]]
-    ):
+    def __init__(self, forms: dict[str, Form], spec: dict, synonyms: dict[str, list[str]]):
         self.forms = list(forms.values())
         self.synonyms = synonyms
         self.docs: list[set[str]] = []
@@ -91,11 +89,7 @@ class Retriever:
                     s.get("description", ""),
                     " ".join(s.get("keywords", [])),
                     " ".join(v for a in f.args for v in a.values),
-                    " ".join(
-                        " ".join(resolve_dynamic(a.dynamic).values())
-                        for a in f.args
-                        if a.dynamic
-                    ),
+                    " ".join(" ".join(resolve_dynamic(a.dynamic).values()) for a in f.args if a.dynamic),
                 ]
             )
             self.docs.append(set(tokens(text)))
@@ -121,18 +115,12 @@ class Retriever:
         else:
             hits = []
         if len(tok) >= 4:
-            for v, score, _ in process.extract(
-                tok, self.vocab, scorer=fuzz.ratio, limit=3, score_cutoff=82
-            ):
+            for v, score, _ in process.extract(tok, self.vocab, scorer=fuzz.ratio, limit=3, score_cutoff=82):
                 if v != tok:
                     hits.append((v, score / 100 * 0.8))
             # prefix match: "screenshot" ~ "screen", "recording" ~ "screenrecording"
             for v in self.vocab:
-                if (
-                    len(v) >= 4
-                    and v != tok
-                    and (tok.startswith(v) or v.startswith(tok))
-                ):
+                if len(v) >= 4 and v != tok and (tok.startswith(v) or v.startswith(tok)):
                     hits.append((v, 0.6))
         return hits
 
@@ -145,12 +133,8 @@ class Retriever:
         scored = []
         for f, doc, rt in zip(self.forms, self.docs, self.route_toks):
             s = sum(w for v, w in weights.items() if v in doc)
-            s += 0.5 * sum(
-                w for v, w in weights.items() if v in rt
-            )  # route words count extra
-            s -= 0.01 * len(
-                f.route.split()
-            )  # tie-break toward shorter, more general routes
+            s += 0.5 * sum(w for v, w in weights.items() if v in rt)  # route words count extra
+            s -= 0.01 * len(f.route.split())  # tie-break toward shorter, more general routes
             scored.append((f, s))
         scored.sort(key=lambda x: -x[1])
         return scored[:k]

@@ -15,8 +15,10 @@ Each argument is one of:
 from __future__ import annotations
 
 import json
+import os
 import re
 import shlex
+import shutil
 import subprocess
 from dataclasses import dataclass, field
 from functools import cache
@@ -178,7 +180,11 @@ def parse_args(spec: str) -> list[tuple[list[str], list[Arg]]]:
 
 @cache
 def load_manifest() -> list[dict]:
-    """The live manifest straight from the CLI, falling back to the snapshot."""
+    """The live manifest straight from the CLI, falling back to the snapshot.
+
+    OMI_AI_SNAPSHOT=1 forces the snapshot (tests, CI, machines without Omarchy)."""
+    if os.environ.get("OMI_AI_SNAPSHOT"):
+        return json.loads((DATA / "manifest-live.json").read_text())["commands"]
     try:
         out = subprocess.run(
             ["omarchy", "commands", "--all", "--json"],
@@ -232,21 +238,47 @@ def forms() -> dict[str, Form]:
                 if a.kind == "free" and key in dyn:
                     a.dynamic = key
             route = " ".join([cmd["route"], *verb])
-            form = Form(
-                route=route, base=cmd["route"], verb=verb, args=args, command=cmd
-            )
+            form = Form(route=route, base=cmd["route"], verb=verb, args=args, command=cmd)
             # Verbless alternatives share a route; keep the first one that can be filled.
             if route not in out or (not out[route].fillable() and form.fillable()):
                 out[route] = form
     return out
 
 
+def omarchy_env() -> dict[str, str]:
+    """The environment for Omarchy helper commands, with OMARCHY_PATH filled in when missing.
+
+    Without it, `omarchy theme list` silently lists only user themes."""
+    env = dict(os.environ)
+    if not env.get("OMARCHY_PATH"):
+        candidates = []
+        if exe := shutil.which("omarchy"):
+            candidates.append(Path(exe).resolve().parent.parent)
+        candidates += [Path.home() / ".local/share/omarchy", Path("/usr/share/omarchy")]
+        for c in candidates:
+            if (c / "themes").is_dir():
+                env["OMARCHY_PATH"] = str(c)
+                break
+    return env
+
+
 def resolve_dynamic(key: str) -> dict[str, str]:
-    """Run a dynamic resolver: {cli_value: description}."""
+    """Run a dynamic resolver: {cli_value: description}.
+
+    Falls back to the recorded values in dynamic-snapshot.json when the command is
+    missing or prints nothing (or OMI_AI_SNAPSHOT is set)."""
     d = dynamic_map()[key]
-    out = subprocess.run(
-        d["cmd"], capture_output=True, text=True, timeout=5, check=False
-    ).stdout
+    out = ""
+    if not os.environ.get("OMI_AI_SNAPSHOT"):
+        try:
+            out = subprocess.run(
+                d["cmd"], capture_output=True, text=True, timeout=5, check=False, env=omarchy_env()
+            ).stdout
+        except OSError, subprocess.SubprocessError:
+            out = ""
+    if not out.strip():
+        snap = DATA / "dynamic-snapshot.json"
+        out = "\n".join(json.loads(snap.read_text()).get(key, [])) if snap.exists() else ""
     values = {}
     for line in out.splitlines():
         line = line.strip()

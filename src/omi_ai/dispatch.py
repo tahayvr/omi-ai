@@ -23,20 +23,16 @@ import json
 import os
 import time
 from dataclasses import dataclass, field
-from pathlib import Path
 
 from typesafe_sdk import Choice, Noul, TypeSafeClient
 
-from . import catalog
+from . import catalog, paths
 from .catalog import Form
+from .config import Config
 from .retriever import Retriever
 
 MODEL = os.environ.get("OMI_AI_MODEL", "jev-1.13.0")
-CACHE = (
-    Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache"))
-    / "omi-ai"
-    / "jev"
-)
+CACHE = paths.JEV_CACHE
 PRICE_PER_TOKEN = 0.042 / 1e6
 TERMINAL_GROUPS = {
     "install",
@@ -54,8 +50,8 @@ TERMINAL_GROUPS = {
 class Thresholds:
     """Defaults are the "balanced" point from the sweep on eval valid split (see NOTES.md)."""
 
-    actionable_min: float = 0.3
-    covered_min: float = 0.5  # the chosen candidate's |fits Noul
+    actionable_min: float = 0.5
+    fits_min: float = 0.5  # the chosen candidate's |fits Noul
     route_min: float = 0.0
     other_max: float = 0.5
     timing_max: float = 0.5
@@ -64,6 +60,19 @@ class Thresholds:
     destructive_min: float = 0.7
     # |fits a candidate needs to be offered as an escalate suggestion
     suggest_min: float = 0.2
+
+    @classmethod
+    def from_config(cls, cfg: Config) -> Thresholds:
+        t = cfg["thresholds"]
+        return cls(**{k: t[k] for k in cls.__dataclass_fields__ if k in t})
+
+
+class MissingKey(Exception):
+    """No TypeSafe API key configured."""
+
+
+class StaleFixture(Exception):
+    """Offline eval: this request isn't in the recorded fixtures (spec or prompts changed)."""
 
 
 @dataclass
@@ -78,6 +87,9 @@ class Result:
     terminal: bool = False  # needs a terminal (sudo prompt or interactive output)
     kind: str = ""  # escalate reason: question | uncovered | timing | detail | value | destructive
     alternatives: list[dict] = field(default_factory=list)  # suggestions on escalate
+    values: dict = field(default_factory=dict)  # chosen argument values, by arg name
+    args: list[dict] = field(default_factory=list)  # per-argument detail for change/explain
+    runner_up: dict | None = None
     candidates: list[str] = field(default_factory=list)
     scores: dict = field(default_factory=dict)  # raw judgments, for tuning and logs
     input_tokens: int = 0
@@ -104,14 +116,27 @@ class Dispatcher:
         k: int = 8,
         model: str = MODEL,
         thresholds: Thresholds | None = None,
+        config: Config | None = None,
+        fixtures: dict | None = None,
+        record: dict | None = None,
     ):
+        """`fixtures`: replay recorded answers only (offline eval).
+        `record`: dict that collects every answer used, keyed by request hash (snapshot)."""
         self.spec = load_spec()
         self.forms = {r: f for r, f in catalog.forms().items() if f.fillable()}
         self.retriever = Retriever(self.forms, self.spec, load_synonyms())
         self.client = client
         self.k = k
         self.model = model
-        self.th = thresholds or Thresholds()
+        self.config = config
+        if config is not None:
+            k = config["retrieval"]["candidates"]
+            model = os.environ.get("OMI_AI_MODEL") or config["model"]["name"]
+        self.th = thresholds or (Thresholds.from_config(config) if config else Thresholds())
+        self.k = k
+        self.model = model
+        self.fixtures = fixtures
+        self.record = record
         self._dyn: dict[str, tuple[float, dict]] = {}
 
     # ---- spec lookups -------------------------------------------------------
@@ -146,16 +171,8 @@ class Dispatcher:
                 parts.append(f"optional: {q[:-1] if q else a.flag}")
             elif a.kind == "choice" or a.dynamic:
                 opts = list(self.options(f, a).values())
-                parts.append(
-                    "one of: "
-                    + ", ".join(opts[:12])
-                    + (" ..." if len(opts) > 12 else "")
-                )
-        return (
-            self.describe(f)
-            + "."
-            + (" It can be told: " + "; ".join(parts) + "." if parts else "")
-        )
+                parts.append("one of: " + ", ".join(opts[:12]) + (" ..." if len(opts) > 12 else ""))
+        return self.describe(f) + "." + (" It can be told: " + "; ".join(parts) + "." if parts else "")
 
     # ---- question building --------------------------------------------------
 
@@ -224,26 +241,31 @@ class Dispatcher:
 
     def _call(self, state: str, qs: dict) -> tuple[dict, bool]:
         payload = {k: v.model_dump(exclude_none=True) for k, v in sorted(qs.items())}
-        h = hashlib.sha256(
-            json.dumps([self.model, state, payload], sort_keys=True).encode()
-        ).hexdigest()
+        h = hashlib.sha256(json.dumps([self.model, state, payload], sort_keys=True).encode()).hexdigest()
+        if self.fixtures is not None:
+            if h not in self.fixtures:
+                raise StaleFixture(h)
+            return self.fixtures[h], True
         path = CACHE / h[:2] / f"{h}.json"
         if path.exists():
-            return json.loads(path.read_text()), True
+            out = json.loads(path.read_text())
+            if self.record is not None:
+                self.record[h] = out
+            return out, True
         if self.client is None:
-            self.client = TypeSafeClient(api_key=read_api_key())
+            timeout = self.config["model"]["timeout_s"] if self.config else 8
+            self.client = TypeSafeClient(api_key=read_api_key(), timeout=timeout)
         r = self.client.system_one(state, qs, model=self.model)
         out = {
             "model": r.model,
             "input_tokens": r.usage.input_tokens,
-            "choices": {
-                k: {"choice": v.choice, "p": dict(v.probabilities)}
-                for k, v in r.choices.items()
-            },
+            "choices": {k: {"choice": v.choice, "p": dict(v.probabilities)} for k, v in r.choices.items()},
             "nouls": {k: v.noul for k, v in r.nouls.items()},
         }
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(out))
+        if self.record is not None:
+            self.record[h] = out
         return out, False
 
     # ---- the decision -------------------------------------------------------
@@ -251,18 +273,14 @@ class Dispatcher:
     def judge(self, q: str) -> tuple[list[Form], dict, bool, float]:
         t0 = time.monotonic()
         cands = [f for f, _ in self.retriever.search(q, self.k)]
-        cands.sort(
-            key=lambda f: f.route
-        )  # Jev leans to the first option; don't hand it retrieval order
+        cands.sort(key=lambda f: f.route)  # Jev leans to the first option; don't hand it retrieval order
         ans, cached = self._call(q, self.questions(cands))
         return cands, ans, cached, time.monotonic() - t0
 
-    def fill(
-        self, f: Form, ans: dict, th: Thresholds
-    ) -> tuple[list[str] | None, float]:
+    def fill(self, f: Form, ans: dict, th: Thresholds) -> tuple[list[str] | None, float, dict]:
         """Build argv for one candidate from its argument judgments.
 
-        Returns (None, 0) when the request asked for a value outside the options.
+        Returns (None, 0, {}) when the request asked for a value outside the options.
         Confidence is the weakest argument judgment (the route pick is not included).
         """
         ch, no = ans["choices"], ans["nouls"]
@@ -283,7 +301,7 @@ class Dispatcher:
                 if p_stated < 0.5:
                     continue
             if no.get(key + "~", 0.0) >= th.other_max:
-                return None, 0.0
+                return None, 0.0, {}
             c = ch[key]
             values[a.name] = c["choice"]
             confs.append(c["p"][c["choice"]])
@@ -291,16 +309,12 @@ class Dispatcher:
         pos = [a for a in f.args if not a.flag]
         for i, a in enumerate(pos):
             if a.name not in values and any(b.name in values for b in pos[i + 1 :]):
-                fill = self.arg_spec(f, a).get("fill") or (
-                    a.values[0] if a.values else None
-                )
+                fill = self.arg_spec(f, a).get("fill") or (a.values[0] if a.values else None)
                 if fill:
                     values[a.name] = fill
-        return f.argv(values), min(confs)
+        return f.argv(values), min(confs), values
 
-    def alternatives(
-        self, cands: list[Form], ans: dict, th: Thresholds, limit: int = 3
-    ) -> list[dict]:
+    def alternatives(self, cands: list[Form], ans: dict, th: Thresholds, limit: int = 3) -> list[dict]:
         """Runnable "did you mean" suggestions for an escalate, best fit first."""
         p_route = ans["choices"]["__command__"]["p"]
         out = []
@@ -308,7 +322,7 @@ class Dispatcher:
             fits = ans["nouls"].get(f"{f.route}|fits", 0.0)
             if fits < th.suggest_min:
                 continue
-            argv, conf = self.fill(f, ans, th)
+            argv, conf, _ = self.fill(f, ans, th)
             if argv is None:
                 continue
             out.append(
@@ -325,13 +339,100 @@ class Dispatcher:
         out.sort(key=lambda x: (-x["fits"], -x["route_p"]))
         return out[:limit]
 
+    def label(self, f: Form, a: catalog.Arg) -> str:
+        s = self.arg_spec(f, a)
+        if s.get("label"):
+            return s["label"]
+        if a.flag:
+            return a.flag.lstrip("-").replace("-", " ")
+        if a.placeholder:
+            return a.placeholder.removesuffix("-name").replace("-", " ")
+        return "option"
+
+    def arg_info(self, f: Form, ans: dict | None, values: dict) -> list[dict]:
+        """What the menu needs to show and change each argument of one form."""
+        ch = ans["choices"] if ans else {}
+        out = []
+        for a in f.args:
+            key = f"{f.route}|{a.name}"
+            if a.kind == "flag":
+                out.append(
+                    {
+                        "name": a.name,
+                        "label": self.label(f, a),
+                        "kind": "flag",
+                        "value": bool(values.get(a.name)),
+                        "required": False,
+                    }
+                )
+                continue
+            if a.kind != "choice" and not a.dynamic:
+                continue
+            opts = self.options(f, a)
+            if not opts:
+                continue
+            value = values.get(a.name)
+            p = ch.get(key, {}).get("p", {}).get(value) if value else None
+            out.append(
+                {
+                    "name": a.name,
+                    "label": self.label(f, a),
+                    "kind": "choice",
+                    "value": value,
+                    "required": a.required,
+                    "options": opts,
+                    "p": round(p, 3) if p is not None else None,
+                }
+            )
+        return out
+
+    def build(self, route: str, values: dict) -> list[str]:
+        """argv for a route with explicit argument values (menu edits). Validates values."""
+        f = self.forms[route]
+        clean: dict = {}
+        for a in f.args:
+            v = values.get(a.name)
+            if v is None or v is False:
+                continue
+            if a.kind == "flag":
+                clean[a.name] = bool(v)
+            elif v in self.options(f, a):
+                clean[a.name] = v
+            else:
+                raise ValueError(f"{v!r} is not a valid value for {a.name} of {route}")
+        missing = [a.name for a in f.args if a.required and a.name not in clean]
+        if missing:
+            raise ValueError(f"{route} needs {', '.join(missing)}")
+        return f.argv(clean)
+
+    def offline_alternatives(self, q: str, limit: int = 5) -> list[dict]:
+        """Retriever-only guesses for when Jev can't be reached."""
+        out = []
+        for f, score in self.retriever.search(q, limit * 2):
+            if score <= 0:
+                continue
+            info = self.arg_info(f, None, {})
+            needs = [a for a in info if a["required"]]
+            out.append(
+                {
+                    "route": f.route,
+                    "command": catalog.display(f.argv({})) if not needs else f.route + " …",
+                    "argv": f.argv({}) if not needs else None,
+                    "args": info,
+                    "description": self.describe(f),
+                    "destructive": catalog.destructive_reason(f.route),
+                    "terminal": self.needs_terminal(f),
+                }
+            )
+            if len(out) == limit:
+                break
+        return out
+
     @staticmethod
     def needs_terminal(f: Form) -> bool:
         return f.command["requires_sudo"] or f.command["group"] in TERMINAL_GROUPS
 
-    def decide(
-        self, q: str, cands: list[Form], ans: dict, th: Thresholds | None = None
-    ) -> Result:
+    def decide(self, q: str, cands: list[Form], ans: dict, th: Thresholds | None = None) -> Result:
         """Pure function of the judgments, so threshold sweeps need no API calls."""
         th = th or self.th
         ch, no = ans["choices"], ans["nouls"]
@@ -364,38 +465,42 @@ class Dispatcher:
         if actionable < th.actionable_min:
             return escalate(
                 "question",
-                "That sounds like a question or a problem report, not an action.",
+                "Sounds like a question, not an action.",
             )
-        if covered < th.covered_min or p_route < th.route_min:
+        if covered < th.fits_min or p_route < th.route_min:
             return escalate("uncovered", "No single omarchy command does that.")
         scores["timing"], scores["detail"] = no["__timing__"], no[f"{route}|detail"]
         timed = self.spec["commands"].get(route, {}).get("timed", False)
         if scores["timing"] >= th.timing_max and not timed:
             return escalate(
                 "timing",
-                "omi-ai runs commands right away; it can't schedule, delay or repeat them.",
+                "Omi runs commands now; it can't schedule or delay them.",
             )
         if scores["detail"] >= th.detail_max:
             return escalate(
                 "detail",
-                "omarchy has a command for that, but it can't take the specific thing you named.",
+                "The command can't take the specific thing you named.",
             )
-        if (
-            catalog.destructive_reason(route)
-            and min(actionable, covered) < th.destructive_min
-        ):
+        if catalog.destructive_reason(route) and min(actionable, covered) < th.destructive_min:
             return escalate(
                 "destructive",
-                "That would run a destructive command and the request wasn't clear enough.",
+                "Destructive, and the request wasn't clear enough.",
             )
 
         f = self.forms[route]
-        argv, conf = self.fill(f, ans, th)
+        others = sorted(((r, p) for r, p in cmd["p"].items() if r != route), key=lambda x: -x[1])
+        if others:
+            res.runner_up = {
+                "route": others[0][0],
+                "p": round(others[0][1], 3),
+                "fits": round(no.get(f"{others[0][0]}|fits", 0.0), 3),
+            }
+        argv, conf, values = self.fill(f, ans, th)
         if argv is None:
-            return escalate(
-                "value", "omarchy can do that, but not with the value you asked for."
-            )
+            return escalate("value", "That value isn't one of the options.")
         res.argv = argv
+        res.values = values
+        res.args = self.arg_info(f, ans, values)
         res.confidence = min(p_route, conf)
         res.escalate = False
         res.destructive = catalog.destructive_reason(route)
@@ -412,9 +517,6 @@ class Dispatcher:
 def read_api_key() -> str:
     if k := os.environ.get("TYPESAFE_API_KEY"):
         return k
-    path = (
-        Path(os.environ.get("XDG_CONFIG_HOME", Path.home() / ".config"))
-        / "omi-ai"
-        / "api-key"
-    )
-    return path.read_text().strip()
+    if paths.KEY_FILE.exists() and (k := paths.KEY_FILE.read_text().strip()):
+        return k
+    raise MissingKey(str(paths.KEY_FILE))

@@ -1552,27 +1552,1680 @@
     "powerpoint",
     "onedrive"
    ]
+  },
+  "omarchy agent": {
+   "description": "open the default AI coding agent (Claude Code, Codex, opencode\u2026) in a terminal",
+   "keywords": [
+    "agent",
+    "ai",
+    "coding",
+    "claude",
+    "codex",
+    "assistant"
+   ]
+  },
+  "omarchy agent account add": {
+   "description": "sign in to and add a Claude, Codex or Grok subscription account",
+   "keywords": [
+    "account",
+    "sign",
+    "login",
+    "add",
+    "subscription",
+    "claude",
+    "codex",
+    "grok"
+   ]
+  },
+  "omarchy agent account list": {
+   "description": "list the signed-in Claude, Codex and Grok accounts and how much of their usage limits is left",
+   "keywords": [
+    "accounts",
+    "limits",
+    "usage",
+    "list",
+    "quota"
+   ]
+  },
+  "omarchy agent account mode": {
+   "description": "choose whether AI agent accounts switch automatically when one nears its limit, or only notify",
+   "keywords": [
+    "account",
+    "switch",
+    "automatic",
+    "limit",
+    "mode"
+   ]
+  },
+  "omarchy agent account use": {
+   "description": "switch which Claude, Codex or Grok account new agent sessions use, or move to the next account",
+   "keywords": [
+    "account",
+    "switch",
+    "use",
+    "next"
+   ]
+  },
+  "omarchy agent usage update": {
+   "description": "refresh the AI agent usage and limits data",
+   "keywords": [
+    "usage",
+    "refresh",
+    "limits",
+    "agent"
+   ]
+  },
+  "omarchy ascii": {
+   "description": "turn some text into big ASCII art letters in the Omarchy logo font",
+   "keywords": [
+    "ascii",
+    "art",
+    "banner",
+    "letters",
+    "figlet"
+   ]
+  },
+  "omarchy branding about": {
+   "description": "change or reset the image or text shown on the About / system info screen",
+   "keywords": [
+    "branding",
+    "about",
+    "logo",
+    "fastfetch",
+    "custom"
+   ]
+  },
+  "omarchy branding screensaver": {
+   "description": "change or reset the image or text the screensaver shows",
+   "keywords": [
+    "branding",
+    "screensaver",
+    "logo",
+    "text",
+    "custom"
+   ]
+  },
+  "omarchy brightness display apple": {
+   "description": "change the brightness of an Apple Studio Display or Pro Display XDR",
+   "keywords": [
+    "apple",
+    "studio",
+    "display",
+    "xdr",
+    "brightness",
+    "monitor"
+   ]
+  },
+  "omarchy brightness keyboard mute": {
+   "description": "turn the laptop's microphone-mute indicator light on or off",
+   "keywords": [
+    "mic",
+    "mute",
+    "led",
+    "light",
+    "indicator"
+   ]
+  },
+  "omarchy channel current": {
+   "description": "show which Omarchy release channel (stable, rc, edge, dev) this system follows",
+   "keywords": [
+    "channel",
+    "release",
+    "stable",
+    "edge",
+    "which"
+   ]
+  },
+  "omarchy channel set": {
+   "description": "switch Omarchy to a different release channel: stable, release candidate, edge or dev",
+   "keywords": [
+    "channel",
+    "stable",
+    "edge",
+    "beta",
+    "rc",
+    "release"
+   ]
+  },
+  "omarchy crash mute": {
+   "description": "stop crash notifications for a program, or list which programs are silenced",
+   "keywords": [
+    "crash",
+    "notifications",
+    "silence",
+    "mute",
+    "alerts"
+   ]
+  },
+  "omarchy debug": {
+   "description": "collect debugging information about the system, e.g. to share when asking for help",
+   "keywords": [
+    "debug",
+    "logs",
+    "info",
+    "diagnostics",
+    "report",
+    "help"
+   ]
+  },
+  "omarchy debug idle": {
+   "description": "show diagnostics for why the screen does or doesn't lock, sleep or start the screensaver",
+   "keywords": [
+    "idle",
+    "lock",
+    "screensaver",
+    "diagnostics",
+    "sleep",
+    "debug"
+   ]
+  },
+  "omarchy default dictation": {
+   "description": "choose which voice dictation app (Superwhisper or Voxtype) is the default",
+   "keywords": [
+    "dictation",
+    "default",
+    "voice",
+    "speech",
+    "voxtype",
+    "superwhisper"
+   ]
+  },
+  "omarchy dictation superwhisper": {
+   "description": "start, stop or toggle voice dictation using Superwhisper",
+   "keywords": [
+    "superwhisper",
+    "dictation",
+    "voice"
+   ]
+  },
+  "omarchy dictation voxtype": {
+   "description": "start, stop or toggle voice dictation using Voxtype",
+   "keywords": [
+    "voxtype",
+    "dictation",
+    "voice"
+   ]
+  },
+  "omarchy disk speedtest": {
+   "description": "measure how fast the disk / SSD reads and writes",
+   "keywords": [
+    "disk",
+    "ssd",
+    "speed",
+    "drive",
+    "benchmark",
+    "storage"
+   ]
+  },
+  "omarchy drive password": {
+   "description": "change the password of an encrypted drive (disk encryption / LUKS passphrase)",
+   "keywords": [
+    "encryption",
+    "luks",
+    "drive",
+    "disk",
+    "password",
+    "passphrase"
+   ]
+  },
+  "omarchy file select": {
+   "description": "open a file picker dialog to choose files or a folder",
+   "keywords": [
+    "file",
+    "picker",
+    "choose",
+    "dialog"
+   ]
+  },
+  "omarchy font cjk": {
+   "description": "choose how Chinese, Japanese and Korean characters are drawn (Japanese, Korean, Simplified, Traditional, Hong Kong)",
+   "keywords": [
+    "cjk",
+    "chinese",
+    "japanese",
+    "korean",
+    "glyphs",
+    "font"
+   ]
+  },
+  "omarchy games retro cores": {
+   "description": "list the RetroArch emulator cores that are installed",
+   "keywords": [
+    "retroarch",
+    "cores",
+    "emulators",
+    "list"
+   ]
+  },
+  "omarchy games retro install": {
+   "description": "add a RetroArch game (ROM) to the app launcher",
+   "keywords": [
+    "retroarch",
+    "rom",
+    "game",
+    "launcher",
+    "emulator"
+   ]
+  },
+  "omarchy hibernation available": {
+   "description": "check whether this computer can hibernate",
+   "keywords": [
+    "hibernate",
+    "hibernation",
+    "supported",
+    "can"
+   ]
+  },
+  "omarchy hibernation remove": {
+   "description": "turn off and remove hibernation (its swap and boot resume setup)",
+   "keywords": [
+    "hibernate",
+    "hibernation",
+    "remove",
+    "disable"
+   ]
+  },
+  "omarchy hyprland window single square aspect toggle": {
+   "description": "keep a lone window square instead of stretching it across a wide screen, or undo that",
+   "keywords": [
+    "square",
+    "aspect",
+    "ratio",
+    "single",
+    "window",
+    "ultrawide"
+   ]
+  },
+  "omarchy hyprland window width": {
+   "description": "save the focused window's width, or put it back to the saved width",
+   "keywords": [
+    "window",
+    "width",
+    "save",
+    "restore",
+    "size"
+   ]
+  },
+  "omarchy hyprland workspace layout current": {
+   "description": "tell which window layout (tiling, scrolling or floating) the current workspace uses",
+   "keywords": [
+    "layout",
+    "which",
+    "workspace",
+    "current"
+   ]
+  },
+  "omarchy hyprland monitor focused": {
+   "description": "tell which monitor is focused (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": [
+    "monitor"
+   ]
+  },
+  "omarchy hyprland monitor focused apple": {
+   "description": "check whether a monitor is an Apple display (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": [
+    "apple"
+   ]
+  },
+  "omarchy hyprland monitor laptop": {
+   "description": "print the laptop screen's output name (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": [
+    "laptop"
+   ]
+  },
+  "omarchy hyprland monitor watch": {
+   "description": "watch for monitors being unplugged (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": [
+    "watch"
+   ]
+  },
+  "omarchy install ai chatgpt": {
+   "description": "install the ChatGPT desktop app",
+   "keywords": [
+    "install",
+    "chatgpt",
+    "openai"
+   ]
+  },
+  "omarchy remove ai chatgpt": {
+   "description": "uninstall the ChatGPT desktop app and delete its data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "chatgpt",
+    "openai"
+   ]
+  },
+  "omarchy install ai claude": {
+   "description": "install the Claude desktop app",
+   "keywords": [
+    "install",
+    "claude",
+    "anthropic"
+   ]
+  },
+  "omarchy remove ai claude": {
+   "description": "uninstall the Claude desktop app and delete its data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "claude",
+    "anthropic"
+   ]
+  },
+  "omarchy install ai hermes": {
+   "description": "install the Hermes AI desktop app",
+   "keywords": [
+    "install",
+    "hermes"
+   ]
+  },
+  "omarchy remove ai hermes": {
+   "description": "uninstall the Hermes AI desktop app and delete its data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "hermes"
+   ]
+  },
+  "omarchy install ai openclaw": {
+   "description": "install the OpenClaw AI agent platform",
+   "keywords": [
+    "install",
+    "openclaw"
+   ]
+  },
+  "omarchy remove ai openclaw": {
+   "description": "uninstall the OpenClaw AI agent platform and delete its data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "openclaw"
+   ]
+  },
+  "omarchy install ai t3 code": {
+   "description": "install T3 Code, an AI coding app",
+   "keywords": [
+    "install",
+    "t3",
+    "code"
+   ]
+  },
+  "omarchy remove ai t3 code": {
+   "description": "uninstall T3 Code, an AI coding app and delete its data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "t3",
+    "code"
+   ]
+  },
+  "omarchy remove ai grok bot": {
+   "description": "uninstall Grok Bot and delete its data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "grok"
+   ]
+  },
+  "omarchy remove ai lm studio": {
+   "description": "uninstall LM Studio and all its downloaded models and delete its data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "lm",
+    "studio",
+    "llm",
+    "models"
+   ]
+  },
+  "omarchy remove ai ollama": {
+   "description": "uninstall Ollama and every model it pulled and delete its data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "ollama",
+    "llm",
+    "models"
+   ]
+  },
+  "omarchy remove ai perplexity": {
+   "description": "uninstall the Perplexity desktop app and delete its data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "perplexity"
+   ]
+  },
+  "omarchy install chromium claude": {
+   "description": "add the Claude extension to Chrome, Chromium, Brave or Edge",
+   "keywords": [
+    "claude",
+    "extension",
+    "browser",
+    "chrome"
+   ]
+  },
+  "omarchy install chromium copy url": {
+   "description": "set up the Copy URL browser extension helper",
+   "keywords": [
+    "copy",
+    "url",
+    "extension",
+    "browser"
+   ]
+  },
+  "omarchy install chromium google account": {
+   "description": "let Chromium sign in to a Google account (sync)",
+   "keywords": [
+    "google",
+    "account",
+    "chromium",
+    "sign",
+    "sync"
+   ]
+  },
+  "omarchy install chromium ytdlp": {
+   "description": "set up the yt-dlp browser extension helper for downloading videos",
+   "keywords": [
+    "ytdlp",
+    "youtube",
+    "download",
+    "video",
+    "extension"
+   ]
+  },
+  "omarchy install dictation superwhisper": {
+   "description": "install and set up Superwhisper voice dictation",
+   "keywords": [
+    "superwhisper",
+    "dictation",
+    "install",
+    "voice"
+   ]
+  },
+  "omarchy install dictation voxtype": {
+   "description": "install and set up Voxtype voice dictation",
+   "keywords": [
+    "voxtype",
+    "dictation",
+    "install",
+    "voice"
+   ]
+  },
+  "omarchy install editor emacs": {
+   "description": "install the Emacs editor",
+   "keywords": [
+    "emacs",
+    "install",
+    "editor"
+   ]
+  },
+  "omarchy install editor helix": {
+   "description": "install the Helix editor",
+   "keywords": [
+    "helix",
+    "install",
+    "editor"
+   ]
+  },
+  "omarchy install gaming battlenet": {
+   "description": "install Battle.net (Blizzard games: Diablo, Overwatch, WoW)",
+   "keywords": [
+    "install",
+    "gaming",
+    "battlenet",
+    "blizzard",
+    "diablo",
+    "overwatch",
+    "wow"
+   ]
+  },
+  "omarchy remove gaming battlenet": {
+   "description": "uninstall Battle.net and its games and data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "battlenet",
+    "blizzard",
+    "diablo",
+    "overwatch",
+    "wow"
+   ]
+  },
+  "omarchy install gaming geforce-now": {
+   "description": "install GeForce NOW cloud gaming",
+   "keywords": [
+    "install",
+    "gaming",
+    "geforce",
+    "nvidia",
+    "cloud",
+    "gaming"
+   ]
+  },
+  "omarchy remove gaming geforce-now": {
+   "description": "uninstall GeForce NOW cloud gaming and its games and data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "geforce",
+    "nvidia",
+    "cloud",
+    "gaming"
+   ]
+  },
+  "omarchy install gaming heroic": {
+   "description": "install the Heroic launcher for Epic, GOG and Amazon games",
+   "keywords": [
+    "install",
+    "gaming",
+    "heroic",
+    "epic",
+    "gog",
+    "amazon",
+    "games"
+   ]
+  },
+  "omarchy remove gaming heroic": {
+   "description": "uninstall the Heroic launcher for Epic, GOG and Amazon games and its games and data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "heroic",
+    "epic",
+    "gog",
+    "amazon",
+    "games"
+   ]
+  },
+  "omarchy install gaming lutris": {
+   "description": "install Lutris with Wine for running Windows games",
+   "keywords": [
+    "install",
+    "gaming",
+    "lutris",
+    "wine",
+    "windows",
+    "games"
+   ]
+  },
+  "omarchy remove gaming lutris": {
+   "description": "uninstall Lutris with Wine for running Windows games and its games and data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "lutris",
+    "wine",
+    "windows",
+    "games"
+   ]
+  },
+  "omarchy install gaming retroarch": {
+   "description": "install RetroArch for retro console emulation",
+   "keywords": [
+    "install",
+    "gaming",
+    "retroarch",
+    "emulator",
+    "retro",
+    "roms"
+   ]
+  },
+  "omarchy remove gaming retroarch": {
+   "description": "uninstall RetroArch for retro console emulation and its games and data",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "retroarch",
+    "emulator",
+    "retro",
+    "roms"
+   ]
+  },
+  "omarchy install gaming gpu-lib32": {
+   "description": "install the 32-bit graphics drivers games need",
+   "keywords": [
+    "drivers",
+    "32bit",
+    "lib32",
+    "vulkan",
+    "gpu",
+    "games"
+   ]
+  },
+  "omarchy install gaming xbox-cloud": {
+   "description": "install Xbox Cloud Gaming",
+   "keywords": [
+    "xbox",
+    "cloud",
+    "gaming",
+    "game",
+    "pass"
+   ]
+  },
+  "omarchy install gaming xbox-controllers": {
+   "description": "add support for Xbox controllers / gamepads",
+   "keywords": [
+    "xbox",
+    "controller",
+    "gamepad",
+    "joystick"
+   ]
+  },
+  "omarchy remove gaming minecraft": {
+   "description": "uninstall Minecraft with its worlds and mods",
+   "keywords": [
+    "minecraft",
+    "uninstall",
+    "remove"
+   ]
+  },
+  "omarchy remove gaming steam": {
+   "description": "uninstall Steam and all its games",
+   "keywords": [
+    "steam",
+    "uninstall",
+    "remove"
+   ]
+  },
+  "omarchy remove gaming xbox cloud": {
+   "description": "remove the Xbox Cloud Gaming app",
+   "keywords": [
+    "xbox",
+    "cloud",
+    "uninstall",
+    "remove"
+   ]
+  },
+  "omarchy remove gaming xbox-controllers": {
+   "description": "remove the Xbox controller driver",
+   "keywords": [
+    "xbox",
+    "controller",
+    "driver",
+    "remove"
+   ]
+  },
+  "omarchy install hermes cli": {
+   "description": "install or check the Hermes command-line tool for the AI agent",
+   "keywords": [
+    "hermes",
+    "cli",
+    "install"
+   ]
+  },
+  "omarchy install openclaw cli": {
+   "description": "install or check the OpenClaw command-line tool for the AI agent",
+   "keywords": [
+    "openclaw",
+    "cli",
+    "install"
+   ]
+  },
+  "omarchy install preinstalls": {
+   "description": "bring back the apps Omarchy came with (default web apps and tools)",
+   "keywords": [
+    "preinstalled",
+    "default",
+    "apps",
+    "restore",
+    "came"
+   ]
+  },
+  "omarchy remove preinstalls": {
+   "description": "remove the apps Omarchy comes with (default web apps and tools) to declutter",
+   "keywords": [
+    "preinstalled",
+    "default",
+    "apps",
+    "bloat",
+    "remove",
+    "declutter"
+   ]
+  },
+  "omarchy install service 1password": {
+   "description": "install 1Password",
+   "keywords": [
+    "install",
+    "1password",
+    "password",
+    "manager"
+   ]
+  },
+  "omarchy install service dropbox": {
+   "description": "install Dropbox",
+   "keywords": [
+    "install",
+    "dropbox",
+    "sync",
+    "cloud",
+    "storage"
+   ]
+  },
+  "omarchy install service nordvpn": {
+   "description": "install NordVPN",
+   "keywords": [
+    "install",
+    "nordvpn",
+    "vpn"
+   ]
+  },
+  "omarchy install service once": {
+   "description": "install the ONCE service",
+   "keywords": [
+    "install",
+    "once"
+   ]
+  },
+  "omarchy install service signal": {
+   "description": "install Signal messenger",
+   "keywords": [
+    "install",
+    "signal",
+    "messenger",
+    "chat"
+   ]
+  },
+  "omarchy install service sunshine": {
+   "description": "install Sunshine game streaming (for Moonlight)",
+   "keywords": [
+    "install",
+    "sunshine",
+    "moonlight",
+    "stream",
+    "streaming"
+   ]
+  },
+  "omarchy remove service 1password": {
+   "description": "uninstall 1Password",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "1password",
+    "password",
+    "manager"
+   ]
+  },
+  "omarchy remove service sunshine": {
+   "description": "uninstall Sunshine game streaming",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "sunshine",
+    "moonlight",
+    "streaming"
+   ]
+  },
+  "omarchy remove service microsoft": {
+   "description": "uninstall the Microsoft Office web apps (Outlook, Word, Excel, Teams\u2026)",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "microsoft",
+    "office",
+    "outlook",
+    "word",
+    "excel",
+    "teams"
+   ]
+  },
+  "omarchy remove service ssh agent": {
+   "description": "uninstall the graphical SSH agent",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "ssh",
+    "agent",
+    "keys"
+   ]
+  },
+  "omarchy install video decode": {
+   "description": "turn on hardware video decoding on Snapdragon laptops",
+   "keywords": [
+    "video",
+    "decode",
+    "hardware",
+    "acceleration",
+    "snapdragon"
+   ]
+  },
+  "omarchy launch battlenet": {
+   "description": "start Battle.net",
+   "keywords": [
+    "battlenet",
+    "blizzard",
+    "launch",
+    "games"
+   ]
+  },
+  "omarchy launch discord community": {
+   "description": "open the Omarchy Discord community",
+   "keywords": [
+    "discord",
+    "community",
+    "omarchy",
+    "chat",
+    "help"
+   ]
+  },
+  "omarchy launch openclaw": {
+   "description": "open the OpenClaw agent control panel",
+   "keywords": [
+    "openclaw",
+    "open",
+    "agent"
+   ]
+  },
+  "omarchy launch terminal herdr": {
+   "description": "open or reattach the persistent herdr terminal session",
+   "keywords": [
+    "herdr",
+    "session",
+    "terminal",
+    "attach"
+   ]
+  },
+  "omarchy launch terminal tmux": {
+   "description": "open or reattach the Work tmux session in a terminal",
+   "keywords": [
+    "tmux",
+    "session",
+    "terminal",
+    "attach"
+   ]
+  },
+  "omarchy menu herdr keybindings": {
+   "description": "show the herdr keyboard shortcuts",
+   "keywords": [
+    "herdr",
+    "keybindings",
+    "shortcuts"
+   ]
+  },
+  "omarchy menu tmux keybindings": {
+   "description": "show the tmux keyboard shortcuts",
+   "keywords": [
+    "tmux",
+    "keybindings",
+    "shortcuts"
+   ]
+  },
+  "omarchy menu plugin": {
+   "description": "pick a status bar / shell plugin to enable, disable, clone or remove",
+   "keywords": [
+    "plugin",
+    "plugins",
+    "shell",
+    "bar",
+    "widget"
+   ]
+  },
+  "omarchy migrate": {
+   "description": "run pending Omarchy migrations (one-off update steps)",
+   "keywords": [
+    "migrate",
+    "migrations",
+    "pending"
+   ]
+  },
+  "omarchy openclaw onboard": {
+   "description": "run the OpenClaw setup wizard",
+   "keywords": [
+    "openclaw",
+    "setup",
+    "onboard",
+    "wizard"
+   ]
+  },
+  "omarchy plugin add": {
+   "description": "add a status bar / shell plugin from a git repository",
+   "keywords": [
+    "plugin",
+    "add",
+    "install",
+    "git",
+    "widget"
+   ]
+  },
+  "omarchy plugin list": {
+   "description": "list the status bar / shell plugins",
+   "keywords": [
+    "plugins",
+    "list",
+    "widgets"
+   ]
+  },
+  "omarchy plugin remove": {
+   "description": "remove an installed status bar / shell plugin",
+   "keywords": [
+    "plugin",
+    "remove",
+    "uninstall"
+   ]
+  },
+  "omarchy plugin update": {
+   "description": "update installed status bar / shell plugins",
+   "keywords": [
+    "plugins",
+    "update"
+   ]
+  },
+  "omarchy plymouth list": {
+   "description": "list the themes available for the boot screen / boot splash",
+   "keywords": [
+    "boot",
+    "plymouth",
+    "splash",
+    "themes",
+    "list"
+   ]
+  },
+  "omarchy plymouth reset": {
+   "description": "reset the boot screen and login screen to the Omarchy default look",
+   "keywords": [
+    "boot",
+    "plymouth",
+    "splash",
+    "login",
+    "reset",
+    "default"
+   ]
+  },
+  "omarchy plymouth switcher": {
+   "description": "open a picker to choose the boot screen / disk unlock screen look",
+   "keywords": [
+    "boot",
+    "plymouth",
+    "unlock",
+    "picker",
+    "splash"
+   ]
+  },
+  "omarchy powerprofiles list": {
+   "description": "list the power profiles this computer supports",
+   "keywords": [
+    "power",
+    "profiles",
+    "list",
+    "modes"
+   ]
+  },
+  "omarchy refresh applications": {
+   "description": "repair missing default app launchers",
+   "keywords": [
+    "launchers",
+    "apps",
+    "missing",
+    "repair",
+    "fix"
+   ]
+  },
+  "omarchy refresh chromium": {
+   "description": "reset Chromium's browser flags back to Omarchy defaults, overwriting your changes",
+   "keywords": [
+    "reset",
+    "default",
+    "defaults",
+    "overwrite",
+    "chromium"
+   ]
+  },
+  "omarchy refresh herdr": {
+   "description": "reset herdr's config back to Omarchy defaults, overwriting your changes",
+   "keywords": [
+    "reset",
+    "default",
+    "defaults",
+    "overwrite",
+    "herdr"
+   ]
+  },
+  "omarchy refresh hyprland": {
+   "description": "reset all Hyprland window manager config files back to Omarchy defaults, overwriting your changes",
+   "keywords": [
+    "reset",
+    "default",
+    "defaults",
+    "overwrite",
+    "hyprland"
+   ]
+  },
+  "omarchy refresh hyprsunset": {
+   "description": "reset the night light (hyprsunset) config back to Omarchy defaults, overwriting your changes",
+   "keywords": [
+    "reset",
+    "default",
+    "defaults",
+    "overwrite",
+    "hyprsunset"
+   ]
+  },
+  "omarchy refresh limine": {
+   "description": "reset the Limine bootloader config back to Omarchy defaults, overwriting your changes",
+   "keywords": [
+    "reset",
+    "default",
+    "defaults",
+    "overwrite",
+    "limine"
+   ]
+  },
+  "omarchy refresh pacman": {
+   "description": "reset the pacman package manager config and mirrors back to Omarchy defaults, overwriting your changes",
+   "keywords": [
+    "reset",
+    "default",
+    "defaults",
+    "overwrite",
+    "pacman"
+   ]
+  },
+  "omarchy refresh plymouth": {
+   "description": "reset the boot / disk unlock screen config back to Omarchy defaults, overwriting your changes",
+   "keywords": [
+    "reset",
+    "default",
+    "defaults",
+    "overwrite",
+    "plymouth"
+   ]
+  },
+  "omarchy refresh sddm": {
+   "description": "reset the login screen theme back to Omarchy defaults, overwriting your changes",
+   "keywords": [
+    "reset",
+    "default",
+    "defaults",
+    "overwrite",
+    "sddm"
+   ]
+  },
+  "omarchy refresh shell": {
+   "description": "reset the Omarchy shell / bar settings (shell.json) back to Omarchy defaults, overwriting your changes",
+   "keywords": [
+    "reset",
+    "default",
+    "defaults",
+    "overwrite",
+    "shell"
+   ]
+  },
+  "omarchy refresh tmux": {
+   "description": "reset the tmux config back to Omarchy defaults, overwriting your changes",
+   "keywords": [
+    "reset",
+    "default",
+    "defaults",
+    "overwrite",
+    "tmux"
+   ]
+  },
+  "omarchy reinstall": {
+   "description": "reinstall Omarchy: its packages and default configs",
+   "keywords": [
+    "reinstall",
+    "omarchy",
+    "fresh",
+    "repair"
+   ]
+  },
+  "omarchy reinstall configs": {
+   "description": "reset all Omarchy config files in your home folder to defaults",
+   "keywords": [
+    "reset",
+    "configs",
+    "dotfiles",
+    "defaults"
+   ]
+  },
+  "omarchy reinstall pkgs": {
+   "description": "reinstall all default Omarchy packages",
+   "keywords": [
+    "reinstall",
+    "packages",
+    "repair"
+   ]
+  },
+  "omarchy remove browser": {
+   "description": "uninstall a web browser",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "browser"
+   ]
+  },
+  "omarchy remove dev env": {
+   "description": "uninstall a programming language / development environment",
+   "keywords": [
+    "uninstall",
+    "remove",
+    "dev",
+    "language",
+    "environment"
+   ]
+  },
+  "omarchy remove dictation superwhisper": {
+   "description": "uninstall Superwhisper dictation",
+   "keywords": [
+    "superwhisper",
+    "uninstall",
+    "remove"
+   ]
+  },
+  "omarchy remove dictation voxtype": {
+   "description": "uninstall Voxtype dictation",
+   "keywords": [
+    "voxtype",
+    "uninstall",
+    "remove"
+   ]
+  },
+  "omarchy remove security fido2": {
+   "description": "turn off security key (FIDO2 / YubiKey) login for sudo",
+   "keywords": [
+    "remove",
+    "disable",
+    "fido2"
+   ]
+  },
+  "omarchy setup security fido2": {
+   "description": "set up security key (FIDO2 / YubiKey) login for sudo",
+   "keywords": [
+    "setup",
+    "enable",
+    "fido2"
+   ]
+  },
+  "omarchy remove security fingerprint": {
+   "description": "turn off fingerprint login",
+   "keywords": [
+    "remove",
+    "disable",
+    "fingerprint"
+   ]
+  },
+  "omarchy setup security fingerprint": {
+   "description": "set up fingerprint login",
+   "keywords": [
+    "setup",
+    "enable",
+    "fingerprint"
+   ]
+  },
+  "omarchy remove security sshd": {
+   "description": "turn off the SSH server (remote login)",
+   "keywords": [
+    "remove",
+    "disable",
+    "sshd"
+   ]
+  },
+  "omarchy setup security sshd": {
+   "description": "set up the SSH server (remote login)",
+   "keywords": [
+    "setup",
+    "enable",
+    "sshd"
+   ]
+  },
+  "omarchy remove security sudoless docker": {
+   "description": "turn off running Docker without sudo",
+   "keywords": [
+    "remove",
+    "disable",
+    "sudoless",
+    "docker"
+   ]
+  },
+  "omarchy setup security sudoless docker": {
+   "description": "set up running Docker without sudo",
+   "keywords": [
+    "setup",
+    "enable",
+    "sudoless",
+    "docker"
+   ]
+  },
+  "omarchy setup security ssh agent": {
+   "description": "set up an SSH agent that asks for key passphrases in a popup",
+   "keywords": [
+    "ssh",
+    "agent",
+    "keys",
+    "passphrase"
+   ]
+  },
+  "omarchy restart btop": {
+   "description": "reload btop's config",
+   "keywords": [
+    "btop",
+    "reload"
+   ]
+  },
+  "omarchy restart helix": {
+   "description": "reload Helix's config",
+   "keywords": [
+    "helix",
+    "reload"
+   ]
+  },
+  "omarchy restart herdr": {
+   "description": "reload herdr",
+   "keywords": [
+    "herdr",
+    "reload"
+   ]
+  },
+  "omarchy restart hyprsunset": {
+   "description": "restart the night light service when it's stuck",
+   "keywords": [
+    "nightlight",
+    "hyprsunset",
+    "restart",
+    "stuck"
+   ]
+  },
+  "omarchy restart opencode": {
+   "description": "reload opencode's config",
+   "keywords": [
+    "opencode",
+    "reload"
+   ]
+  },
+  "omarchy restart tmux": {
+   "description": "restart tmux with the latest config",
+   "keywords": [
+    "tmux",
+    "restart",
+    "reload"
+   ]
+  },
+  "omarchy restart xcompose": {
+   "description": "restart the compose key / input method service to apply new compose key settings",
+   "keywords": [
+    "compose",
+    "xcompose",
+    "fcitx",
+    "input"
+   ]
+  },
+  "omarchy setup direct boot": {
+   "description": "add or remove a firmware boot entry that boots Omarchy directly",
+   "keywords": [
+    "boot",
+    "efi",
+    "uefi",
+    "direct",
+    "entry"
+   ]
+  },
+  "omarchy setup input": {
+   "description": "set up typing in Japanese, Korean or Chinese (input method)",
+   "keywords": [
+    "input",
+    "japanese",
+    "korean",
+    "chinese",
+    "ime",
+    "typing"
+   ]
+  },
+  "omarchy sudo passwordless": {
+   "description": "let sudo run without asking for a password, for a while or permanently, or turn that off",
+   "keywords": [
+    "sudo",
+    "password",
+    "passwordless",
+    "nopasswd"
+   ]
+  },
+  "omarchy system wake": {
+   "description": "wake the screens up and restore brightness",
+   "keywords": [
+    "wake",
+    "screens",
+    "display"
+   ]
+  },
+  "omarchy tailscale receive": {
+   "description": "save files sent to this computer over Tailscale (Taildrop)",
+   "keywords": [
+    "tailscale",
+    "taildrop",
+    "receive",
+    "files"
+   ]
+  },
+  "omarchy theme extras": {
+   "description": "list the extra themes installed from git",
+   "keywords": [
+    "themes",
+    "extra",
+    "installed",
+    "git",
+    "list"
+   ]
+  },
+  "omarchy theme set fcitx5": {
+   "description": "apply the current theme to the Fcitx input method popup",
+   "keywords": [
+    "fcitx",
+    "input",
+    "theme"
+   ]
+  },
+  "omarchy theme set hermes": {
+   "description": "apply the current theme to Hermes",
+   "keywords": [
+    "hermes",
+    "theme"
+   ]
+  },
+  "omarchy theme set hunk": {
+   "description": "refresh colours in open Hunk sessions",
+   "keywords": [
+    "hunk",
+    "theme"
+   ]
+  },
+  "omarchy theme set keyboard asus rog": {
+   "description": "light an ASUS ROG keyboard in the theme colour",
+   "keywords": [
+    "asus",
+    "rog",
+    "keyboard",
+    "rgb"
+   ]
+  },
+  "omarchy theme set keyboard f16": {
+   "description": "light a Framework 16 keyboard in the theme colour",
+   "keywords": [
+    "framework",
+    "keyboard",
+    "rgb"
+   ]
+  },
+  "omarchy theme set pi": {
+   "description": "apply the current theme to Pi",
+   "keywords": [
+    "pi",
+    "theme"
+   ]
+  },
+  "omarchy theme set t3code": {
+   "description": "apply the current theme to T3 Code",
+   "keywords": [
+    "t3",
+    "code",
+    "theme"
+   ]
+  },
+  "omarchy transcode": {
+   "description": "convert pictures or videos to a smaller, shareable format",
+   "keywords": [
+    "convert",
+    "compress",
+    "transcode",
+    "video",
+    "image",
+    "format"
+   ]
+  },
+  "omarchy tui remove": {
+   "description": "remove a terminal app launcher",
+   "keywords": [
+    "tui",
+    "launcher",
+    "remove"
+   ]
+  },
+  "omarchy tui remove all": {
+   "description": "remove all terminal app launchers",
+   "keywords": [
+    "tui",
+    "launchers",
+    "remove",
+    "all"
+   ]
+  },
+  "omarchy webapp remove": {
+   "description": "remove a web app launcher",
+   "keywords": [
+    "webapp",
+    "remove",
+    "launcher"
+   ]
+  },
+  "omarchy webapp remove all": {
+   "description": "remove all web app launchers",
+   "keywords": [
+    "webapps",
+    "remove",
+    "all"
+   ]
+  },
+  "omarchy webapp handler hey": {
+   "description": "open HEY email",
+   "keywords": [
+    "hey",
+    "email",
+    "mail"
+   ]
+  },
+  "omarchy webapp handler zoom": {
+   "description": "open a Zoom meeting link",
+   "keywords": [
+    "zoom",
+    "meeting"
+   ]
+  },
+  "omarchy update analyze logs": {
+   "description": "check the last update's log for known problems",
+   "keywords": [
+    "update",
+    "log",
+    "failed",
+    "problems"
+   ]
+  },
+  "omarchy update confirm": {
+   "description": "ask for confirmation, then start a system update",
+   "keywords": [
+    "update",
+    "confirm"
+   ]
+  },
+  "omarchy update keyring": {
+   "description": "repair the package signing keys (keyring), e.g. after signature errors",
+   "keywords": [
+    "keyring",
+    "keys",
+    "signature",
+    "pgp",
+    "pacman"
+   ]
+  },
+  "omarchy update orphan pkgs": {
+   "description": "review and remove leftover packages nothing needs anymore",
+   "keywords": [
+    "orphans",
+    "unused",
+    "packages",
+    "cleanup"
+   ]
+  },
+  "omarchy update restart": {
+   "description": "after an update has already finished, do the service restarts or reboot that update asked for (only follow-up, does not update anything)",
+   "keywords": [
+    "pending",
+    "restart",
+    "services",
+    "after",
+    "update"
+   ]
+  },
+  "omarchy upgrade to quattro": {
+   "description": "upgrade an old Omarchy install to the new package-based layout",
+   "keywords": [
+    "quattro",
+    "upgrade",
+    "migrate",
+    "legacy"
+   ]
+  },
+  "omarchy version channel": {
+   "description": "show the Omarchy mirror and release channel in use",
+   "keywords": [
+    "version",
+    "channel",
+    "mirror"
+   ]
+  },
+  "omarchy version pkgs": {
+   "description": "show when the system packages were last updated",
+   "keywords": [
+    "last",
+    "updated",
+    "packages",
+    "when"
+   ]
+  },
+  "omarchy voxtype config": {
+   "description": "open Voxtype's settings",
+   "keywords": [
+    "voxtype",
+    "settings",
+    "config"
+   ]
+  },
+  "omarchy voxtype model": {
+   "description": "choose the AI speech model Voxtype uses",
+   "keywords": [
+    "voxtype",
+    "model",
+    "speech"
+   ]
+  },
+  "omarchy windows key": {
+   "description": "show the Windows product / license key stored in the firmware",
+   "keywords": [
+    "windows",
+    "license",
+    "key",
+    "product"
+   ]
+  },
+  "omarchy update dev": {
+   "description": "update the Omarchy development checkout (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": [
+    "dev"
+   ]
+  },
+  "omarchy audio output sink": {
+   "description": "print the audio sink in use (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy audio sink availability": {
+   "description": "print audio device availability (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy battery present": {
+   "description": "check for a battery (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy power present": {
+   "description": "check for external power (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy pkg aur accessible": {
+   "description": "check that the AUR is reachable (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy monitor state": {
+   "description": "print monitor panel state (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy weather icon": {
+   "description": "print a weather icon (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy system stats": {
+   "description": "print CPU and memory numbers (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy migrate notify": {
+   "description": "notify about pending migrations (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy show done": {
+   "description": "print a Done message (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy show logo": {
+   "description": "print the Omarchy logo (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy osd": {
+   "description": "draw the on-screen display popup (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy n1x probe": {
+   "description": "record N1x hardware evidence (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy powerprofiles init": {
+   "description": "set the boot-time power profile (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy hook": {
+   "description": "run a named hook script (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy sudo keepalive": {
+   "description": "keep sudo credentials alive (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy drive select": {
+   "description": "pick a drive for other scripts (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy theme bg cache": {
+   "description": "cache wallpaper thumbnails (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy cmd missing": {
+   "description": "check for missing commands (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
+  },
+  "omarchy cmd present": {
+   "description": "check for required commands (an internal helper used by the status bar and scripts, not something people ask for)",
+   "keywords": []
   }
  },
  "args": {
   "omarchy theme set": {
    "pos0": {
-    "question": "Which colour theme does the user want to switch the desktop to?"
+    "question": "Which colour theme does the user want to switch the desktop to?",
+    "label": "theme"
    }
   },
   "omarchy plymouth set by theme": {
    "pos0": {
-    "question": "Which colour theme should the boot screen be styled after?"
+    "question": "Which colour theme should the boot screen be styled after?",
+    "label": "theme"
    }
   },
   "omarchy theme remove": {
    "pos0": {
-    "question": "Which colour theme does the user want deleted?"
+    "question": "Which colour theme does the user want deleted?",
+    "label": "theme"
    }
   },
   "omarchy font set": {
    "pos0": {
-    "question": "Which font does the user want to use?"
+    "question": "Which font does the user want to use?",
+    "label": "font"
    }
   },
   "omarchy bar position": {
@@ -1584,7 +3237,8 @@
      "bottom": "the bottom edge of the screen",
      "left": "the left side of the screen",
      "right": "the right side of the screen"
-    }
+    },
+    "label": "edge"
    }
   },
   "omarchy dock position": {
@@ -1596,7 +3250,8 @@
      "bottom": "the bottom edge",
      "left": "the left side",
      "right": "the right side"
-    }
+    },
+    "label": "edge"
    }
   },
   "omarchy bar background": {
@@ -1608,7 +3263,8 @@
      "glassy": "a frosted, see-through glass background",
      "none": "no background at all, fully transparent",
      "cycle": "go to the next background style, without naming one"
-    }
+    },
+    "label": "background"
    }
   },
   "omarchy toggle bar": {
@@ -1619,7 +3275,8 @@
      "on": "hide the bar, make it disappear",
      "off": "show the bar, bring it back",
      "toggle": "flip it: hide it if visible, show it if hidden"
-    }
+    },
+    "label": "bar"
    }
   },
   "omarchy toggle idle": {
@@ -1631,7 +3288,8 @@
      "allow-idle": "let the computer idle, lock and sleep normally again",
      "toggle": "flip the current setting",
      "status": "just report whether it is being kept awake"
-    }
+    },
+    "label": "mode"
    }
   },
   "omarchy toggle animations": {
@@ -1642,7 +3300,8 @@
      "on": "turn animations, blur and shadows on",
      "off": "turn animations, blur and shadows off",
      "toggle": "flip the current setting"
-    }
+    },
+    "label": "state"
    }
   },
   "omarchy toggle fullscreen desktop": {
@@ -1653,7 +3312,8 @@
      "on": "turn the distraction-free mode on",
      "off": "turn it off, bring back the bar and gaps",
      "toggle": "flip the current setting"
-    }
+    },
+    "label": "state"
    }
   },
   "omarchy toggle touchpad": {
@@ -1664,7 +3324,8 @@
      "on": "enable the touchpad",
      "off": "disable the touchpad",
      "toggle": "flip the current state"
-    }
+    },
+    "label": "state"
    }
   },
   "omarchy toggle touchscreen": {
@@ -1675,7 +3336,8 @@
      "on": "enable touch",
      "off": "disable touch",
      "toggle": "flip the current state"
-    }
+    },
+    "label": "state"
    }
   },
   "omarchy toggle nightlight": {
@@ -1693,7 +3355,8 @@
      "windows": "a single window",
      "fullscreen": "the entire screen",
      "scroll": "a long scrolling capture of a page"
-    }
+    },
+    "label": "area"
    },
    "pos1": {
     "question": "What should happen with the screenshot afterwards?",
@@ -1701,7 +3364,8 @@
     "options": {
      "copy": "copy it to the clipboard to paste somewhere",
      "save": "save it as a file"
-    }
+    },
+    "label": "then"
    }
   },
   "omarchy capture screenrecording": {
@@ -1724,7 +3388,8 @@
      "small": "a small webcam overlay",
      "medium": "a medium webcam overlay",
      "large": "a large webcam overlay"
-    }
+    },
+    "label": "webcam size"
    },
    "--stop-recording": {
     "question": "Is the user asking to stop a recording that is already running?"
@@ -1740,7 +3405,8 @@
      "raise": "make the sound louder, turn it up",
      "lower": "make the sound quieter, turn it down",
      "mute-toggle": "silence the sound completely, or unsilence it"
-    }
+    },
+    "label": "volume"
    }
   },
   "omarchy audio source switch": {
@@ -1750,7 +3416,8 @@
     "options": {
      "next": "the next media source",
      "previous": "the previous media source"
-    }
+    },
+    "label": "direction"
    }
   },
   "omarchy brightness display": {
@@ -1766,7 +3433,8 @@
      "100%": "full / maximum brightness",
      "off": "turn the display off",
      "on": "turn the display back on"
-    }
+    },
+    "label": "brightness"
    },
    "--no-osd": {
     "question": "Does the user ask for no on-screen popup when changing brightness?"
@@ -1781,7 +3449,8 @@
      "cycle": "step to the next brightness level",
      "off": "turn the keyboard light off",
      "restore": "bring the keyboard light back to how it was"
-    }
+    },
+    "label": "light"
    },
    "--no-osd": {
     "question": "Does the user ask for no on-screen popup?"
@@ -1795,7 +3464,8 @@
      "off": "turn bluetooth off",
      "toggle": "flip bluetooth on or off",
      "is-on": "just check whether bluetooth is on"
-    }
+    },
+    "label": "bluetooth"
    }
   },
   "omarchy network speedtest": {
@@ -1805,7 +3475,8 @@
     "options": {
      "down": "download speed",
      "up": "upload speed"
-    }
+    },
+    "label": "direction"
    }
   },
   "omarchy network band": {
@@ -1817,7 +3488,8 @@
      "2.4": "the 2.4 GHz band, longer range",
      "5": "the 5 GHz band, faster",
      "6": "the 6 GHz band"
-    }
+    },
+    "label": "band"
    }
   },
   "omarchy dns": {
@@ -1829,7 +3501,8 @@
      "Google": "Google DNS (8.8.8.8)",
      "DHCP": "the automatic DNS from the router or network, the default",
      "Custom": "a custom DNS server the user will enter"
-    }
+    },
+    "label": "DNS"
    }
   },
   "omarchy display text size": {
@@ -1838,7 +3511,8 @@
     "stated": "Does the request ask to reset text size back to the default?",
     "options": {
      "reset": "reset text size to the default"
-    }
+    },
+    "label": "text size"
    }
   },
   "omarchy hyprland monitor scaling": {
@@ -1848,7 +3522,8 @@
     "options": {
      "up": "scale up, make everything on screen bigger",
      "down": "scale down, make everything smaller and fit more"
-    }
+    },
+    "label": "scaling"
    }
   },
   "omarchy hyprland monitor internal": {
@@ -1859,7 +3534,8 @@
      "off": "turn the laptop screen off",
      "toggle": "flip it on or off",
      "recover": "recover it after something went wrong"
-    }
+    },
+    "label": "laptop screen"
    }
   },
   "omarchy hyprland monitor internal mirror": {
@@ -1870,7 +3546,8 @@
      "off": "stop mirroring",
      "toggle": "flip mirroring on or off",
      "recover": "recover after something went wrong"
-    }
+    },
+    "label": "mirroring"
    }
   },
   "omarchy hyprland window transparency": {
@@ -1881,7 +3558,8 @@
      "opaque": "fully solid, not see-through",
      "transparent": "see-through",
      "glassy": "frosted, blurred glass"
-    }
+    },
+    "label": "windows"
    }
   },
   "omarchy hyprland corners": {
@@ -1892,7 +3570,8 @@
      "rounded": "rounded corners",
      "sharp": "sharp, square corners",
      "theme": "whatever the current theme uses"
-    }
+    },
+    "label": "corners"
    }
   },
   "omarchy hyprland workspace layout default": {
@@ -1903,7 +3582,8 @@
      "dwindle": "tiling: windows split the screen between them",
      "scrolling": "scrolling: windows in a row you scroll through",
      "floating": "floating: windows overlap freely like a classic desktop"
-    }
+    },
+    "label": "layout"
    }
   },
   "omarchy dock autohide": {
@@ -1914,7 +3594,8 @@
      "on": "hide the dock automatically",
      "off": "keep the dock visible",
      "toggle": "flip the setting"
-    }
+    },
+    "label": "autohide"
    }
   },
   "omarchy system": {
@@ -1925,7 +3606,8 @@
      "reboot": "restart / reboot the computer",
      "reboot-boot-menu": "restart into the boot menu / firmware menu",
      "shutdown": "shut down / power off / turn off the computer"
-    }
+    },
+    "label": "action"
    }
   },
   "omarchy powerprofiles set": {
@@ -1936,7 +3618,8 @@
      "ac": "when plugged in / charging",
      "battery": "when running on battery",
      "autodetect": "for whichever state the laptop is in now"
-    }
+    },
+    "label": "power source"
    },
    "pos1": {
     "question": "Which power profile should be used?",
@@ -1945,7 +3628,8 @@
      "power-saver": "save power, longer battery life, quieter",
      "balanced": "a balance of speed and power use",
      "performance": "maximum speed and performance"
-    }
+    },
+    "label": "profile"
    }
   },
   "omarchy default browser": {
@@ -1960,7 +3644,8 @@
      "edge": "Microsoft Edge",
      "firefox": "Firefox",
      "zen": "Zen browser"
-    }
+    },
+    "label": "browser"
    }
   },
   "omarchy install browser": {
@@ -1974,7 +3659,8 @@
      "edge": "Microsoft Edge",
      "firefox": "Firefox",
      "zen": "Zen browser"
-    }
+    },
+    "label": "browser"
    }
   },
   "omarchy remove browser": {
@@ -1987,7 +3673,8 @@
      "edge": "Microsoft Edge",
      "firefox": "Firefox",
      "zen": "Zen browser"
-    }
+    },
+    "label": "browser"
    }
   },
   "omarchy default terminal": {
@@ -1999,7 +3686,8 @@
      "foot": "Foot",
      "ghostty": "Ghostty",
      "kitty": "Kitty"
-    }
+    },
+    "label": "terminal"
    }
   },
   "omarchy install terminal": {
@@ -2010,7 +3698,8 @@
      "foot": "Foot",
      "ghostty": "Ghostty",
      "kitty": "Kitty"
-    }
+    },
+    "label": "terminal"
    }
   },
   "omarchy default editor": {
@@ -2026,7 +3715,8 @@
      "vim": "Vim",
      "emacs": "Emacs",
      "nvim": "Neovim"
-    }
+    },
+    "label": "editor"
    }
   },
   "omarchy share": {
@@ -2036,7 +3726,8 @@
      "clipboard": "what is copied on the clipboard",
      "file": "one or more files",
      "folder": "a folder"
-    }
+    },
+    "label": "what"
    }
   },
   "omarchy dictation": {
@@ -2046,7 +3737,8 @@
      "start": "start dictating / listening",
      "stop": "stop dictating",
      "toggle": "flip dictation on or off"
-    }
+    },
+    "label": "dictation"
    }
   },
   "omarchy snapshot": {
@@ -2055,7 +3747,8 @@
     "options": {
      "create": "make a new snapshot / backup point",
      "restore": "restore or roll back to an earlier snapshot"
-    }
+    },
+    "label": "action"
    }
   },
   "omarchy theme bg intro": {
@@ -2066,7 +3759,8 @@
      "disable": "turn intros off",
      "toggle": "flip intros on or off",
      "status": "check whether intros are on"
-    }
+    },
+    "label": "intros"
    }
   },
   "omarchy agent account use": {
@@ -2075,7 +3769,18 @@
     "stated": "Does the request ask to switch to the next account?",
     "options": {
      "next": "the next account"
-    }
+    },
+    "label": "account"
+   },
+   "pos0": {
+    "label": "provider",
+    "question": "Which AI provider's account should be switched?",
+    "options": {
+     "claude": "Claude (Anthropic)",
+     "codex": "Codex (OpenAI)",
+     "grok": "Grok (xAI)"
+    },
+    "stated": "Does the request name Claude, Codex or Grok?"
    }
   },
   "omarchy windows vm": {
@@ -2087,7 +3792,267 @@
      "stop": "stop / shut it down",
      "status": "check whether it is running",
      "remove": "delete it"
+    },
+    "label": "action"
+   }
+  },
+  "omarchy agent account add": {
+   "pos3": {
+    "label": "provider",
+    "question": "Which AI provider's account should be added?",
+    "options": {
+     "claude": "Claude (Anthropic)",
+     "codex": "Codex (OpenAI)",
+     "grok": "Grok (xAI)"
+    },
+    "stated": "Does the request name Claude, Codex or Grok?"
+   }
+  },
+  "omarchy agent account list": {
+   "pos0": {
+    "label": "provider",
+    "question": "Which AI provider's accounts should be listed?",
+    "options": {
+     "claude": "Claude (Anthropic)",
+     "codex": "Codex (OpenAI)",
+     "grok": "Grok (xAI)"
+    },
+    "stated": "Does the request name Claude, Codex or Grok?"
+   }
+  },
+  "omarchy agent account mode": {
+   "pos0": {
+    "label": "provider",
+    "question": "Which AI provider's accounts does this apply to?",
+    "options": {
+     "claude": "Claude (Anthropic)",
+     "codex": "Codex (OpenAI)",
+     "grok": "Grok (xAI)"
+    },
+    "stated": "Does the request name Claude, Codex or Grok?"
+   },
+   "pos1": {
+    "label": "mode",
+    "question": "Should accounts switch automatically near a limit, or only notify?",
+    "options": {
+     "auto": "switch to another account automatically",
+     "manual": "only notify, don't switch"
+    },
+    "stated": "Does the request say automatic or manual?"
+   }
+  },
+  "omarchy branding about": {
+   "pos0": {
+    "label": "what",
+    "question": "Should the branding use an image, use text, or go back to the default?",
+    "options": {
+     "image": "use a picture / logo image",
+     "text": "use custom text",
+     "reset": "go back to the default"
     }
+   }
+  },
+  "omarchy branding screensaver": {
+   "pos0": {
+    "label": "what",
+    "question": "Should the branding use an image, use text, or go back to the default?",
+    "options": {
+     "image": "use a picture / logo image",
+     "text": "use custom text",
+     "reset": "go back to the default"
+    }
+   }
+  },
+  "omarchy brightness keyboard mute": {
+   "pos0": {
+    "label": "light",
+    "question": "Should the mic-mute light be on or off?",
+    "options": {
+     "on": "light on",
+     "off": "light off"
+    }
+   }
+  },
+  "omarchy channel set": {
+   "pos0": {
+    "label": "channel",
+    "question": "Which release channel should Omarchy follow?",
+    "options": {
+     "stable": "stable releases, the default",
+     "rc": "release candidates, a little ahead",
+     "edge": "edge, the newest builds",
+     "dev": "development builds"
+    }
+   }
+  },
+  "omarchy crash mute": {
+   "pos1": {
+    "label": "state",
+    "question": "Should crash alerts be silenced, unsilenced, or flipped?",
+    "options": {
+     "on": "silence the crash alerts",
+     "off": "allow the crash alerts again",
+     "toggle": "flip it"
+    },
+    "stated": "Does the request say whether to silence or allow them?"
+   }
+  },
+  "omarchy dictation superwhisper": {
+   "pos0": {
+    "label": "dictation",
+    "question": "Should dictation start, stop, or toggle?",
+    "options": {
+     "start": "start dictating",
+     "stop": "stop dictating",
+     "toggle": "flip dictation on or off"
+    }
+   }
+  },
+  "omarchy dictation voxtype": {
+   "pos0": {
+    "label": "dictation",
+    "question": "Should dictation start, stop, or toggle?",
+    "options": {
+     "start": "start dictating",
+     "stop": "stop dictating",
+     "toggle": "flip dictation on or off"
+    }
+   }
+  },
+  "omarchy font cjk": {
+   "pos0": {
+    "label": "glyphs",
+    "question": "Which regional style should Chinese, Japanese and Korean characters use?",
+    "options": {
+     "jp": "Japanese",
+     "kr": "Korean",
+     "sc": "Simplified Chinese (mainland)",
+     "tc": "Traditional Chinese (Taiwan)",
+     "hk": "Hong Kong Chinese",
+     "default": "the default"
+    },
+    "stated": "Does the request name a language or region for the characters?"
+   }
+  },
+  "omarchy hyprland window width": {
+   "pos0": {
+    "label": "action",
+    "question": "Should the window width be saved or put back?",
+    "options": {
+     "save": "remember the current width",
+     "restore": "put back the saved width"
+    }
+   }
+  },
+  "omarchy install hermes cli": {
+   "pos0": {
+    "label": "action",
+    "question": "Install now, only check, or move off the mise copy?",
+    "options": {
+     "--now": "install it now",
+     "--check": "only check whether it's installed",
+     "--retire-mise": "replace the mise-managed copy"
+    }
+   }
+  },
+  "omarchy install openclaw cli": {
+   "pos0": {
+    "label": "action",
+    "question": "Install now or only check?",
+    "options": {
+     "--now": "install it now",
+     "--check": "only check whether it's installed"
+    }
+   }
+  },
+  "omarchy menu plugin": {
+   "pos0": {
+    "label": "action",
+    "question": "What should happen to the plugin?",
+    "options": {
+     "enable": "turn a plugin on",
+     "disable": "turn a plugin off",
+     "clone": "copy a plugin to customise it",
+     "remove": "delete a plugin"
+    }
+   }
+  },
+  "omarchy remove dev env": {
+   "pos0": {
+    "label": "language",
+    "question": "Which programming language or framework environment should be removed?",
+    "options": {
+     "ruby": "ruby",
+     "node": "node",
+     "bun": "bun",
+     "deno": "deno",
+     "go": "go",
+     "php": "php",
+     "laravel": "laravel",
+     "symfony": "symfony",
+     "python": "python",
+     "elixir": "elixir",
+     "phoenix": "phoenix",
+     "zig": "zig",
+     "rust": "rust",
+     "java": "java",
+     "dotnet": "dotnet",
+     "ocaml": "ocaml",
+     "clojure": "clojure",
+     "scala": "scala"
+    }
+   }
+  },
+  "omarchy setup input": {
+   "pos0": {
+    "label": "input method",
+    "question": "Which language's typing input method should be set up?",
+    "options": {
+     "mozc": "Japanese (Mozc)",
+     "hangul": "Korean (Hangul)",
+     "pinyin": "Simplified Chinese (Pinyin)",
+     "chewing": "Traditional Chinese (Zhuyin / Chewing)",
+     "cangjie5": "Traditional Chinese (Cangjie)"
+    },
+    "stated": "Does the request name a language or input method?"
+   }
+  },
+  "omarchy sudo passwordless": {
+   "pos0": {
+    "label": "how",
+    "question": "Should sudo stop asking for a password permanently, or should that be checked or turned off?",
+    "options": {
+     "permanent": "never ask for a password",
+     "--active": "just check whether it's on",
+     "--disable": "ask for the password again"
+    },
+    "stated": "Does the request say permanently, or ask to check or turn it off?"
+   }
+  },
+  "omarchy update restart": {
+   "pos0": {
+    "label": "which",
+    "question": "Restart only services, or only reboot?",
+    "options": {
+     "--services-only": "restart services, no reboot",
+     "--reboot-only": "only the reboot"
+    },
+    "stated": "Does the request say only services or only a reboot?"
+   }
+  },
+  "omarchy theme set fcitx5": {
+   "--activate": {
+    "question": "Does the user also want the theme switched on there right away, not just synced?"
+   }
+  },
+  "omarchy theme set hermes": {
+   "--activate": {
+    "question": "Does the user also want the theme switched on there right away, not just synced?"
+   }
+  },
+  "omarchy theme set pi": {
+   "--activate": {
+    "question": "Does the user also want the theme switched on there right away, not just synced?"
    }
   }
  }
