@@ -115,6 +115,36 @@ Held-out test, balanced preset:
 Remaining false commands are mostly "picker" commands given a specific value (timezone, language, keyboard
 layout, AUR package): they open the right picker, but the eval labels them as escalations.
 
+## Jev vs Kev-0.8B (2026-10-18)
+
+[Kev](https://github.com/jaredpalmer/kev) is an open, local System One–compatible model family (Qwen3.5 + LoRA +
+pointer head). The TypeSafe SDK talks to it unchanged via `TYPESAFE_BASE_URL`; Omi turns off zstd request
+compression for custom base URLs because Kev's server doesn't accept it.
+
+This machine (i7-7700K, 16 GB, AMD RX 580 — no usable GPU) can only run Kev-0.8B, on CPU in fp32. Kev-4B needs
+8–16 GB just for weights and would take minutes per request here. Same 100-row sample of the held-out test split
+(83 commands, 17 escalations), same spec and retriever:
+
+| | command | args | over-escalate | false-command | time per request |
+|---|---|---|---|---|---|
+| Jev 1.13, balanced | 86.7% | 86.7% | 10.8% | 5.9% | ~80 ms (API) |
+| Jev 1.13, best thresholds at ≤6% false-command | 89.2% | 89.2% | 8.4% | 5.9% | |
+| Kev-0.8B, Jev's thresholds | 14.5% | 12.0% | 85.5% | 17.6% | ~30 s (CPU, alone) |
+| Kev-0.8B, best thresholds at ≤6% false-command | 10.8% | 10.8% | 89.2% | 5.9% | |
+| Kev-0.8B, best at ≤35% false-command | 49.4% | 49.4% | 38.6% | 35.3% | |
+| Jev, gates off (command pick only) | 96.4% | 95.2% | 0% | 100% | |
+| Kev-0.8B, gates off (command pick only) | 89.2% | 79.5% | 0% | 100% | |
+
+- Kev-0.8B is a usable *picker* (89% right command among 8 candidates) but its Noul judgments carry almost no
+  signal on Omi's questions: its "is this an action?" median is 0.41 on command rows and 0.40 on escalation rows,
+  so no threshold separates them. The escalate gates are what make Omi safe, so Kev-0.8B can't replace Jev here.
+- At ~30 s per request on this CPU it also fails the latency bar by two orders of magnitude.
+- Not tested: Kev-4B / 9B / 27B, which Kev's README puts within 1–4 points of Jev on its own suites. That needs a
+  GPU (an L40S or H100 on Modal, per Kev's docs). To reproduce: start
+  `kev.serve --run jaredpalmer/kev-4b@v1.0 --port 8009`, then
+  `TYPESAFE_BASE_URL=http://127.0.0.1:8009 TYPESAFE_API_KEY=local omi-ai eval run --split test --sample 100 --model kev-latest`
+  with a separate `XDG_CACHE_HOME` and a long `model.timeout_s`.
+
 ## Gates
 
 - Installer: `bin/omi-ai-install` (venv, key file 600, units, symlinks, privacy notice once).

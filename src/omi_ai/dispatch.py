@@ -114,7 +114,7 @@ class Dispatcher:
         self,
         client: TypeSafeClient | None = None,
         k: int = 8,
-        model: str = MODEL,
+        model: str | None = None,
         thresholds: Thresholds | None = None,
         config: Config | None = None,
         fixtures: dict | None = None,
@@ -126,15 +126,13 @@ class Dispatcher:
         self.forms = {r: f for r, f in catalog.forms().items() if f.fillable()}
         self.retriever = Retriever(self.forms, self.spec, load_synonyms())
         self.client = client
-        self.k = k
-        self.model = model
         self.config = config
         if config is not None:
             k = config["retrieval"]["candidates"]
-            model = os.environ.get("OMI_AI_MODEL") or config["model"]["name"]
         self.th = thresholds or (Thresholds.from_config(config) if config else Thresholds())
         self.k = k
-        self.model = model
+        # Explicit argument > OMI_AI_MODEL > config file > built-in default.
+        self.model = model or os.environ.get("OMI_AI_MODEL") or (config["model"]["name"] if config else MODEL)
         self.fixtures = fixtures
         self.record = record
         self._dyn: dict[str, tuple[float, dict]] = {}
@@ -254,7 +252,9 @@ class Dispatcher:
             return out, True
         if self.client is None:
             timeout = self.config["model"]["timeout_s"] if self.config else 8
-            self.client = TypeSafeClient(api_key=read_api_key(), timeout=timeout)
+            # Self-hosted System One servers (e.g. Kev) may not accept zstd request bodies.
+            compression = False if os.environ.get("TYPESAFE_BASE_URL") else None
+            self.client = TypeSafeClient(api_key=read_api_key(), timeout=timeout, compression=compression)
         r = self.client.system_one(state, qs, model=self.model)
         out = {
             "model": r.model,

@@ -95,6 +95,16 @@ def run(d: Dispatcher, data: list[dict], workers: int = 8):
         return list(ex.map(one, data))
 
 
+def sample(data: list[dict], n: int) -> list[dict]:
+    """N rows spread evenly over a stable order, keeping the command/escalate mix."""
+    out = []
+    for kind in ("command", "escalate"):
+        part = sorted((r for r in data if r["kind"] == kind), key=lambda r: hashlib.sha1(r["q"].encode()).hexdigest())
+        k = round(n * len(part) / len(data))
+        out += [part[int(i * len(part) / k)] for i in range(k)] if k else []
+    return out
+
+
 def fixtures_path(model: str) -> Path:
     return FIXTURES / f"{model}.jsonl"
 
@@ -216,6 +226,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--model", default=None)
     ap.add_argument("--offline", action="store_true", help="replay recorded fixtures, no API")
     ap.add_argument("--fails", action="store_true")
+    ap.add_argument("--sample", type=int, default=0, help="a fixed, evenly spread subset of N rows (slow backends)")
     a = ap.parse_args(argv)
     if a.what == "snapshot":
         n = snapshot(a.model)
@@ -227,7 +238,7 @@ def main(argv: list[str] | None = None) -> int:
     d = Dispatcher(config=cfg, fixtures=fixtures, **({"model": a.model} if a.model else {}))
     if a.k:
         d.k = a.k
-    data = rows(a.split)
+    data = sample(rows(a.split), a.sample) if a.sample else rows(a.split)
     mode = "offline" if a.offline else "live"
     print(f"{a.split}: {len(data)} rows, model {d.model}, k={d.k}, {mode}")
     if a.what == "recall":
